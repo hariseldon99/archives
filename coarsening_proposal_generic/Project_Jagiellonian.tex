@@ -1,0 +1,155 @@
+\documentclass[a4paper,9pt]{article}
+
+%% A template for the IEF Marie Curie action
+%
+% All very simple code, and standard packages. The bibliography uses
+% IEEEtranSA style, which is very similar to alpha.
+%
+% The ethical issues tables in section B6 could be forced in place
+% more elegantly, but it worked for me.
+%
+% DOUBLE CHECK the details of your call before using this
+% template. The name of the sections and subsections changes from call
+% to call, and new sections are added and removed.
+%
+% August 2010, v1.0 - Jesus Nuevo-Chiquero.
+%
+% This file is provided AS IS, with absolutely no warranty of
+% anything. You are welcome to use it, but you assume all risks.
+\usepackage[defaultsans]{droidsans}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be typewriter style
+\usepackage[latin1]{inputenc}
+\usepackage[margin=0.5in]{geometry}
+\usepackage{setspace}
+\usepackage[numbers, comma, sort&compress]{natbib}
+\usepackage{hyperref}
+
+\let\oldthebibliography=\thebibliography
+  \let\endoldthebibliography=\endthebibliography
+  \renewenvironment{thebibliography}[1]{%
+    \begin{oldthebibliography}{#1}%
+      \setlength{\parskip}{0ex}%
+      \setlength{\itemsep}{0ex}%
+  }%
+  {%
+    \end{oldthebibliography}%
+  }
+
+ \title{Research Proposal:\\ Coarsening and Dynamical Many Body Freezing in Quantum Systems}
+ \author{Analabha Roy\\CSIR Senior Research Associate,\\ Saha Institute of Nuclear Physics,\\ Kolkata, India}
+ \date{\today}
+
+\begin{document}
+ \maketitle
+
+The main objective of this research project is to understand the dynamics of \textbf{Coarsening} and \textbf{Dynamical Many Body Freezing and Localization} in  {Quantum} Many Body {Systems} when they are out of equilibrium, mainly at $T=0$. Coarsening describes the structural evolution of a many body system while it is approaching equilibrium after a quench in a  {parameter}; a particularly important aspect of the nonequilibrium dynamics seen in recent experiments. A 'quench' is defined as the \textit{diabatic} variation of a thermodynamic or other  {parameter} of the system, such as temperature, mass or chemical potential. In a diabatic variation, the rate at which the quench rate is faster than all the relaxation rates intrinsic to the system, thus allowing for approximating the change as instantaneous. Coarsening after a quench constitutes the dynamical process by which the characteristic  {size} of the support of the equilibrium phases grows. 
+During this \textit{coarsening} process, space-time correlations allow for the identification of a growing length scale. Domains of equilibrium states grow with this length scale, and a spatial profile of 'kinks' or  {`domain walls'} that demarcate these regions provides insights into the coarsening process.
+
+The first part of this project proposes investigating the coarsening described above to the quantum realm in many body systems. 
+In these systems, a \textit{diabatic quench} can be induced  by a varying a {parameter}  rapidly in comparison to the relaxation times of the excitations. The nonequilibrium dynamics of such closed quantum systems after a quench, although an ongoing subject of study,  {are somewhat better understood than their open counterparts}, and involve principles like dephasing~\cite{thermalization} and the Eigenstate Thermalization hypothesis~\cite{thermalization,krishrev}, the Kibble-Zurek mechanism~\cite{bikashbabu}, Landau-Zener tunneling~\cite{bikashbabu}, semiclassical mean field dynamics like those obtained from the Gross-Pitaevski equation for Bose Einstein condensates~\cite{colrev} and the Ginzburg Landau equation for superconductivity~\cite{rammer}, diagrammatic perturbation theory~\cite{gorkov, volkov}, and others. This part of the research project will involve the application of some of the above-mentioned ideas, as well as newer stochastic methods, to \textit{open quantum systems} \textit{viz.} systems 
+that can exchange energy via connections to a reservoir of heat. For open systems, such dynamics can be studied by completely specifying the nature of the reservoir, and treat the coupled system + reservoir as a closed quantum system, or by treating the reservoir stochastically. The nonequilibrium dynamics, thus formulated, allows the profiling of local quantum correlations and coarse-grained responses whose spatial extent described coarsening that is expected to grow towards the steady state. Analytics will involve modeling such systems by \textit{spin chain heterostructures}~\cite{arrachea},  constructed by linking finite or semi-infinite XX or XY spin chains (of various anisotropies) to each other at their ends. This model is analogous to well-established models that describe transport in many body systems, as well as nano and mesoscopic systems~\cite{arrachea,openspin, imry}. The dissipative dynamics of the central chain after a quench can thus be obtained from the Hamiltonian quantum dynamics of the 
+entire system of links. Such systems can be mapped onto p-wave BCS superconducting fermions, and the nonequilibrium Dyson equation can be formulated in a manner similar to~\cite{gorkov, volkov}. Post-quench dynamics can be studied by solving the resultant equations for the local fermion correlations by diagrammatic approximations to the nonequilibrium self-energy, either in the collisionless regime~\cite{volkov,ncnsd2012}, or in the regime where collisions are rapid enough to have relaxed away and only order parameter dynamics remains~\cite{ncnsd2012}. The steady state properties of such systems have already been investigated in the context of thermal transport by Arrachea \textit{et. al.}~\cite{arrachea}, and can easily be adapted to dynamics farther from equilibrium.
+
+The approach detailed above, with the full Hamiltonian description of the system and reservoir, comes at the price of numerous analytical and computational difficulties. The next part of this project will deal with alternative formalisms of open quantum systems, where the reduced density matrix is evolved in time by a master equation, allowing for the inclusion of incoherent processes which represent interactions with a reservoir. Such dynamics is regularly studied in quantum optics using the \textbf{Kossakowski-Lindblad equation}, where it can represent absorption or emission from a reservoir~\cite{lindblad}. Here, the regular Liouvillean dynamics of closed quantum density matrices are dressed with Lindblad bath operators which act locally on degrees of freedom near each bath. Although this approach is not universally valid, it is a reasonable starting point to study Heisenberg chains such as the ones being studied in this project~\cite{spinchains:lindblad}. Here, as in the previous paragraph, the ends of a 
+finite spin chain are coupled to canonical Lindblad spin operators whose amplitudes are determined by the thermodynamics of the reservoir.  This approach is computationally simpler, and the density matrix for such a mixed system can be solved using DMRG methods. The ensuing Kossakowski-Lindblad dynamics  can be simulated numerically with novel approaches to the time evolved block decimation using the Density Matrix Renormalization Group technique, including the implementation of these algorithms in distributed grid computing environments using established parallel-programming paradigms~\cite{white:pdmrg}. The expertise of the host in DMRG techniques~\cite{Zakrzewski:dmrg} will prove invaluable in this area. Their earlier works  computing the dynamically important excited states of the Bose-Hubbard Model~\cite{Zakrzewski:dmrg}  can be readily adapted to our system of interest.
+
+The next part of this project involves the study of an interesting phenomenon in nonequilibrium many body physics \textit{viz.} that of \textbf{Dynamical Many Body Freezing}. Within many simple quantum dynamical systems, quantum interference can manifest itself through surprising effects which are quite counter-intuitive and have no classical analogs.
+One such effect is the phenomenon of \textbf{dynamical localization} (freezing) or \textbf{coherent destruction of tunneling}. Here, a single particle is localized in space for all time under periodic forcing (dynamical localization~\cite{Dunlap}) or in one of the two wells of a double-well potential modulated sinusoidally (coherent destruction of tunneling~\cite{Hanggi}) due to
+coherent suppression of tunneling amplitudes. A many-body version of the phenomenon - dynamical many-body freezing - has also been observed both theoretically~\cite{dmfth} and experimentally ~\cite{Mahesh}. This freezing is distinct from other forms of freezing caused by universality at quantum criticality (Kibble-Zurek mechanism~\cite{bikashbabu}), Landau-Zener relaxations~\cite{bikashbabu,Shevchenko-Ashhab-Nori-Rev}, or classical dynamical hysteresis~\cite{class:hyst}, in that it is a total freezing of response for all degrees of freedom  that is qualitatively independent of the phase portrait or the quantum structure of the system. This effect has largely been reported for clean, well-ordered and closed quantum systems, and the investigation of this unique phenomenon in quantum systems that are closer to real world setups has yet to be performed.
+
+The study of dynamical many body freezing in real world systems will involve studying periodically driven many body systems with several deviations from ideal conditions. The study of one such deviation, that of disorder, is currently under way. Preliminary numerical results of the periodically time driven disordered Edwards-Anderson model indicate a strong robustness of the dynamical freezing of local responses like Ising magnetization to uniform disorder. Analytical treatments via the use of Floquet theory and Wilson Numerical Renormalization Group~\cite{mintert} are currently being pursued.
+We will investigate the response of quantities such as magnetization, correlations and entanglement entropy in disordered as well as multiband systems~\cite{multiband}, and continue our analysis to Lindblad systems. Further deviations from ideal conditions include multiband effects in spatially periodic quantum systems (such as the Bose Hubbard model in a tightly bound lattice) that arise due to ultrafast dynamics, as well as open quantum systems using Lindblad dynamics. The former case is of special interest, since multiband effects arise due to the breakdown of the traditional tight-binding model commonly used in optical lattice problems. It would be of significant interest to see whether exotic freezing survives multiband transitions, and we plan to study a Bose Hubbard model in a shaken optical lattice (along the lines of~\cite{mintert}) with multiband effects added to the dynamics. These effects can be incorporated, both analytically and numerically, into periodically driven disordered Ising systems 
+using the formalism obtained by the host and collaborators~\cite{multiband}, and will provide important insight into the phenomenon in real world experiments with ultracold atoms.
+
+Due to the many implications and interdisciplinary nature of nonequilibrium dynamics, a comprehensive study of the approach to equilibrium in such systems would provide insights into the behavior of several nonequilibrium systems that are actively studied in academia. In addition, most treatments of open quantum systems out of equilibrium have involved phenomenological approaches using generic structures~\cite{openspin}, restricting  themselves to the equilibrium steady state, and often performed within the linear response regime with small temperature gradients. Therefore, it is desirable to develop alternative approaches designed to treat systems far out of equilibrium while they are coarsening towards steady states. The Keldysh formalism provides such a framework, and a detailed investigation of nonequilibrium dynamics using Keldysh 
+methods is sorely needed in order to form a complete understanding of such systems. Finally, the detailed study of quantum nonequilibrium dynamics has, for the most part, been restricted to closed quantum systems, and studies of open systems have begun fairly recently~\cite{daley}. Thus, studies of coarsening in open quantum systems will contribute towards a fledgling area of research. 
+
+The relevance of dynamical many body freezing in the areas of quantum information science and computing cannot be overstated. The degradation of entangled many body states due to disorder induced dephasing is a significant issue hindering the realization of stable qbits. If a many body system is periodically driven at resonance, then the literature shows that ordered systems can be frozen~\cite{dmfth} at any arbitrary initial state. If the phenomenon is as robust against disorder as preliminary observations indicate, then the investigation of multipartite entanglement in such systems will be of immeasurable value in quantum information science.
+\newpage
+
+\begin{thebibliography}{}
+
+\bibitem{thermalization}
+M. Rigol, V. Dunjko, and M. Olshanii, Nature 452, 854 (2008).
+
+\bibitem{krishrev}
+A. Polkovnikov, K. Sengupta, A. Silva, M. Vengalattore, Rev. Mod. Phys. \textbf{83}, 863 (2011).
+
+\bibitem{bikashbabu}
+A. Dutta, U. Divakaran, D. Sen, B.K. Chakrabarti, T.F. Rosenbaum, G. Aeppli, arXiv:1012:0653 (unpublished).
+
+\bibitem{colrev}
+A. Roy, Eur. Phys. J. {Plus}, {\bf 127}:3, 34 (2012).
+
+\bibitem{rammer}
+J. Rammer, \textit{Quantum Field Theory of Non-equilibrium States} (Cambridge University Press, Cambridge 2007).
+
+\bibitem{gorkov}
+L.P. Gorkov, G.M. Eliashberg, Sov. Phys. JETP \textbf{27}, 328 (1968).
+
+\bibitem{volkov}
+A.F. Volkov, Sh.M. Kogan, Sov. Phys. JETP \textbf{38}(5), 1018 (1974).
+
+\bibitem{arrachea}
+L. Arrachea, G. S. Lozano, and A. A. Aligia, Phys. Rev. B {\bf 80}, 014425 (2009).
+
+\bibitem{openspin}
+M. Michel, O. Hess,  H. Wichterich and J. Gemmer, Phys. Rev. B {\bf 77}, 104303 (2008) 
+
+\bibitem{imry}
+Y. Imry, \textit{Introduction to Mesoscopic Physics}, (Oxford University Press, 1997).
+
+\bibitem{ncnsd2012}
+A. Roy, \textit{Nonequilibrium Dynamics of Ultracold Fermi Superfluids}, Invited mini-review (NCNSD $2012$),
+Eur. Phys. J. ST, {\bf 222} (3-4), 975-993 (2013).
+
+\bibitem{lindblad}
+A. Kossakowski, Rep. Math. Phys. {\bf 3} 247 (1972); G. Lindblad , Commun. Math. Phys. {\bf 48} 119 (1976).
+
+\bibitem{spinchains:lindblad}
+S. Clark, J. Prior, M. J. Hartmann, D. Jaksch, and M. B. Plenio, New J. Phys. {\bf 12}, 025005 (2010).
+
+\bibitem{white:pdmrg}
+E. M. Stoudenmire and S. R. White, Phys. Rev. B {\bf 87}, 155137 (2013).
+
+\bibitem{fermidyn}
+A.Roy, R. Dasgupta, S. Modak, A.Das, and K. Sengupta,  J. Phys.: Condens. Matter, {\bf 25}, 205703 (2013).
+
+\bibitem{Zakrzewski:dmrg}
+M. Lacki, D. Delande, and J. Zakrzewski, Phys. Rev. A {\bf 86}, 013602 (2012).
+
+\bibitem{multiband}
+M. Lacki, D. Delande, and J. Zakrzewski New J. Phys. {\bf 15} 013062 (2013) ; M. Lachi and J. Zakrzewski, Phys. Rev. Lett. {\bf 110}, 065301 (2013).
+
+
+\bibitem{Hanggi}
+F. Grossmann, T. Dittrich, P. Jung and P. Hanggi, Phys. Rev. Lett. {\bf 67}, 516 (1991).
+
+
+\bibitem{Dunlap}
+D. H. Dunlap and V. M. Kenkre, Phys. Rev. B {\bf 34}, 3625 (1986).
+
+
+
+\bibitem{Shevchenko-Ashhab-Nori-Rev}
+S. N. Shevchenko, S. Ashhab and F. Nori,
+Phys. Rept. {\bf 492} 1 (2010). 
+
+\bibitem{dmfth}
+A. Das, Phys. Rev. B {\bf 82}, 172402 (2010);A. Das and R. Moessner, arXiv:1208.0217;
+
+\bibitem{Mahesh}
+Swathi S. Hegde, Hemant Katiyar, T. S. Mahesh, and Arnab Das, arXiv:1307.8219.
+
+\bibitem{class:hyst}
+B. K. Chakrabarti and M. Acharyya, Rev. Mod. Phys. {\bf 71}, 847 (1999).
+
+\bibitem{mintert}
+A. Verdeny, A. Mielke, and F. Mintert, Phys. Rev. Lett. {\bf 111}, 175301 (2013).
+
+\bibitem{daley}
+W. Yi, S. Diehl, A. J. Daley and P. Zoller, New J. Phys. {\bf 14}, 055002 (2012).
+
+\end{thebibliography}
+
+\end{document}

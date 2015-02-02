@@ -1,0 +1,20 @@
+2009-09-23 Analabha Roy daneel@physics.utexas.edu:
+Removed all older tags and renamed project to "optical_lattice_floquet"
+
+2008-08-13 Analabha Roy daneel@physics.utexas.edu: 
+Tagged version 0.1 
+    * floquet_optical_lattice.c (main): 
+    Single resonance optical lattice, time independent in the absense of drive
+    Parameters are:
+    	Lattice amplitude kappa
+    	Drive frequency omega
+    	Drive amplitude lambda
+   Integrates an N X N Floquet matrix and diagonalizes it for each value of parameter (one of above) in a specified range.
+
+Format of Changelog:
+$DATE (YYYY-MM-DD) $NAME $EMAIL
+Tagged version $VERSION_TAGGED_IN_SVN
+    * $FILE_CHANGED ($FUNCTION CHANGED): $CHANGES
+	$ADDITIONAL_CHANGES
+
+    * $ANOTHER_FILE_CHANGED ($SOMEFUNCTION): $MORE_CHANGES

@@ -1,0 +1,19 @@
+CC=`which mpicc`
+GLIB_LOC = pkg-config --cflags --libs glib-2.0
+GSL_LOC = gsl-config --cflags
+GLIB_FLAGS = pkg-config --libs glib-2.0
+CFLAGS= -O3 -c
+GSL_FLAGS= gsl-config --libs
+INTEL_FLAGS= -limf 
+
+%.o:%.c %.h 
+	$(CC) `$(GLIB_LOC)` `$(GSL_LOC)` $(CFLAGS) $<
+
+graphenehop: graphene-hopping.o
+	-$(CC) -o $@ graphene-hopping.o `$(GLIB_FLAGS)` $(INTEL_FLAGS) `$(GSL_FLAGS)` 
+
+libclean:
+	${RM} *~ graphene-hopping.o
+
+clean: libclean
+	${RM} graphenehop

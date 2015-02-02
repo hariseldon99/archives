@@ -1,0 +1,26 @@
+img_extensions=.eps .jpg .jpeg .png .pdf .ps .fig .gif
+pkg_extensions=.cls .sty
+src_extensions=.tex .ltx .latex .dtx .ins
+
+[General]
+img_extIsRegExp=false
+kileprversion=2
+kileversion=2.1
+lastDocument=
+masterDocument=
+name=Project
+pkg_extIsRegExp=false
+src_extIsRegExp=false
+
+[Tools]
+MakeIndex=
+QuickBuild=
+
+[item:dissertation.kilepr]
+archive=true
+column=1027423549
+encoding=
+highlight=
+line=0
+open=false
+order=-1

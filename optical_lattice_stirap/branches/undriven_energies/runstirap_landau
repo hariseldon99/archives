@@ -1,0 +1,9 @@
+#!/bin/bash
+export RUNPROG="./stirap_oplattice"
+export FILENAME_ENERGY="result/energies_lattice_nodrive_U0_23_lowres.dat"
+export KAPPA_INIT=0.0
+export KAPPA_FINAL=11.00
+export KAPPA_INC=0.1
+export U0=23.0
+
+$RUNPROG $FILENAME_ENERGY $KAPPA_INIT $KAPPA_FINAL $KAPPA_INC $U0

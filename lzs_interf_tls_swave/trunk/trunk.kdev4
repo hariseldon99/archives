@@ -1,0 +1,22 @@
+[Project]
+Manager=KDevCustomMakeManager
+Name=trunk
+
+[files]
+current_page=-1
+
+[indentation]
+detect_indent=false
+indent_hard_tab_width=8
+indent_mode=2
+indent_type=1
+indent_width=4
+
+[long line marker]
+long_line_behaviour=1
+long_line_column=72
+
+[project]
+base_path=
+description=
+name=untitled

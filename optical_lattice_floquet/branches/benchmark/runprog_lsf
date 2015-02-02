@@ -1,0 +1,22 @@
+#!/bin/bash
+                                                                               #first line specifies shell
+#BSUB -J optical_lattice                                                            #name the job
+#BSUB -o out.o%J                                                               #output->   out.o&ltjobID>
+#BSUB -e err.o%J                                                               #error -> error.o&ltjobID>
+#BSUB -M 3850000                                                              #4GB/task of memory
+#BSUB -n 2 -W 10:01                                                           #No of CPUs and time 
+#BSUB -R 'span[ptile=2]'
+#BSUB -q normal                                                                #Queue name
+set echo                                                                                                                                                         #Echo all commands.
+cd $LS_SUBCWD
+export RUNPROG="./benchmark"
+export FILENAME="result/times.dat"
+export N_INIT=1
+export N_FINAL=700
+export KAPPA=12.0
+export LAMBDA=3.0
+export OMEGA=24.0
+
+                                                                                                                                                   #cd to directory of submission
+ibrun $RUNPROG $FILENAME $N_INIT $N_FINAL $KAPPA $LAMBDA $OMEGA
+                                                                                                                                                        #use ibrun for "pam -g mvapich_wrapper"

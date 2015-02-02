@@ -1,0 +1,46 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[centertags]{amsmath}
+\usepackage{amssymb,amsmath}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{url}
+\usepackage{bera}
+%opening
+\title{Formula for Defect Density}
+\author{Analabha Roy}
+
+\begin{document}
+
+\maketitle
+
+Let us denote the adiabatic BCS state as
+\begin{eqnarray}
+|\psi^{adb}_{\bf k}(t)\rangle &=& \left[u^{adb}_{\bf k}(t) + v^{adb}_{\bf k}(t)a^\dagger_{\bf k} a^{\dagger}_{-{\bf k}} \right]|0\rangle, \nonumber \\
+u^{adb}_{\bf k} (t) &=& \frac{1}{\sqrt{2}}\left[1 + \frac{f_{\bf k}(t)}{\mathcal{E}_{\bf k}(t)} \right]^{1/2}, \nonumber \\
+v^{adb}_{\bf k} (t) &=& \frac{1}{\sqrt{2}}\left[1 - \frac{f_{\bf k}(t)}{\mathcal{E}_{\bf k}(t)} \right]^{1/2}, 
+\end{eqnarray}
+where $f_{\bf k}(t) = \epsilon_{\bf k}-\mu(t)$, and $\mathcal{E}_{\bf k}(t) = \sqrt{f^2_{\bf k}(t) + |\Delta(t)|^2}$. Also, $\epsilon_{\bf k} = \cos{k_x}+\cos{k_y}$, and $\mu(t) = \mu_0 + \mu_a\sin{\omega t}$. Obviously,
+$|u^{adb}_{\bf k}(t)|^2 + |v^{adb}_{\bf k}(t)|^2 = 1$.  The BCS system, when departing from equilibrium, assumes the state
+\begin{equation}
+|\psi_{\bf k}(t)\rangle = \left[u_{\bf k}(t) + v_{\bf k}(t)a^\dagger_{\bf k} a^{\dagger}_{-{\bf k}} \right]|0\rangle,
+\end{equation}
+subject to the normalization $|u_{\bf k}(t)|^2 + |v_{\bf k}(t)|^2 = 1$. When the system moves adiabatically,
+\begin{eqnarray}
+ |\psi_{\bf k}(t)\rangle &=& |\psi^{adb}_{\bf k}(t)\rangle, \nonumber \\
+u_{\bf k}(t)&=&u^{adb}_{\bf k}(t), \nonumber \\
+v_{\bf k}(t)&=&v^{adb}_{\bf k}(t). 
+\end{eqnarray}
+During adiabatic motion, the operators
+\begin{eqnarray}
+\alpha_{\bf k}(t) &=& u^{adb}_{\bf k}(t) a_{\bf k} - v^{adb}_{\bf k}(t)a^\dagger_{-{\bf k}}, \nonumber \\
+\alpha^\dagger_{-{\bf k}}(t) &=& u^{adb}_{-{\bf k}}(t) a^\dagger_{-{\bf k}} - v^{adb}_{-{\bf k}}(t)a_{\bf k},
+\end{eqnarray}
+diagonalize the Hamiltonian. Thus, the defect density is
+\begin{eqnarray}
+\rho_{\mathrm d}(t) &=& \sum_{\bf k} \rho^{\mathrm d}_{\bf k}(t),\nonumber \\ 
+\rho^{\mathrm d}_{\bf k}(t) &\equiv& \langle \psi_{\bf k}(t)|\alpha^\dagger_{\bf k}(t)\alpha_{\bf k}(t)|\psi_{\bf k}(t)\rangle,\nonumber \\
+ &=& |u^{adb}_{\bf k}(t)v_{\bf k}(t)-v^{adb}_{\bf k}(t)u_{\bf k}(t)|^2.
+\end{eqnarray}
+When the system moves adiabatically, the defect density above vanishes, meaning that no excitations above the adiabatic ground state are produced. When not adiabatic, excitations are produced, and $\rho_{\mathrm d}(t)$ gives us the density of these excitations.
+\end{document}

@@ -1,0 +1,27 @@
+# KDevelop Custom Project File List
+Makefile
+Makefile.landau
+Makefile.lonestar
+algebra.c
+algebra.h
+final_output.c
+final_output.h
+floquet_optical_lattice.c
+floquet_optical_lattice.h
+hamiltonian.c
+hamiltonian.h
+hosts.landau
+integrator.c
+integrator.h
+params.h
+quantum_hamilt_melements.c
+quantum_hamilt_melements.h
+quasienergies.c
+quasienergies.h
+runprog_landau
+runprog_landau_dbg
+runprog_lsf
+runprog_lsf_dev
+slepc_eval_nhep.c
+slepc_eval_nhep.h
+tags

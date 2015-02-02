@@ -1,0 +1,38 @@
+[Buildset]
+BuildItems=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
+
+[Launch]
+Launch Configurations=Launch Configuration 0
+
+[Launch][Launch Configuration 0]
+Configured Launch Modes=execute
+Configured Launchers=nativeAppLauncher
+Name=New Native Application Configuration
+Type=Native Application
+
+[Launch][Launch Configuration 0][Data]
+Arguments="result/debug1.txt" "result/debug2.txt" "result/debug3.txt" "result/debug4.txt" "result/debug5.txt" 20.0 0.0 1.0 3.0 1.0 0.0 0.0 0.1 60 1000 "s"\n
+Debugger Shell=
+Dependencies=@Variant(\x00\x00\x00\t\x00\x00\x00\x00\x00)
+Dependency Action=Nothing
+Display Demangle Names=true
+Display Static Members=true
+EnvironmentGroup=default
+Executable=file:///home/daneel/daneelrepo/lzs_interf_tls/trunk/lzs_mbt_1d
+External Terminal=konsole --noclose --workdir %workdir -e %exe
+GDB Path=file:///usr/bin/valgrind
+Project Target=
+Remote GDB Config Script=
+Remote GDB Run Script=
+Remote GDB Shell Script=
+Use External Terminal=false
+Working Directory=file:///home/daneel/daneelrepo/lzs_interf_tls/trunk
+isExecutable=true
+
+[MakeBuilder]
+Default Target=lzs_mbt_1d
+Number Of Jobs=1
+Su Command=1
+
+[Project]
+VersionControlSupport=kdevsubversion

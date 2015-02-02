@@ -1,0 +1,69 @@
+CC=/opt/MPI/intel9/mvapich-gen2/0.9.8/bin/mpicc
+CFLAGS=-O3 -xT -c
+
+#Runtime Binaries
+HUSIMIBIN=husimi
+WIGNERBIN=wigner
+POINCAREBIN=poincare
+
+#GNU Scientific Library Paths
+TACC_GSL_BIN=/opt/apps/gsl/gsl-1.8/bin
+TACC_GSL_INC=/opt/apps/gsl/gsl-1.8/include
+TACC_GSL_LIB=/opt/apps/gsl/gsl-1.8/lib
+TACC_GSL_DIR=/opt/apps/gsl/gsl-1.8
+
+#Dependencies
+HUSIMIOBJECTS= husimi_integrals.o quantum_hamilt_melements.o classical_hamilt_fn.o
+WIGNEROBJECTS= wigner_integrals.o quantum_hamilt_melements.o classical_hamilt_fn.o
+POINCAREOBJECTS=poincare.o classical_hamilt_fn.o classical_integrator.o
+
+#Installation Files/Scripts
+INSTALLFILES=runproggie* $(HUSIMIBIN) $(HUSIMIBIN)_intp2 $(WIGNERBIN) $(WIGNERBIN)_intp2 $(POINCAREBIN)
+
+husimi: husimi.o $(HUSIMIOBJECTS)  params.h
+	$(CC) -L$(TACC_GSL_LIB) husimi.o $(HUSIMIOBJECTS) -lgsl -lgslcblas -lm -o $(HUSIMIBIN)
+
+#husimi_intp2: husimi_intp2.o $(HUSIMIOBJECTS) params.h
+#	$(CC) -L$(TACC_GSL_LIB) husimi_intp2.o $(HUSIMIOBJECTS) -lgsl -lgslcblas -lm -o $(HUSIMIBIN)_intp2
+
+wigner:wigner.o $(WIGNEROBJECTS) params.h
+	$(CC) -L$(TACC_GSL_LIB) wigner.o $(WIGNEROBJECTS) -lgsl -lgslcblas -lm -o $(WIGNERBIN)
+
+#wigner_intp2:wigner_intp2.o $(WIGNEROBJECTS) params.h
+#	$(CC) -L$(TACC_GSL_LIB) wigner_intp2.o $(WIGNEROBJECTS) -lgsl -lgslcblas -lm -o $(WIGNERBIN)_intp2
+
+husimi.o: husimi.c params.h 
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) husimi.c
+
+#husimi_intp2.o: husimi_intp2.c params.h
+#$(CC) -I$(TACC_GSL_INC) $(CFLAGS) husimi_intp2.c
+
+husimi_integrals.o: husimi_integrals.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) husimi_integrals.c
+
+wigner.o: wigner.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) wigner.c
+
+wigner_integrals.o: wigner_integrals.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) wigner_integrals.c
+
+quantum_hamilt_melements.o: quantum_hamilt_melements.c params.h 
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) quantum_hamilt_melements.c
+
+poincare: $(POINCAREOBJECTS) params.h
+	$(CC) -L$(TACC_GSL_LIB) $(POINCAREOBJECTS) -lgsl -lgslcblas -lm -o $(POINCAREBIN)
+
+poincare.o: poincare.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) poincare.c
+
+classical_integrator.o: classical_integrator.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) classical_integrator.c
+
+classical_hamilt_fn.o: classical_hamilt_fn.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) classical_hamilt_fn.c
+
+install: 
+	cp $(INSTALLFILES) $(WORK)
+
+clean:
+	rm -f $(HUSIMIBIN) $(WIGNERBIN) $(POINCAREBIN) *.o *~

@@ -1,0 +1,31 @@
+#!/bin/bash
+#
+#
+# Author: Analabha Roy <daneel@utexas.edu>, (C) 2012
+#
+# Copyright: See COPYING file that comes with this distribution
+#
+#
+export GSL_URL="http://www.gnu.org/software/gsl/"
+export GLIBDEV_URL="http://library.gnome.org/devel/glib/"
+export OPENMPI_URL="http://www.open-mpi.org/"
+
+echo 
+echo "Special utilities required to compile and run graphenehop"
+echo 
+
+echo "Standard utilities (ie these should be installed by default):"
+echo "1. The pkg-config utility. GNU pkg-config found at:" `which pkg-config`
+echo "2. GNU make. GNU make found at:" `which make`
+echo "3. The C standard library (libc6-dev)."
+echo "4. Any C compiler like gcc, icc."     
+echo "5. The GNU bc arbitrary precision calculator language. "
+echo 
+     
+echo "Non-standard utilities and ways to get them (if they are unavailable in the package repositories of your OS):"
+echo "1. The GNU Scientific Library: Development headers (libgsl-dev), version 1.15 or later"
+echo "   Available at $GSL_URL" 
+echo "2. The GLib library: Development headers (libglib-dev), version 2.30 or later"
+echo "   Available at $GLIBDEV_URL"
+echo "3. Any implementation of the Message Passing Interface (MPI) standard. Tested with OpenMPI-1.4.3."
+echo "   Available at $OPENMPI_URL"

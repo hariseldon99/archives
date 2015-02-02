@@ -1,0 +1,44 @@
+BIN_LOC    = /usr/bin
+GSL_FLAGS  = $(BIN_LOC)/gsl-config --cflags
+CFLAGS     = -Wall -O3 `$(GSL_FLAGS)`
+GSL_LIBS   = $(BIN_LOC)/gsl-config  --libs-without-cblas 
+DIST_FILES = *.c *.h Makefile* TODO INSTALL eth_question.kdev4 .kdev4/* scripts/*
+RES_FILES  = *.dat *.info
+
+include ${SLEPC_DIR}/conf/slepc_common
+
+.DEFAULT_GOAL := all
+
+all: rigol_lattice eth_diag eth_davg eth_eavg
+
+indent:
+	indent *.c *.h
+	${RM} *~
+
+rigol_lattice: rigol_lattice.o common.o filenames.h chkopts
+	-${CLINKER} -o $@ rigol_lattice.o common.o ${PETSC_LIB} `$(GSL_LIBS)`
+
+eth_diag: eth_diag.o filenames.h chkopts
+	-${CLINKER} -o $@ eth_diag.o ${SLEPC_LIB} 
+
+eth_davg: eth_davg.o common.o filenames.h chkopts
+	-${CLINKER} -o $@ eth_davg.o common.o ${PETSC_LIB} `$(GSL_LIBS)`
+
+eth_eavg: eth_eavg.o common.o filenames.h chkopts
+	-${CLINKER} -o $@ eth_eavg.o common.o ${PETSC_LIB} `$(GSL_LIBS)`
+
+alldist: dist res
+
+dist:
+	tar czvf eth_question.tar.gz $(DIST_FILES)
+	
+res:
+	tar czvf results.tar.gz $(RES_FILES)
+
+allclean: clean objclean resclean
+
+objclean:
+	${RM} *.o rigol_lattice eth_diag eth_*avg *.tar.gz scripts/*.pyc
+
+resclean:
+	${RM} $(RES_FILES)

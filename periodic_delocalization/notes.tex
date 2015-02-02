@@ -1,0 +1,57 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{bera}
+\usepackage[centertags]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\floor}{\lfloor}{\rfloor}
+\usepackage{dsfont}
+\usepackage{amsfonts}
+\usepackage[margin=0.6in]{geometry}
+\usepackage[square, comma, numbers, sort&compress]{natbib}
+
+%opening
+\title{Periodic quantum dynamics of the disordered tight-binding model}
+\author{Analabha Roy}
+
+\begin{document}
+
+\maketitle
+
+\section{\sc Introduction}
+\label{sec:intro}
+We seek to integrate the dynamics of the following model
+\begin{equation} \label{H_OBC}
+H(t) = -  J \sum_i^{L-1} \left( c^{\dagger}_i c_{i+1}  + {\rm h.c.}\right) 
+    - 2 \sum_i^{L} h(t) c^{\dagger}_i c_i \;,
+\end{equation}
+where $h(t)$ can be $h_0\cos{\omega t}$ as in~\cite{isingrand}.
+
+
+\section{\sc Numerical Methodology}
+\label{sec:numerics}
+We express the single particle wave function as a linear combination of Wannier states to yield $|\psi(t)\rangle = \sum_m u_m(t) c^\dagger_m|0\rangle$. Substituting this into the Schr\"odinger equation, $H(t) |\psi(t)\rangle = i \partial_t|\psi(t)\rangle$ and using eq~\ref{H_OBC} yields the following dynamical system for the amplitudes $u_m(t)$ by comparing coefficients of $c^\dagger_m|0\rangle$
+\begin{equation}
+\label{eq:numerics}
+\dot{u}_m(t) = i\; J \left(u_{m+1}+u_{m-1}\right)+2i h(t) u_m .
+\end{equation}
+We are interested in an initial condition which is localized in the middle of the lattice \textit{i.e.} $u_m(0)=\delta_{m\floor{L/2}}$. Setting $J=1$ without loss of generality, the numerics can be parallelized as follows. Parallelize the numerical evolution of eq~\ref{eq:numerics} by storing $u_m(t)$ in an $m$-distributed array and use libraries that autoparallelize the evaluation. For computational reasons, we rewrite the dynamics in eq~\ref{eq:numerics} as 
+\begin{equation}
+\partial_t |u(t)\rangle = \mathcal{J}(t)\;|u(t)\rangle,
+\end{equation}
+where $\langle u (t) | = [u_0(t), u_1(t), \dots u_{L-1}(t)]$, and the $L \times L$ Jacobian matrix $\mathcal{J}(t)$ has elements
+\begin{equation}
+\mathcal{J}_{lm}(t)= i\left(\delta_{lm+1}+\delta_{lm-1}\right)+2i h(t)\delta_{lm},
+\end{equation}
+with the initial condition $\langle u (0) | = [0, 0, \dots, 1, 0,\dots, 0]$ with the unit element being at the floor of the middle. Finally, the response of interest is variance of the wavefunction in lattice sites, which is evaluated using vectorized routines.
+
+
+\begin{thebibliography}{10}
+\bibitem{isingrand}
+\newblock T. Caneva, R. Fazio, and G.E. Santoro, Phys. Rev. B {\bf 76}, 144427 (2007).
+\end{thebibliography}
+
+
+\end{document}

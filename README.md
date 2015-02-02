@@ -1,3 +1,4 @@
+# archives
 This repository contains the following items:
 
 ==Source Codes==
@@ -17,7 +18,6 @@ A time dependent many body problem of the Ising model in 1 dimension with disord
 Code to diagonalize the Hamiltonian of an anisotropic Graphene system.
 
 ===Non-Equilibrium quantum quenched dynamics of BCS systems===
-
 A momentum space ensemble of tls systems simulating a BCS gas, with a self-consistent time-dependent superfluid gap.
 
 ===Temporal evolution of Coherent Matter Waves in Bose Fermi Mixtures===
@@ -43,7 +43,3 @@ Floquet analysis of the time evolution of two interacting bosons in the followin
 ===Classical and Quantum Poincare maps===
 
 Poincare and Husimi cross sections for 2 interacting particles in a double well are calculated.
-
-==Written works==
-
- # My PhD dissertation (in trunk)

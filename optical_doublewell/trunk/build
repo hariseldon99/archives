@@ -1,0 +1,10 @@
+#!/bin/bash
+OMPBIN="xlc_r"
+SOURCEFILE="src/2-particleXXX"
+OUTBIN="floquet"
+JOBSCRIPT="XXX"
+
+
+$OMPBIN -I$TACC_GSL_INC -L$TACC_GSL_LIB -qsmp=noauto:omp -qarch=pwr5 -qtune=pwr5 -lgsl -lgslcblas -lessl -lm -O4 $SOURCEFILE -o $OUTBIN
+cp $OUTBIN $JOBSCRIPT $WORK
+rm -f *.o

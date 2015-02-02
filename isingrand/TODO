@@ -1,0 +1,4 @@
+`TODO list:
+1. Finish computation for autocorrelation. To do setting of pmat and qmat from aa, ab, ba and bb in responses.c
+   Then add autocorrelation (real and imaginary) in output files. For multiple outs, see revision 1567
+

@@ -1,0 +1,80 @@
+NOTES:
+
+1. The binaries in this package are:
+(a) lzs_tls: Calculates the excitation probability of a driven two-level system (tls). See the runtime script runlzs_tls.
+(b) lzs_mbt_2d: Calculates the momentum probability distribution for excitation of the single channel BdG  Hamiltonian in 2 dimensions for a square lattice (mbt==many body theory). Based on lzs_tls, it takes each tls of the Bogoliubov de-Gennes Hamiltonian (one for each value of momentum for a Cooper-pair and evauates the excitation prob.
+
+2. Convention: The tls state is denoted by {uk, vk} for a particular momentum.
+
+3. The 2d computations take 3 different kinds of initial conditions:
+    1. Diabatic ground state uk=0, vk=1. Do not set this unless you have commented out self-consistency block
+    2. BCS ground state, uk and vk given by formula in file "adiabatic_trans_mbt_formula.jpg". This can be set unrestrictedly
+    3. Random uk and vk subject to the constraint |uk|^2 + |vk|^2 =1 and uk and vk have the same phase. This can also be set unrestrictedly
+	Different random number generators will output different results. The code uses the algorithms available in the GNU Scientific library.
+	Please set the value of env variable GSL_RNG_TYPE in the runscripts according the the strings listed below. Remove the quotes though.
+	(i) "mt19937": Matsumoto and Nishimura Mersenne Twister generator
+	(ii) "ranlxs0" "ranlxs1" "ranlxs2" : Luxury random numbers of Luscher, level 0,1,2, all second generation
+	(iii) "ranlux" : Luxury random numbers of Luscher,  first generation, default decorrelation in bits
+	(iv) "ranlux389" : Luxury random numbers of Luscher,  first generation, all bits decorrelated
+	(v)  "cmrg" : Combined multiple recursive generator by L'Ecuyer
+	(vi) "mrg" :  Fifth-order multiple recursive generator by L'Ecuyer, Blouin and Coutre
+	(vii) "taus" "taus2" : Maximally equidistributed combined Tausworthe generator by L'Ecuyer with improved seeding for "taus2"
+	(viii) "gfsr4" : Lagged-fibonacci generator
+	Please see : http://www.gnu.org/software/gsl/manual/html_node/Random-number-generator-algorithms.html for details
+
+4. The integrators in lzs_tls_integrator.c and lzs_mbt_integrator.c integrate the system, either adaptively or not, using GNU Sci Lib integrators
+    The possible options are set in the subroutines rather than the environment variables: They are
+    (i) "rk2" "rk4" : Explicit embedded Runge-Kutta (2, 3) method, and Explicit 4th order (classical) Runge-Kutta.
+    (ii) "rkf45" : Explicit embedded Runge-Kutta-Fehlberg (4, 5) method.
+    (iii) "rkck" : Explicit embedded Runge-Kutta Cash-Karp (4, 5) method.
+    (iv) "rk8pd" : Runge-Kutta Prince-Dormand (8, 9) method.
+    (v) "rk1imp" "rk2imp" "rk4imp" : Implicit Gaussian first , second and fourth order Runge-Kutta.
+    (vi) "bsimp" : Implicit Bulirsch-Stoer method of Bader and Deuflhard
+    Please see: http://www.gnu.org/software/gsl/manual/html_node/Stepping-Functions.html for details
+
+Notes for lonestar at the Texas Advanced Computational Center
+For parallel submission
+-----------------------
+
+1. edit the submit script
+2. Read documentation at http://www.tacc.utexas.edu/services/userguides/lonestar
+3. Submit via 'qsub <submit script>' 
+
+
+
+Notes for hpc at the S.N. Bose National Centre for Basic Sciences
+For serial submission
+---------------------
+
+1. compile the .f file  (E.g. ifort helloworld.f -o helloworld)
+2. ssh compute-0-i.local        (where i=1,2,3,4 only)
+3. ./helloworld > output        (taking helloworld to be your executable)
+        PLEASE DO NOT RUN ANY JOBS IN THE MASTER NODES (E.g. ssh compute-0-0.local ./a.out is NOT PERMITTED)
+
+===========================================================================================================
+
+For parallel submission
+-----------------------
+
+1. edit the submit script 
+2. please give only the working path 
+(E.g. "pwd" gives you the current working directory. say "/home/daneel/helloworld-testing"
+In the script, only edit "helloworold-testing" in place of "your-working-path". $USER indicates /home/daneel)
+(Also change the name of the binary that you wish to run using MPI)
+
+Commands to run the job in the cluster
+
+msub -N [job name] -l nodes=j:ppn=8 -o out.log -e err.log -d `pwd` -q [queue name] submit-latest.sh
+
+when j=1 ;queue name = parallel8
+when j=2 ;queue name = parallel16
+when j=4 ;queue name = parallel32
+when j=8 ;queue name = parallel64
+
+msub -N [job name] -l nodes=j:ppn=12 -o out.log -e err.log -d `pwd` -q [queue name] submit-latest.sh
+
+when j=1 ;queue name = parallel12-new
+when j=2 ;queue name = parallel24-new
+when j=5 ;queue name = parallel60-new
+
+

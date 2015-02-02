@@ -1,0 +1,11 @@
+#!/bin/bash
+export RUNPROG="./benchmark"
+export NUMPROCS=2
+export FILENAME="result/times.dat"
+export N_INIT=1
+export N_FINAL=10
+export KAPPA=12.0
+export LAMBDA=3.0
+export OMEGA=24.0
+
+bsub -I -n $NUMPROCS -W 0:05 -q development ibrun $RUNPROG $FILENAME $N_INIT $N_FINAL $KAPPA $LAMBDA $OMEGA

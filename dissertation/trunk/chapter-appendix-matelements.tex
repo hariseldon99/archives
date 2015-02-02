@@ -1,0 +1,183 @@
+\chapter{Matrix Elements for two Bosons}
+\index{Appendix!Matrix Elements for two Bosons @\emph{Matrix Elements for two Bosons}}%
+\label{appendix-matelements}
+\section{Introduction}
+The Hamiltonians in the text of this dissertation are diagonalized numerically by a nonadaptive finite element method using the matrix elements in a suitable known basis.A tower of states for the 2-particle system are built up by index using unique combinations of single particle states up to the truncation value $N$. Thus, the tower consists of the combinations of the type $n=\left[i,j\right]$, where $n$ is the index for the two-particle state and $i$, $j$ are the corresponding single particle eigenstate indices. The decomposition of the tower of states is detailed on table~\ref{tabA:appendix}.
+
+\begin{table}
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
+\hline
+$n$ & $\left[i,j\right]$&	$n$&$\left[i,j\right]$&	$n$&$\left[i,j\right]$&	$\hdots$&	$n$&$\left[i,j\right]$\\
+\hline
+1&$\left[1,1\right]$&	&	&	&	&	&	&	\\
+2&$\left[1,2\right]$&$N+1$&$\left[2,2\right]$&	&	&	&	&	\\
+3&$\left[1,3\right]$&$N+2$&$\left[2,3\right]$&$2N+1$&$\left[3,3\right]$&$\hdots$&	&	\\
+$\vdots$&$\vdots$&$\vdots$&$\vdots$& $\vdots$& $\vdots$&$\hdots$&	&	\\
+$N$&$\left[1,N\right]$&$2N-1$&$\left[2,N\right]$&$3N-2$&$\left[3,N\right]$&$\hdots$& $N^2-N+1$& $\left[N,N\right]$\\
+\hline
+\end{tabular}
+\caption{Tower of states $n=\left[i,j\right]$ constructed for the diagonalization of the two-boson system. Here, $n$ is the index for the two-particle state and $i$, $j$ are the corresponding single particle eigenstate indices.}
+\label{tabA:appendix}
+\end{center}
+\end{table}
+The matrix elements can now be evaluated after each member in the tower of states is assigned to a two-particle state decomposition as follows.
+\begin{equation}
+{\langle}x_1,x_2\vert n_1,n_2{\rangle} ^{(s)}=\frac{1}{\sqrt{2(1+\delta_{n_1,n_2})}} 
+[{\langle}x_1|n_1\rangle{\langle}x_2|n_2\rangle +{\langle}x_1|n_2\rangle{\langle}x_2|n_1\rangle ],
+\label{eq:symm:appendix}
+\end{equation}
+
+Thus, the matrix element of an operator $A=a_1+a_2$, where $a_i$ is the corresponding single particle operator for the $i^{th}$ particle,  can be decomposed into single particle matrix elements as follows
+\begin{multline}
+\langle n | A| m \rangle =\frac{1}{\sqrt{2(1+\delta_{n_1,n_2})}} \frac{1}{\sqrt{2(1+\delta_{m_1,m_2})}}\\
+  \left[ \langle n_1|a|m_1\rangle \delta_{n_2 m_2} +  \langle n_1|a|m_2\rangle \delta_{n_2 m_1}+ 
+  \langle n_2|a|m_1\rangle \delta_{n_1 m_2}+\langle n_2|a|m_2\rangle \delta_{n_1 m_1} \right]
+\end{multline}
+Here, the states $|m\rangle$ and $|n\rangle$ for the two-particle system are broken up into $|m_1,m_2\rangle$ and $|n_1,n_2\rangle$ respectively, where $m=\left[m_1,m_2\right]$ and $n=\left[ n_1,n_2\right]$ as shown in table~\ref{tabA:appendix}.
+\section{Double Well}
+The Hamiltonian for two bosons in a quartic double well adiabatically driven by laser pulses  is given by
+\begin{eqnarray}
+H(t;t_{fix})=H+\left[\epsilon_f(t_{fix})\sin(\omega_ft)+\epsilon_s(t_{fix})\sin(\omega_st)\right](x_1+x_2),\\
+H =p^2_1+p^2_2+V_0 (-2 x_1^2+ x_1^4) +V_0 (-2 x_2^2+ x_2^4)+U_0 \delta(x_1-x_2).
+\label{eq:fullham:appendix}
+\end{eqnarray}
+In the case of the double well, we have chosen the eigenbasis of two bosons on a box of size $L$ (in accordance with~\cite{na-reichl:pbox}). The box size $L$ is optimized for the best possible convergence of the ground state energy. Therefore, the single particle basis is
+\begin{equation}
+\langle x|n,x\rangle=\frac{1}{\sqrt{L}} \sin{\biggl[}{\frac{n\pi}{2}(\frac{x}{L}-1){\biggr]}},
+\label{eq:pboxfn:appendix}
+\end{equation}
+%
+within the box (and vanishing outside). Here, $n=1,2,...N$. 
+
+Thus, the matrix elements of the single particle operators $p^2$, $x$, $x^2$ and $x^4$ for a particle in a box need to be evaluated. Since the particle in a box has a Hamiltonian of $p^2$ within the box (and infinity outside), the matrix elements are
+\begin{equation}
+ \langle m_i |p^2| n_i \rangle=\frac{n^2_i\pi ^2}{4L^2} \delta_{m_in_i}.
+\label{eq:psqmat:appendix}
+\end{equation}
+The matrix elements of $x$ for a particle in a box are given by
+\begin{equation}
+ \langle m_i |x| n_i \rangle = \left\{
+\begin{array}{lll}
+\frac{16m_in_i}{\pi ^2\left(m_i^2-n_i^2\right)^2}L & m_i+n_i \mbox{ is odd }, \\
+0 & \mbox{otherwise.}
+\end{array}
+\right.
+\end{equation}
+Similarly, the matrix elements of $x^2$ for a particle in a box are
+\begin{equation}
+\langle m_i |x^2| n_i \rangle = \left\{
+\begin{array}{lll}
+\frac{32m_in_i}{\pi ^2\left(m_i^2-n_i^2\right)^2}L^2 & m_i+n_i  \mbox{ is even, and } m_i \neq n_i,  \\
+\left(\frac{1}{3}-\frac{2}{n_i^2\pi ^2}\right)L^2 & m_i=n_i, \\
+0 & \mbox{otherwise.}
+\end{array}
+\right.
+\end{equation}
+The matrix elements of $x^4$ are likewise given by
+\begin{equation}
+ \langle m_i |x^4| n_i \rangle = \left\{
+ \begin{array}{lll}
+\frac{64m_in_i}{\pi^4}   \left[ \frac{\pi^2}{(m_i^2 - n_i^2)^2} - \frac{
+   48(m_i^2 + n_i^2)}{(m_i^2 - n_i^2)^4}\right] L^4 & m_i+n_i  \mbox{ is even, and } m_i \neq n_i, \\
+\left(\frac{1}{5}-\frac{4}{n_i^2\pi ^2}+\frac{24}{n_i^4\pi ^4}\right)L^4 & m_i=n_i,\\
+0 & \mbox{otherwise.}
+\end{array}
+\right.
+\end{equation}
+The matrix elements of the two-particle interaction operator are shown below.
+\begin{equation}
+\frac{1}{2} \langle m | \delta(x_1-x_2) | n \rangle =\left\{
+\begin{array}{lll}
+-\frac{1}{4L} & \left\{ \begin{array}{lll}
+ & n_1-n_2=m_1+m_2 \mbox{ , and } n_1\neq n_2,\\
+ & n_1+n_2=m_2-m_1 \mbox{ , and } n_1\neq -n_2,\\
+ & n_1+n_2=m_1-m_2 \mbox{ , and } n_1\neq -n_2,\\
+ & n_1-n_2=-m_1-m_2 \mbox{ , and } n_1\neq n_2\\
+ \end{array}\right\}, \\
+&  \\
+\frac{1}{4L} & \left\{ \begin{array}{lll}
+ & n_1-n_2=m_2-m_1 \mbox{ , and } n_1\neq n_2, \\
+ & n_1-n_2=m_1-m_2 \mbox{ , and } n_1\neq n_2,\\
+ & n_1+n_2=m_1+m_2 \mbox{ , and } n_1\neq -n_2,\\
+ & n_1+n_2=-m_1-m_2 \mbox{ , and } n_1\neq -n_2\\
+ \end{array} \right\}, \\
+ & \\
+\frac{1}{2L}& \left\{ \begin{array}{lll}
+ &n_1-n_2=m_1+m_2 \mbox{ , and } n_1=n_2, \\
+ &n_1-n_2=m_2-m_1 \mbox{ , and } n_1=n_2, \\
+ &n_1-n_2=m_1-m_2 \mbox{ , and } n_1=n_2,\\
+ &n_1+n_2=m_1+m_2 \mbox{ , and } n_1=-n_2,\\
+ &n_1+n_2=m_2-m_1 \mbox{ , and } n_1=-n_2, \\
+ &n_1+n_2=m_1-m_2 \mbox{ , and } n_1=-n_2, \\
+ &n_1-n_2=-m_1-m_2 \mbox{ , and } n_1=n_2, \\
+ &n_1+n_2=-m_1-m_2 \mbox{ , and } n_1=-n_2\\
+ \end{array} \right\}, \\
+&  \\
+\frac{3}{4L} &  \begin{array}{llll}
+ & &n_1=n_2=m_1=m_2,\\
+\end{array}\\
+&  \\
+0 &  \begin{array}{llll}
+ & &\mbox{otherwise.}\\
+ \end{array}
+\end{array}
+\right.
+\end{equation}
+\section{Optical Lattice}
+In the case of the optical lattice, our Hamiltonian is  
+\begin{eqnarray}
+H(t:t_{fix}) = H + \lambda^0  \cos{x_i} \left[ \lambda_f(t_{fix})\cos{\omega_f t} + \lambda_s(t_{fix}) \cos{\omega_s t}\right]\\
+H=p^2_1 + p^2_2+\kappa \cos{x_1}+\kappa \cos{x_2} + U_0 \delta(x_1-x_2).
+\label{eq:hamscale:oplattice:appendix}
+\end{eqnarray}
+We have chosen the integer momentum states of two free bosons (in accordance with~\cite{holder-reichl:avoidedcross}). The periodic boundary conditions are thus automatically satisfied for any lattice period size ($N$). Therefore, the single particle basis is
+\begin{equation}
+\langle x | n \rangle=\left\{
+\begin{array}{lll}
+ \frac{1}{\sqrt{N\pi}}\cos{nx} & n>0, \\
+ \frac{1}{\sqrt{2N\pi}} & n=0, \\
+ \frac{1}{-\sqrt{N\pi}}\sin{nx } & n<0 .
+\end{array}
+\right.
+\label{eq:freeptcl:appendix}
+\end{equation}
+
+The single particle matrix elements of the relevant operators are given below. Since the operator $p^2_i$ is diagonalized by the basis, we have
+\begin{equation}
+\langle|p^2|n_i\rangle = n^2 \delta_{m_in_i}
+\end{equation}
+The single particle matrix elements of $\cos{x}$ are also provided below.
+\begin{equation}
+\langle m_i | \cos{x} | n_i \rangle =\left\{
+\begin{array}{lll}
+\frac{1}{2}\left( \delta_{m_i,n_i+1}+\delta_{m_i,n_i-1}\right) & n_i \mbox{,  } m_i > 0 \mbox{ or } n_i \mbox{,  } m_i < 0,\\
+\frac{1}{\sqrt{2}} & n_i=1 \mbox{ ,  } m_i=0 \mbox{ or } n_i=0 \mbox{ ,  } m_i=1,\\
+0 & \mbox{otherwise}.
+\end{array}
+\right.
+\end{equation}
+The matrix elements of the two-particle interaction operator are shown below.
+\begin{equation}
+\frac{1}{2} \langle m | \delta(x_1-x_2) | n \rangle =\left\{
+\begin{array}{lll}
+\frac{1}{2N\pi} & \left\{ \begin{array}{lll}
+ & p_1=p_2 \mbox{ and } p_1=0,\\
+ & p_1>0 \mbox{ , } p_2>0 \mbox{ and } p_1\neq p_2, \\
+ & p_1<0 \mbox{ , } p_2<0 \mbox{ and } p_1\neq p_2,\\
+ & p_1>0 \mbox{ , } p_2=0 \mbox{ or } p_1=0 \mbox{ , } p_2>0,\\
+ & p_1<0 \mbox{ , } p_2=0 \mbox{ or } p_1=0 \mbox{ , } p_2<0,\\
+ & p_1>0 \mbox{ , } p_2<0 \mbox{ or } p_1<0 \mbox{ , } p_2>0\\
+\end{array}\right\},\\
+ & &  \\
+\frac{3}{4N\pi} & \begin{array}{llll}
+ & & p_1=p_2 \mbox{ and } p_1 \neq 0,\\
+\end{array} \\
+ & &  \\
+0 & \begin{array}{llll}
+ & & \mbox{otherwise}.\\
+\end{array}
+\end{array}
+\right.
+\end{equation}
+Here, $p_1$ and $p_2$ are equal pairs of $[m_1,m_2,n_1,n_2]$. If no equal pairs exist, then the matrix element vanishes.

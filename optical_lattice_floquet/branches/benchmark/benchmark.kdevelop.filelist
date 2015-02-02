@@ -1,0 +1,15 @@
+# KDevelop Custom Project File List
+Makefile
+algebra.c
+algebra.h
+benchmark.c
+benchmark.h
+hamiltonian.c
+hamiltonian.h
+integrator.c
+integrator.h
+params.h
+quantum_hamilt_melements.c
+quantum_hamilt_melements.h
+timer.c
+timer.h

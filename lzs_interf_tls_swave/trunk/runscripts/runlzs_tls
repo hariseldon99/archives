@@ -1,0 +1,31 @@
+#!/bin/bash
+export OUTPUT_FILE_DATA="result/delta_0.1_omega_0.3_periods_3.dat"
+export OUTPUT_FILE_PROBS="result/delta_0.1_omega_0.3_periods_3_plus_prob.dat"
+export OUTPUT_FILE_PROBS_PRIME="result/delta_0.1_omega_0.3_periods_3_plus_prime_prob.dat"
+			
+#THIS IS IN THE INITIAL CONDITIONS IN THE DIABATIC BASIS, OUTPUT IS IN ADIABATIC BASIS
+export UK_REAL=0.0
+export VK_REAL=1.0
+export UK_IMAG=0.0
+export VK_IMAG=0.0
+
+#All time input is in fractions of the period
+export T_INIT=-0.22
+export N_PERIODS=1.0
+export T_EXTRA=0.0
+
+#Gap
+export DELTA_REAL=0.1
+export DELTA_IMAG=0.0
+
+#Frequency
+export OMEGA=0.3
+
+export OFFSET=0.0
+export AMPMAX=0.1
+
+export VERBOSITY="n"
+
+export RUNPROG="./lzs_tls"
+		 
+$RUNPROG $OUTPUT_FILE_DATA $OUTPUT_FILE_PROBS $OUTPUT_FILE_PROBS_PRIME $UK_REAL $VK_REAL $UK_IMAG $VK_IMAG $T_INIT $N_PERIODS $T_EXTRA $DELTA_REAL $DELTA_IMAG $OMEGA $OFFSET $AMPMAX $VERBOSITY

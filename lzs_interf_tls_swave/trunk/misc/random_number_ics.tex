@@ -1,0 +1,104 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8x]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{bera}
+\usepackage{listings}
+\usepackage[margin=1.0in]{geometry}
+\usepackage{url}
+\usepackage{hyperref}
+\usepackage[square, comma, numbers, sort&compress]{natbib}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+%opening
+\title{Random Number Initial Conditions}
+\author{Analabha Roy}
+
+\begin{document}
+
+\maketitle
+ The time-dependent Bogoliubov de-Gennes Hamiltonian for our system is given by
+\begin{eqnarray}
+\label{eq:bdghamilt}
+H(t) &=& \sum^{\mathrm N}_{{\bf k}\in\Omega} h_{\bf k}(t), \nonumber \\
+h_{\bf k}(t) &=& \begin{pmatrix}
+f_{\bf k}-\mu(t) & \Delta(t)\\
+\Delta^{\ast}(t) & -f_{\bf k}+\mu(t)
+\end{pmatrix}=\left[f_{\bf k}-\mu(t)\right]\sigma_z +\frac{1}{2}\left[ \Delta(t) \sigma_+ + \Delta^\ast(t)\sigma_-\right],
+\end{eqnarray}
+where $\sigma_\pm$ are the ladder operators of $\sigma_{xyz}$, the generators of the $SU(2)$ Lie algebra i.e. the Pauli matrices. It is assumed that at, $t=0$, the system is in thermal equilibrium at $T=0$, which is given by the state $|\Psi_{BCS}\rangle$, since this Hamiltonian is equivalent to the BCS Hamiltonian. This is the adiabatic ground state of the Hamiltonian in eq~\ref{eq:bdghamilt} at $t=0$, given by
+\begin{eqnarray}
+\label{eq:bcs:state}
+|\Psi_{BCS}\rangle &=& \prod_{\bf k} \left[ u_{\bf k}(0) + v_{\bf k}(0) c^\dagger_{\bf k}c^\dagger_{-\bf k}\right] |0\rangle, \nonumber \\
+u_{\bf k}(0)&=&\frac{1}{\sqrt{2}}\left(1+\frac{f_{\bf k}}{E_k}\right)^{1/2}, \nonumber \\
+v_{\bf k}(0)&=&\frac{1}{\sqrt{2}}\left(1-\frac{f_{\bf k}}{E_k}\right)^{1/2}.
+\end{eqnarray}
+Here, $E_{\bf k} = \sqrt{f^2_{\bf k}+\Delta ^2_0}$, and $\Delta_0$ is the equilibrium value of the gap viz. $\Delta(0)$, which is real in our choice of gauge. Now, the state of this system is expressed in the diabatic basis as $|\Psi(t)\rangle\equiv \prod_{\bf k}|\psi_{\bf k}(t)\rangle$, where $|\psi_{\bf k}(t)\rangle = \left[u_{\bf k}(t)+v_{\bf k}(t)c^\dagger_{{\bf k}\uparrow}c^\dagger_{-{\bf k}\downarrow}\right]|0\rangle$. The equilibrium value of $\Delta$ is given by
+\begin{equation}
+\label{eq:gapformula}
+\Delta_0 = \frac{V_{eff}}{\mathrm N}\sum^{\mathrm N}_{{\bf k}\in\Omega} u^{\ast}_{\bf k}(0) v_{\bf k}(0) = \frac{V_{eff}}{2\mathrm{N}}\sum^{\mathrm N}_{{\bf k}\in\Omega}\langle\psi_{\bf k}(0)|\sigma_+|\psi_{\bf k}(0)\rangle,
+\end{equation}
+where $N$ is the number of allowed momenta ${\bf k}$. The equilibrium values $\Delta_0$ and $\mu_0$ can be obtained via the gap and number equations
+\begin{eqnarray}
+\label{eq:gapnum}
+ 1&=&\frac{N V_{eff}}{2} \sum^{\mathrm N}_{{\bf k}\in\Omega} \frac{1}{E_{\bf k}},  \nonumber \\
+ 1&=& \frac{1}{2N\zeta}\sum^{\mathrm N}_{{\bf k}\in\Omega} \left( 1-\frac{f_{\bf k}}{E_{\bf k}} \right), 
+   \end{eqnarray}
+where $E_{\bf k} = \sqrt{\left[\epsilon_{\bf k}-\mu_0\right]^2+|\Delta|^2}$, and $\zeta$ is the lattice filling factor. Solutions of equations~\ref{eq:gapnum} are attempted in a tightly bound $2$-dimensional lattice of unit size and $N$ lattice sites at $T=0$. Here, the energy band spectrum is given by $\epsilon_{\bf k} = 2 \tau\left( \cos{k_x}+\cos{k_y}\right)$ 
+in units of the site-to-site hopping amplitude $\tau$, which will be scaled to $1/2$, and all energy and time units rendered accordingly. Also, the sum over momenta ${\bf k}$ extends to the entire first Brillouin zone (henceforth denoted by $\Omega$) $k_{x,y} = \{-\pi,\pi\}$. Assuming that the lattice is half-filled i.e. $\zeta=1/2$ leads to the $1$-dimensional Fermi 'surface' corresponding to this  band structure being given by the four curves $k_x = \pi \pm k_y$ and $k_x = -\pi \pm k_y$, with Fermi energy $E_F = 0$. Symmetry and uniqueness arguments can be used to show that the equilibrium chemical potential $\mu_0$ is $0$ as well. 
+
+When the system departs from equilibrium, a mean field approximation is made for $\Delta$, which is adiabatically continued in time from its equilibrium value. Thus
+\begin{equation}
+\label{eq:gapmean}
+\Delta(t) = \frac{V_{eff}}{\mathrm N}\sum^{\mathrm N}_{{\bf k}\in\Omega} u^{\ast}_{\bf k}(t) v_{\bf k}(t),
+\end{equation}
+together with the Schr\"odinger equation for the Hamiltonian in eqn~\ref{eq:bdghamilt},
+\begin{eqnarray}
+\label{eq:schrodinger:full}
+\dot{u}_{\bf k} &=& -i\left[f_{\bf k} -\mu(t) \right]{u}_{\bf k} -i \Delta(t) {v}_{\bf k} ,\nonumber \\
+\dot{v}_{\bf k} &=& +i\left[f_{\bf k} -\mu(t) \right] {v}_{\bf k}-i\Delta^\ast(t){u}_{\bf k} ,
+\end{eqnarray}
+where dot denotes \textit{explicit} ie partial time derivatives, and $\hbar=1$, yields the mean field dynamics of this system. The $u_{\bf k}(v_{\bf k})$-dependence of $\Delta$ in eqns~\ref{eq:schrodinger:full} render the dynamics highly nonlinear and strongly coupled in momentum space. In order to understand the dynamics, a few quantities need to be defined first. The physical response of this system to the external quenching is measured by the effective 'magnetization' of this system for $\mathrm{N}$ particles. This is defined as 
+\begin{eqnarray}
+\label{eq:mag}
+m(t) &\equiv& \frac{1}{\mathrm N}\sum^{\mathrm N}_{{\bf k}\in\Omega} m_{\bf k}(t), \nonumber \\
+m_{\bf k}(t) &\equiv& \langle \psi_{\bf k}(t)| \sigma_z |\psi_{\bf k}(t)\rangle, 
+\end{eqnarray}
+in analogy with the Ising model. This simplifies to $ m(t) = \frac{2}{\mathrm N} \sum^{\mathrm N}_{{\bf k}\in\Omega} |v_{\bf k}(t)|^2-1$ for ${\mathrm N}$ particles. 
+
+In addition to the BCS case mentioned above, we wish to repeat the above numerical runs with semi-random numbers for initial conditions. Our choice of initial conditions are
+\begin{eqnarray}
+\label{eq:randic}
+\Delta(0) &=& \Delta_0, \nonumber \\
+u_{\bf k}(0) &=& \frac{1}{\sqrt{2}} \left[1+\frac{f_{\bf k}}{E_{\bf k}} + \frac{r_{\bf k}}{f_{\bf k}} \right]^{1/2} \nonumber \\
+v_{\bf k}(0) &=& \frac{1}{\sqrt{2}} \left[1-\frac{f_{\bf k}}{E_{\bf k}} - \frac{r_{\bf k}}{f_{\bf k}} \right]^{1/2}.
+\end{eqnarray}
+Here, $r_{\bf k}$ is a function chosen to meet
+\begin{eqnarray}
+\label{eq:rcrit}
+1\pm\frac{f_{\bf k}}{E_{\bf k}} \pm \frac{r_{\bf k}}{f_{\bf k}} &\in& \left[0,1 \right], \nonumber \\
+\lim_{\mathrm{N}\rightarrow\infty}\frac{1}{\mathrm N}\sum^{\mathrm N}_{{\bf k}\in\Omega} r_{\bf k} &=& 0.
+\end{eqnarray}
+This condition ensures that the system is in the same initial energy as the corresponding BCS state. To see this, note that the energy of the system at $t=0$ is given by
+\begin{equation}
+ {\mathrm E} = \frac{1}{\mathrm N}\sum^{\mathrm N}_{{\bf k}\in\Omega} \left\{\langle 0 | \left[ u^\ast_{\bf k}(0) + v^\ast_{\bf k}(0) c^\dagger_{\bf k}c^\dagger_{-\bf k}\right]  h_{\bf k}(0)\left[ u_{\bf k}(0) + v_{\bf k}(0) c^\dagger_{\bf k}c^\dagger_{-\bf k}\right] |0\rangle\right\}.
+\end{equation}
+Using equations~\ref{eq:bdghamilt} and~\ref{eq:gapformula}, this simplifies to
+\begin{equation}
+\label{eq:energy:init}
+{\mathrm E} = \frac{2\Delta^2_0}{V_{eff}}-\frac{1}{\mathrm N}\sum^{\mathrm N}_{{\bf k}\in\Omega}m_{\bf k}(0)f_{\bf k},
+\end{equation}
+where $m_{\bf k}(t)$ from eq~\ref{eq:mag} has been used. Applying the formula for $v_{\bf k}$ in eq~\ref{eq:randic} to eqn~\ref{eq:energy:init}, and using eqn~\ref{eq:rcrit}, we can clearly see that $r_{\bf k}$ makes no contribution to the total energy of the system, once the continuum limit has been taken.
+Thus, this state produces the same energy as the BCS state in eqns~\ref{eq:bcs:state}. A fairly generic choice for $r_{\bf k}$ can be 
+a random number in the range $(-1,1)$ chosen for each of the $\mathrm{N}$ crystal momenta ${\bf k}$ and satisfying eq~\ref{eq:rcrit}, or $0$ if not. If $\mathrm{N}$ is sufficiently large then their sum should be substantially less than $\mathrm{N}$, satisfying eq~\ref{eq:rcrit}. Among the list of available random number generators from the GNU Scientific Library~\cite{gsl:manual}, L\"uscher's second generation 'luxury random number generator' (labeled 'ranlxs2') has a strong $24$-bit precision output and a high period of $10^{171}$. This ranlxs2 generator shows the most decorrelated random numbers, producing the lowest average of $-5\times 10^{-4}$, when run for $20,000$ iterations in the $(-1,1)$ interval in a $64$-bit machine. Thus, this generator is the most optimal for this problem.
+
+
+\begin{thebibliography}{10}
+\bibitem{gsl:manual}
+M. Galassi et al, 
+GNU Scientific Library Reference Manual (3rd Ed.), 
+ISBN 0954612078.
+Link: \url{http://www.gnu.org/software/gsl/}
+\end{thebibliography}
+\end{document}

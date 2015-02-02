@@ -1,0 +1,22 @@
+#!/bin/bash
+                                                                               #first line specifies shell
+#BSUB -J clsdblwell                                                            #name the job
+#BSUB -o out.o%J                                                               #output->   out.o&ltjobID>
+#BSUB -e err.o%J                                                               #error -> error.o&ltjobID>
+#BSUB -M 1048576                                                               #1GB/task of memory
+#BSUB -n 52 -W 00:30                                                           #No of CPUs and time 
+#BSUB -q normal                                                                #Queue name
+set echo                                                                                                                                                         #Echo all commands.
+cd $LS_SUBCWD                                                                                                                                                    #cd to directory of submission
+export FILENAME="result/husimi_te_smallnos6.dat"                                                                                                                     #Output filename
+export STATECHOSEN=1
+export STDEV1=0.4946941761676272
+export STDEV2=0.6573810329927109
+export PLOTPOINTS=100000
+mpiexec -n 2 ./husimi $FILENAME $STATECHOSEN $STDEV1 $STDEV2 $PLOTPOINTS
+                                                                                                                                                                 #use ibrun for "pam -g 1 mvapich_wrapper"
+#Standard Deviations for smallnos6
+#E1: 0.4946941761676272   0.4946941761676272
+#E2: 0.4946941761676272   0.5103047409924656
+#E4: 0.4946941761676272   0.6573810329927109
+#E7: 0.5103047409924656   0.5975002758606083

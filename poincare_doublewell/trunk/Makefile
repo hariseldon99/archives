@@ -1,0 +1,53 @@
+CC=/usr/bin/mpicc
+INSTALL=/usr/bin/install
+
+CFLAGS= -c
+INSTALLFLAGS=--mode=700
+#Runtime Binaries
+HUSIMIBIN=husimi
+POINCAREBIN=poincare
+
+#GNU Scientific Library Paths
+TACC_GSL_BIN=/usr/bin
+TACC_GSL_INC=/usr/include
+TACC_GSL_LIB=/usr/lib64
+
+#Dependencies
+HUSIMIOBJECTS= husimi_integrals.o quantum_hamilt_melements.o undriven_hamilt.o classical_hamilt_fn.o
+POINCAREOBJECTS=poincare.o classical_hamilt_fn.o classical_integrator.o
+
+#Installation Files/Scripts
+INSTALLFILES=runproggie* $(HUSIMIBIN) $(POINCAREBIN) 
+
+husimi: husimi.o $(HUSIMIOBJECTS)  params.h
+	$(CC) -L$(TACC_GSL_LIB) husimi.o $(HUSIMIOBJECTS) -lgsl -lgslcblas -lm -o $(HUSIMIBIN)
+
+husimi.o: husimi.c params.h 
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) husimi.c
+
+husimi_integrals.o: husimi_integrals.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) husimi_integrals.c
+
+quantum_hamilt_melements.o: quantum_hamilt_melements.c params.h 
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) quantum_hamilt_melements.c
+
+undriven_hamilt.o: undriven_hamilt.c params.h 
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) undriven_hamilt.c
+
+poincare: $(POINCAREOBJECTS) params.h
+	$(CC) -L$(TACC_GSL_LIB) $(POINCAREOBJECTS) -lgsl -lgslcblas -lm -o $(POINCAREBIN)
+
+poincare.o: poincare.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) poincare.c
+
+classical_integrator.o: classical_integrator.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) classical_integrator.c
+
+classical_hamilt_fn.o: classical_hamilt_fn.c params.h
+	$(CC) -I$(TACC_GSL_INC) $(CFLAGS) classical_hamilt_fn.c
+
+install: 
+	$(INSTALL) $(INSTALLFLAGS) $(INSTALLFILES) $(WORK)
+
+clean:
+	rm -f $(HUSIMIBIN) $(POINCAREBIN) *.o *~

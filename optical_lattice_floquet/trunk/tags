@@ -1,0 +1,98 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ABSERROR	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.h	/^#define ABSERROR /;"	d
+DIM	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^#define DIM /;"	d
+DT	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.h	/^#define DT /;"	d
+LATTICESIZE	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^#define LATTICESIZE /;"	d
+MACHINENUM	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^#define MACHINENUM /;"	d
+MNUM	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.h	/^#define MNUM /;"	d
+N	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^#define N /;"	d
+PROBLEMTYPE	/home/daneel/svncos/optical_lattice_floquet/trunk/slepc_eval_nhep.h	/^#define PROBLEMTYPE /;"	d
+QUASIMAX	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^#define QUASIMAX /;"	d
+RATTOL	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^#define RATTOL /;"	d
+RELERROR	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.h	/^#define RELERROR /;"	d
+STATENO	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^#define STATENO /;"	d
+TOLERANCE	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.h	/^#define TOLERANCE /;"	d
+YERROR	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.h	/^#define YERROR /;"	d
+YPRIMEERROR	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.h	/^#define YPRIMEERROR /;"	d
+__FUNCT__	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.c	/^#define __FUNCT__ /;"	d	file:
+__FUNCT__	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.c	/^#undef __FUNCT__$/;"	d	file:
+__FUNCT__	/home/daneel/svncos/optical_lattice_floquet/trunk/slepc_eval_nhep.c	/^#define __FUNCT__ /;"	d	file:
+__FUNCT__	/home/daneel/svncos/optical_lattice_floquet/trunk/slepc_eval_nhep.c	/^#undef __FUNCT__$/;"	d	file:
+arrcopy	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^arrcopy (double source[], double target[], int size)$/;"	f
+arrcopy	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.h	/^int arrcopy (double source[], double target[], int arrsize);$/;"	p
+arrcopy	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int arrcopy (double source[], double target[], int size);$/;"	p
+c_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^double c_mat (int m, int n), s_mat (int m, int n), psq_mat (int n),$/;"	p
+c_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/quantum_hamilt_melements.c	/^c_mat (int m, int n)$/;"	f
+check_foldedness	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^check_foldedness (double array[], double omega, int size)$/;"	f
+check_unitarity	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^check_unitarity (double matrix_real[], double matrix_imag[], int size)$/;"	f
+check_unitarity	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int check_unitarity (double matrix_real[], double matrix_imag[], int size);$/;"	p
+cosmatrix	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double cosmatrix[DIM * DIM];$/;"	m	struct:__anon1
+direct_prod	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^direct_prod (double a_real[], double a_imag[], double b_real[],$/;"	f
+direct_prod	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.h	/^double direct_prod (double a_real[], double a_imag[], double b_real[],$/;"	p
+direct_prod	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^double direct_prod (double a_real[], double a_imag[], double b_real[],$/;"	p
+final_output	/home/daneel/svncos/optical_lattice_floquet/trunk/final_output.c	/^final_output (double period, time_t begin, time_t end, int nprocs)$/;"	f
+final_output	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^void final_output (double period, time_t begin, time_t end, int nprocs);$/;"	p
+floquetsort	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^floquetsort (double evals_real[], double evals_imag[], double evecs_real[],$/;"	f
+floquetsort	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int floquetsort (double floquetevals_real[], double floquetevals_imag[],$/;"	p
+fold_quasi	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^fold_quasi (double array[], double omega, int size)$/;"	f
+fold_quasi	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int fold_quasi (double array[], double omega, int size);$/;"	p
+func	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.c	/^func (double t, const double y[], double dydt[], void *param)$/;"	f
+getpair	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^getpair (int a1, int a2, int a3, int a4, int pair[])$/;"	f
+getpair	/home/daneel/svncos/optical_lattice_floquet/trunk/quantum_hamilt_melements.c	/^int getpair (int a1, int a2, int a3, int a4, int pair[]);$/;"	p	file:
+hamilt	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^double hamilt (void *param, int nt, int mt, double t);$/;"	p
+hamilt	/home/daneel/svncos/optical_lattice_floquet/trunk/hamiltonian.c	/^hamilt (void *param, int nt, int mt, double t)$/;"	f
+hamilt	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.h	/^double hamilt (void *param, int nt, int mt, double t);$/;"	p
+hamilt_deriv	/home/daneel/svncos/optical_lattice_floquet/trunk/hamiltonian.c	/^hamilt_deriv (void *param, int nt, int mt, double t)$/;"	f
+hamilt_deriv	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.h	/^double hamilt_deriv (void *param, int nt, int mt, double t);$/;"	p
+hamilt_deriv_sp	/home/daneel/svncos/optical_lattice_floquet/trunk/hamiltonian.c	/^hamilt_deriv_sp (void *param, int nt, int mt, double t)$/;"	f
+hamilt_sp	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^double hamilt_sp (void *param, int nt, int mt, double t);$/;"	p
+hamilt_sp	/home/daneel/svncos/optical_lattice_floquet/trunk/hamiltonian.c	/^hamilt_sp (void *param, int nt, int mt, double t)$/;"	f
+help	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^static char help[] =$/;"	v
+in_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^double in_mat (int m1, int m2, int n1, int n2);$/;"	p
+in_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/hamiltonian.h	/^double in_mat (int, int, int, int);$/;"	p
+in_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/quantum_hamilt_melements.c	/^in_mat (int m1, int m2, int n1, int n2)$/;"	f
+integrate	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int integrate (double *y, double initial, double final, void *out);$/;"	p
+integrate	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.c	/^integrate (double *input, double initial, double final, void *param)$/;"	f
+interaction	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double interaction[STATENO * STATENO];$/;"	m	struct:__anon1
+jac	/home/daneel/svncos/optical_lattice_floquet/trunk/integrator.c	/^jac (double t, const double y[], double *dfdy, double dfdt[], void *param)$/;"	f
+kappa	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double kappa;$/;"	m	struct:__anon1
+kdel	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^kdel (int i, int j)$/;"	f
+kdel	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^kdel (int i, int j);$/;"	p
+kdel	/home/daneel/svncos/optical_lattice_floquet/trunk/hamiltonian.h	/^double kdel (int, int), psq_mat (int);$/;"	p
+kdel	/home/daneel/svncos/optical_lattice_floquet/trunk/quantum_hamilt_melements.c	/^double kdel (int, int);$/;"	p	file:
+lambda0	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double lambda0;$/;"	m	struct:__anon1
+main	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.c	/^main (int argc, char **argv)$/;"	f
+paramspace_pt	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^} paramspace_pt;$/;"	t	typeref:struct:__anon1
+print_arr	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^print_arr (double matrix_real[], double matrix_imag[], int size)$/;"	f
+print_arr	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^void print_arr (double matrix_real[], double matrix_imag[], int size);$/;"	p
+psq	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double psq[DIM];$/;"	m	struct:__anon1
+psq_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^double c_mat (int m, int n), s_mat (int m, int n), psq_mat (int n),$/;"	p
+psq_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/hamiltonian.h	/^double kdel (int, int), psq_mat (int);$/;"	p
+psq_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/quantum_hamilt_melements.c	/^psq_mat (int n)$/;"	f
+quasienergies	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^long quasienergies (double evals_real[], double evals_imag[], int size,$/;"	p
+quasienergies	/home/daneel/svncos/optical_lattice_floquet/trunk/quasienergies.c	/^quasienergies (double evals_real[], double evals_imag[], int size,$/;"	f
+s_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^double c_mat (int m, int n), s_mat (int m, int n), psq_mat (int n),$/;"	p
+s_mat	/home/daneel/svncos/optical_lattice_floquet/trunk/quantum_hamilt_melements.c	/^s_mat (int m, int n)$/;"	f
+select_vec	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^select_vec (double matrix[], int j, double vector[], int row_col_size)$/;"	f
+select_vec	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.h	/^int select_vec (double matrix[], int i, double vector[], int rowsize);$/;"	p
+select_vec	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int select_vec (double matrix[], int i, double vector[], int rowsize);$/;"	p
+sinmatrix	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double sinmatrix[DIM * DIM];$/;"	m	struct:__anon1
+slepc_eval_nhep	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int slepc_eval_nhep (int argc, char **argv, double matrixreal[],$/;"	p
+slepc_eval_nhep	/home/daneel/svncos/optical_lattice_floquet/trunk/slepc_eval_nhep.c	/^slepc_eval_nhep (int argc, char **argv, double matrix_real[],$/;"	f
+tag_quasi	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^tag_quasi (int tagarray[], double quasi[], double unperturbed_quasi[],$/;"	f
+tag_quasi	/home/daneel/svncos/optical_lattice_floquet/trunk/floquet_optical_lattice.h	/^int tag_quasi (int tagarray[], double quasi[], double unperturbed_quasi[],$/;"	p
+td	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double td;$/;"	m	struct:__anon1
+tf	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double tf;$/;"	m	struct:__anon1
+tfix	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double tfix;$/;"	m	struct:__anon1
+towerofstates	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        int towerofstates[STATENO][2];$/;"	m	struct:__anon1
+ts	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double ts;$/;"	m	struct:__anon1
+u0	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double u0;$/;"	m	struct:__anon1
+wf	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double wf;$/;"	m	struct:__anon1
+write_vec	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.c	/^write_vec (double vector[], int j, double matrix[], int row_col_size)$/;"	f
+write_vec	/home/daneel/svncos/optical_lattice_floquet/trunk/algebra.h	/^int write_vec (double vector[], int i, double matrix[], int rowsize);$/;"	p
+ws	/home/daneel/svncos/optical_lattice_floquet/trunk/params.h	/^        double ws;$/;"	m	struct:__anon1

@@ -1,0 +1,70 @@
+\documentclass[a4paper,9pt]{article}
+
+\usepackage[defaultsans]{droidsans}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be typewriter style
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{eurosym}
+\usepackage{lastpage}
+\usepackage[margin=0.6in]{geometry}
+\usepackage[square, comma, numbers, sort&compress]{natbib}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhead[l]{Analabha Roy \\Santa Fe Institute 
+}
+\fancyhead[r]{Omidyar Fellowship Program - 2013}
+
+
+\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\thesection}{\thesection}
+\def\thesection{B\arabic{section}} 
+
+
+\let\oldthebibliography=\thebibliography
+  \let\endoldthebibliography=\endthebibliography
+  \renewenvironment{thebibliography}[1]{%
+    \begin{oldthebibliography}{#1}%
+      \setlength{\parskip}{0ex}%
+      \setlength{\itemsep}{0ex}%
+  }%
+  {%
+    \end{oldthebibliography}%
+  }
+
+
+
+\title{Statement of Academic Interest in the Santa Fe Institute}
+\author{Analabha Roy}
+
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+\label{sec:intro}
+The main thrust of my research work involves extensive studies of the nonequilibrium dynamics of complex classical and quantum systems. 
+My interest in SFI stems from the institutes focus on the study of complex systems in general, as well as the extensive expertise of the institute members in the study of universality in such systems,  an aspect that spans multiple disciplines in science. I believe that I can contribute constructive research results in the diverse interdisciplinary environment offered by the hosts, and remain enthused about the possibility of absorbing their knowledge of complex systems in order to strengthen my research work. I also hope to diversify my interests from complex systems in physics to the study of analogous behavior in social systems, particularly in the urbanization of developing countries. I believe that my extensive expertise in high performance computing and theoretical condensed matter physics/statistical physics will contribute to this growth. Finally, the host institute offers extensive freedom to its fellows in forming and nurturing academic collaborations with researchers elsewhere in the world, and I hope to enhance all my nascent and ongoing collaborations from there.
+
+\section{Host scientific expertise and relevance to the proposed project}
+\label{sec:host_expertise}
+ 
+The host institute is renown for its focus on the dynamics and growth of heterostructures in complex systems out of statistical equilibrium. Virtually all of the ongoing projects of SFI, such as the organizational and dynamical aspects of urban agglomerates (L. Bettencourt, G. West), using statistical methods for modeling the evolution of complexity in biological systems via natural selection (D. Krakauer), the search for universality in biological and social systems (G. West, J. Sabloff) and others, involve the explicit or implicit study of this phenomenon. In addition, numerous faculty members focus on the direct manifestations of complexity in physical systems, such as  atomic/molecular many body systems (S. Jain, T. Bhattacharya), topological interactions and phenomena in non-nonabelian gauge theories (F. A. Bais), the dynamics of open dissipative systems (A.W. Hubler) etc. These topics directly relate to my research interests, and I hope to collaborate in research projects with these groups.
+
+The research that I plan to pursue at SFI involves the study of a generic phenomenon in complex systems that follow after a quench, that of \textbf{coarsening}. Here, the characteristic support structures of the post-quench equilibrium phase grows and stabilizes with time. Such phenomena are also seen in biological and social systems that grow with time following a strong and sudden external influence. My earnest hope is to absorb the knowledge and skills of the host institute members in the dynamics of complex systems, and apply it to the study of classical and quantum many body systems. I also anticipate obtaining universal power and scaling laws for the order parameters of the systems that I mean to study as they approach equilibrium, and am confident that the same universal classes can be seen in biological and social systems that can be modeled analogously. Thus, I hope to contribute to the research interests of the host members, and diversify my own interest in nonequilibrium dynamics to areas outside physics. 
+
+I am particularly interested in the possibility of studying the dynamical growth of urban agglomerates, a phenomenon that I have experienced viscerally in my own home country (India). A good starting point for obtaining reliable data sets for the study of coarsened growth in urbanization can be the compilation of satellite imagery of urbanizing areas using existing application programming interfaces (API's) such as those distributed by Google Inc. (the Python programming language provides bindings that support this, such as the one at \url{http://py-googlemaps.sourceforge.net/}), and the data obtained therein can be compared with the results from theoretical studies that model coarsened growth. Urbanization has accelerated in my home state of West Bengal over the last few years as rural areas are opened up for rapid industrial development by the government and the private sector. This has been done via Special Economic Zones (SEZ's), the off-shoring of information technologies, the training and hiring  of technical support personnel etc. I am interested in studying the growth of such phenomena and the various aspects and pitfalls of inducing such growth, including the mathematical study of any ensuing political and social conflicts that may arise due to the redistribution of land and resources that are inevitable in the urbanization process. My home state of West Bengal in India has experienced such issues in the first decade of the $21^{st}$ century, and this has fueled my interest in this phenomenon as well. 
+
+\section{Transfer of Knowledge}
+\label{sec:training}
+
+With the proposed project, I hope to bring several sorts of unique background and expertise to the host institute. First, I will bring my extensive expertise in numerical methods. These were founded during my graduate years studying classical and quantum chaos in the University of Texas. The group of my supervisor, Prof Linda E. Reichl, is one of the few groups in North America studying the implications of classical dynamics in the corresponding quantum system as it is periodically driven. Studying the onset of chaos assisted adiabatic passage in the quantum Floquet problem numerically entails large system sizes that are quickly and embarrassingly parallelizable in multiprocessor grids, and I have gained extensive expertise to do so using the computational and teaching resources of the Texas Advanced Computational Center at UT. My expertise has been extended and refined during my postdoctoral years in the United States and India, where I worked on several dynamical problems involving nonequilibrium quantum fields and ensuing ordinary and partial differential equations, as well as a working knowledge of the Density Matrix Renormalization Group method for solving quantum many body problems. I did so via a diverse range of multiprocessor grids at the SN Bose National Centre for Basic Sciences, Kolkata, as well as the Saha Institute of Nuclear Physics, Kolkata. My knowledge of several paradigms in parallel computing, such as multithreading, message passing, OpenCL and computing using graphical processors, as well as scripting for parallel grid engines, will ensure that numerical work is done in a timely and efficient manner, optimally utilizing the computational resources available to the host in order to solve the problems that interest me. In addition to research, I plans to hold teaching workshops in parallel computing at the host institution where he will be able to introduce scientific computing in distributed environments to graduate students, fellow postdocs and faculty members new to the field.
+
+Furthermore, I will bring my extensive knowledge of condensed matter theory, many body physics, nonequilibrium field theory, nonlinear dynamics, dynamical systems and chaos to the host. My knowledge in these areas were developed under the guidance of several leaders in their respective fields in the United States and India, such as Prof L.E. Reichl (The transition to Chaos in classical and quantum systems), Prof J.K. Bhattacharjee (Nonlinear Dynamics), Prof. Krishnendu Sengupta (Nonequilibrium Field Theory), Dr. Arnab Das (Dynamics of many particle systems), Prof. Arti Garg (Condensed Matter Theory) and others. Thus, my theoretical background encompasses numerous topics, such as  Floquet theory, Keldysh theory as applied to the Fermi BCS problem, Bose Einstein Condensates and the time dependent Gross-Pitaevski Bogoliubov equations and the study of excitations therein, and others. All of this knowledge will be brought to the host organization and group and shared with colleagues, graduate students and other postdocs.
+
+Finally, I have made plans to enhance existing collaborations with colleagues in order to expedite my research work. Collaborators include  Profs. G. Lozano and L. Arrachea (Universidad de Buenos Aires, Argentina), D. Rossini (Scuola Normale Superiore, Pisa, Italy) and R. Fazio (Center for Quantum Technologies, National University of Singapore). These collaborations will help bring the knowledge and expertise gained by the collaborators from outside the institute via interactions and collaborations. In addition, the various conferences and workshops that I plan to attend over the course of the fellowship will further disseminate expertise throughout the world. The host institute offers substantial freedom to its postdoctoral fellows and encourages external collaborations and interactions, and such an environment is essential for my growth as a researcher.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\end{document}

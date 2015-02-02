@@ -1,0 +1,14 @@
+1. Figure out the bug in eth_davg/eth_eavg that's causing negative values of density matrix elements
+   To do this, remove forbiddenness and run the code for lattice_size=3, vector_size=1
+   If |m> is a basis vector, then b_j |m> = \delta_{jm}|vacuum>
+   Analytical formula for avg(b^\dagger_i b_j) is possible:
+   avg(b^\dagger_i b_j)  = \sum_\a |<a|\psi_0>|^2 U_{ai} U_{aj}
+   Compared python evaluation with numerics to see where it is going wrong
+   
+   Update: 
+   Now using absolute value of the expression for momentum density in supplementary
+   rigol doi:10.1038/nature06838. May be wrong though.
+
+2. Large problem sizes (5 X 5 lattice , 5 particles) takes 4 days for Hamilt to build and still not dump 
+   any output for 3 days since). REALLY need to reduce redundant calculations...
+3. Write code for evolving this system dynamically 

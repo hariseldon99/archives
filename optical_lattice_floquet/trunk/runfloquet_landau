@@ -1,0 +1,31 @@
+#!/bin/bash
+export RUNPROG="./floquet_oplattice"
+export FILENAME_ENERGY="result/energies_nodrive_omega_24_U0_23.dat"
+export FILENAME_QUASI="result/quasienergies_nodrive_omega_24_U0_23.dat"
+export TFIX_INIT=0.0
+export TFIX_FINAL=24000.00
+export TFIX_TOT=36000.0
+export TFIX_INC=16000.0
+export LAMBDA_0=0.1
+export OMEGA_F=2.4
+export OMEGA_S=1.6
+export NF=3
+export NS=2
+export U0=23.0
+export KAPPA=8.0
+
+
+export TAGA=40
+export TAGB=54
+export TAGC=55
+export TAGD=60
+
+export FILENAME_TAGA="result/floquetstate_tonks_1_4_15_amp_0.2_taga.dat"
+export FILENAME_TAGB="result/floquetstate_tonks_1_4_15_amp_0.2_tagb.dat"
+export FILENAME_TAGC="result/floquetstate_tonks_1_4_15_amp_0.2_tagc.dat"
+export FILENAME_TAGD="result/floquetstate_tonks_1_4_15_amp_0.2_tagd.dat"
+
+export NUMPROCS=3             
+
+#mpirun -np $NUMPROCS -hostfile hosts.landau $RUNPROG $FILENAME_ENERGY $FILENAME_QUASI $TFIX_INIT $TFIX_FINAL $TFIX_TOT $TFIX_INC $LAMBDA_0 $OMEGA_F $OMEGA_S $NF $NS $U0 $KAPPA $TAGA $TAGB $TAGC $TAGD $FILENAME_TAGA $FILENAME_TAGB $FILENAME_TAGC $FILENAME_TAGD
+mpirun -np $NUMPROCS $RUNPROG $FILENAME_ENERGY $FILENAME_QUASI $TFIX_INIT $TFIX_FINAL $TFIX_TOT $TFIX_INC $LAMBDA_0 $OMEGA_F $OMEGA_S $NF $NS $U0 $KAPPA $TAGA $TAGB $TAGC $TAGD $FILENAME_TAGA $FILENAME_TAGB $FILENAME_TAGC $FILENAME_TAGD

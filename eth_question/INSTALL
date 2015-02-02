@@ -1,0 +1,41 @@
+
+
+Installation instructions:
+===========================================================================================
+
+1. Copy the Makefile closest to your system
+   $ cp Makefile.XXX Makefile
+2. Adjust Makefile as needed
+3. Run the command
+   $make
+
+===========================================================================================
+
+
+Dependencies needed to compile and run the programs:
+===========================================================================================
+
+Necessary dependencies:
+
+1. Bash shell environment (http://www.gnu.org/software/bash/). 
+   Can use MinGW on windows (http://www.mingw.org/).
+2. Fortran and C/C++ compilers. 
+   Tested with gfortran (http://gcc.gnu.org/fortran/) and gcc (http://gcc.gnu.org/).
+   Also tested with ifort and icc (http://software.intel.com/en-us/intel-compilers)
+3. GNU Make (http://www.gnu.org/software/make/).
+4. Any implementation of MPI. Tested using OpenMPI (http://www.open-mpi.org/).
+5. Petsc compiled with complex data type and optionally HDF5 (http://www.mcs.anl.gov/petsc/).
+   Petsc installer can download and install MPI and HDF5 (optional).
+6. Slepc compiled on Petsc installation as above (http://www.grycap.upv.es/slepc/).
+7. GNU Scientific Library (http://www.gnu.org/software/gsl/).
+
+Optional dependencies:
+
+1. Parallel HDF5 libraries (http://www.hdfgroup.org/HDF5/PHDF5/).
+2. X window system: 
+   Either x-org (http://www.x.org) , Cygwin/X (http://x.cygwin.com/) or 
+   something similar like Xming (http://www.straightrunning.com/XmingNotes/)
+3. Python for converting PetSc binary to ASCII text (http://www.python.org/).
+   Additionally, Numpy (http://www.numpy.org/) may also be installed.
+
+===========================================================================================

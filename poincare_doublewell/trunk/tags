@@ -1,0 +1,82 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ALPHA	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define ALPHA /;"	d
+BUFSIZE	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define BUFSIZE /;"	d
+ENERGY	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define ENERGY /;"	d
+En	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double En (int l);$/;"	p	file:
+En	/home/daneel/svncos/poincare_doublewell/trunk/quantum_hamilt_melements.c	/^En (int l)$/;"	f
+En	/home/daneel/svncos/poincare_doublewell/trunk/undriven_hamilt.c	/^double kdel (int, int), En (int), in (int, int, int, int), pot (int, int);$/;"	p	file:
+L	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define L /;"	d
+MACHINENUM	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define MACHINENUM /;"	d
+NADT	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define NADT /;"	d
+PFINAL	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define PFINAL /;"	d
+PINIT	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define PINIT /;"	d
+SIGMA	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define SIGMA /;"	d
+STATENO	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define STATENO /;"	d
+STROBE	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define STROBE /;"	d
+STROBERR	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define STROBERR /;"	d
+TIME	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define TIME /;"	d
+U0	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define U0 /;"	d
+V0	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define V0 /;"	d
+XFINAL	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define XFINAL /;"	d
+XINIT	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^#define XINIT /;"	d
+classical_int	/home/daneel/svncos/poincare_doublewell/trunk/classical_hamilt_fn.c	/^classical_int (double x1, double x2, double u0)$/;"	f
+classical_int	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double classical_int (double x1, double x2, double u0);$/;"	p	file:
+classical_int	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^double classical_int (double x1, double x2, double u0);$/;"	p	file:
+classical_int	/home/daneel/svncos/poincare_doublewell/trunk/poincare.c	/^double classical_int (double x1, double x2, double u0);$/;"	p	file:
+classical_pot	/home/daneel/svncos/poincare_doublewell/trunk/classical_hamilt_fn.c	/^classical_pot (double x, double v0)$/;"	f
+classical_pot	/home/daneel/svncos/poincare_doublewell/trunk/classical_integrator.c	/^double classical_pot (double x, double v0), in (double x1, double x2,$/;"	p	file:
+classical_pot	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double classical_pot (double x, double v0);$/;"	p	file:
+classical_pot	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^double classical_pot (double x, double v0);$/;"	p	file:
+classical_pot	/home/daneel/svncos/poincare_doublewell/trunk/poincare.c	/^double classical_pot (double x, double v0);$/;"	p	file:
+drive_and_tower	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^} drive_and_tower;$/;"	t	typeref:struct:__anon1
+eigenvalues	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^  double eigenvalues[STATENO], eigenvectors[STATENO][STATENO];$/;"	m	struct:__anon1
+eigenvectors	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^  double eigenvalues[STATENO], eigenvectors[STATENO][STATENO];$/;"	m	struct:__anon1
+f1	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double f1 (int m, int n);$/;"	p	file:
+f1	/home/daneel/svncos/poincare_doublewell/trunk/quantum_hamilt_melements.c	/^f1 (int m, int n)$/;"	f
+f2	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double f2 (int m, int n);$/;"	p	file:
+f2	/home/daneel/svncos/poincare_doublewell/trunk/quantum_hamilt_melements.c	/^f2 (int m, int n)$/;"	f
+f3	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double f3 (int m, int n);$/;"	p	file:
+f4	/home/daneel/svncos/poincare_doublewell/trunk/quantum_hamilt_melements.c	/^f4 (int m, int n)$/;"	f
+force	/home/daneel/svncos/poincare_doublewell/trunk/classical_integrator.c	/^double force (double x1, double x2, double v0, double u0);$/;"	p	file:
+force	/home/daneel/svncos/poincare_doublewell/trunk/classical_integrator.c	/^force (double x1, double x2, double v0, double u0)$/;"	f
+force	/home/daneel/svncos/poincare_doublewell/trunk/poincare.c	/^double force (double x1, double x2, double v0, double u0);$/;"	p	file:
+func	/home/daneel/svncos/poincare_doublewell/trunk/classical_integrator.c	/^func (double t, const double y[], double f[], void *params)$/;"	f
+func	/home/daneel/svncos/poincare_doublewell/trunk/poincare.c	/^int func (double t, const double y[], double f[], void *params);$/;"	p	file:
+gaussian_intg	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^gsl_complex gaussian_intg (double x, double p, double sigma, double a);$/;"	p	file:
+gaussian_intg	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^gaussian_intg (double x, double p, double sigma, double a)$/;"	f
+gaussian_prod	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^gsl_complex gaussian_prod (double x1, double x2, double p1, double s1,$/;"	p	file:
+gaussian_prod	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^gaussian_prod (double x1, double x2, double p1, double p2, double s1,$/;"	f
+husimi	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^gsl_complex husimi (int n, double x1, double p1, void *param);$/;"	p	file:
+husimi	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^husimi (int n, double x1, double p1, void *param)$/;"	f
+in	/home/daneel/svncos/poincare_doublewell/trunk/classical_integrator.c	/^double classical_pot (double x, double v0), in (double x1, double x2,$/;"	p	file:
+in	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double in (int n1, int n2, int n3, int n4);$/;"	p	file:
+in	/home/daneel/svncos/poincare_doublewell/trunk/quantum_hamilt_melements.c	/^in (int n1, int n2, int n3, int n4)$/;"	f
+in	/home/daneel/svncos/poincare_doublewell/trunk/undriven_hamilt.c	/^double kdel (int, int), En (int), in (int, int, int, int), pot (int, int);$/;"	p	file:
+integrate	/home/daneel/svncos/poincare_doublewell/trunk/classical_integrator.c	/^integrate (double *y, double initial, double final, double epsilon,$/;"	f
+integrate	/home/daneel/svncos/poincare_doublewell/trunk/poincare.c	/^int integrate (double *y, double initial, double final, double epsilon,$/;"	p	file:
+jac	/home/daneel/svncos/poincare_doublewell/trunk/classical_integrator.c	/^jac (double t, const double y[], double *dfdy, double dfdt[], void *params)$/;"	f
+jac	/home/daneel/svncos/poincare_doublewell/trunk/poincare.c	/^int jac (double t, const double y[], double *dfdy, double dfdt[],$/;"	p	file:
+kdel	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^double kdel (int i, int j);$/;"	p	file:
+kdel	/home/daneel/svncos/poincare_doublewell/trunk/quantum_hamilt_melements.c	/^kdel (int i, int j)$/;"	f
+kdel	/home/daneel/svncos/poincare_doublewell/trunk/undriven_hamilt.c	/^double kdel (int, int), En (int), in (int, int, int, int), pot (int, int);$/;"	p	file:
+main	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^main (int argc, char *argv[])$/;"	f
+main	/home/daneel/svncos/poincare_doublewell/trunk/poincare.c	/^main (int argc, char *argv[])$/;"	f
+pbox_husimi01	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^gsl_complex pbox_husimi01 (int m, double x1, double x2, double p1, double s1,$/;"	p	file:
+pbox_husimi01	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^pbox_husimi01 (int m, double x1, double x2, double p1, double p2, double s1,$/;"	f
+pbox_husimi02	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^gsl_complex pbox_husimi02 (int m, double x1, double x2, double p1, double s1,$/;"	p	file:
+pbox_husimi02	/home/daneel/svncos/poincare_doublewell/trunk/husimi_integrals.c	/^pbox_husimi02 (int m, double x1, double x2, double p1, double p2, double s1,$/;"	f
+pot	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double pot (int m, int n);$/;"	p	file:
+pot	/home/daneel/svncos/poincare_doublewell/trunk/quantum_hamilt_melements.c	/^pot (int n, int m)$/;"	f
+pot	/home/daneel/svncos/poincare_doublewell/trunk/undriven_hamilt.c	/^double kdel (int, int), En (int), in (int, int, int, int), pot (int, int);$/;"	p	file:
+s1	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^  double s1, s2;$/;"	m	struct:__anon1
+s2	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^  double s1, s2;$/;"	m	struct:__anon1
+tower	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^  int tower[STATENO][2];$/;"	m	struct:__anon1
+u0	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^  double u0;$/;"	m	struct:__anon1
+undriven_hamilt	/home/daneel/svncos/poincare_doublewell/trunk/husimi.c	/^double undriven_hamilt (void *param, int nt, int mt);$/;"	p	file:
+undriven_hamilt	/home/daneel/svncos/poincare_doublewell/trunk/undriven_hamilt.c	/^			undriven_hamilt (void *param, int nt, int mt)$/;"	f
+v0	/home/daneel/svncos/poincare_doublewell/trunk/params.h	/^  double v0;$/;"	m	struct:__anon1

@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+CHEMPOT_INTEGRAL_FAILURE	errorcodes.h	/^#define CHEMPOT_INTEGRAL_FAILURE /;"	d
+CHEMPOT_INTEGRAL_TOLERANCE	chempot_funcs.h	/^#define CHEMPOT_INTEGRAL_TOLERANCE /;"	d
+Conclusion	Huang_etal_pra79_053602_2009/final.tex	/^\\section{Conclusion}$/;"	s
+DIM	Kouya_nlinear_systems.c	/^#define DIM /;"	d	file:
+Dynamical Equations of Motion	Writeup/homogeneous_dynamics_simplify.tex	/^\\section{Dynamical Equations of Motion}$/;"	s
+EPSABS	chempot_funcs.h	/^#define EPSABS /;"	d
+EPSREL	chempot_funcs.h	/^#define EPSREL /;"	d
+Fixed Points and Chemical Potential	Writeup/homogeneous_dynamics_simplify.tex	/^\\section{Fixed Points and Chemical Potential}$/;"	s
+Fluctuation effects	Huang_etal_pra79_053602_2009/final.tex	/^\\section{Fluctuation effects}$/;"	s
+GSL_INTEGRATION_KEY	chempot_funcs.h	/^#define GSL_INTEGRATION_KEY /;"	d
+Ginzburg Landau theory of a trapped Fermi gas	Huang_etal_pra79_053602_2009/final.tex	/^\\section{Ginzburg-Landau theory of a trapped Fermi gas}\\label{Chap2}$/;"	s
+INT_INFINITY	chempot_funcs.h	/^#define INT_INFINITY /;"	d
+Introduction	Huang_etal_pra79_053602_2009/final.tex	/^\\section{Introduction}\\label{Chap1}$/;"	s
+MAXTIMES	Kouya_nlinear_systems.c	/^#define MAXTIMES /;"	d	file:
+SIZE	chempot_funcs.h	/^#define SIZE /;"	d
+chempot_integral	chempot_funcs.c	/^double chempot_integral(double x){$/;"	f
+chempot_integral	chempot_integral.h	/^double chempot_integral(double x);/;"	p
+dfunc_m	Kouya_nlinear_systems.c	/^int dfunc_m(const gsl_vector *x, void *param, gsl_matrix *ret)$/;"	f
+fdfunc_m	Kouya_nlinear_systems.c	/^int fdfunc_m(const gsl_vector *x, void *param, gsl_vector *ret_vec, gsl_matrix *ret_mat)$/;"	f
+func_m	Kouya_nlinear_systems.c	/^int func_m(const gsl_vector *x, void *param, gsl_vector *ret)$/;"	f
+integrand	chempot_funcs.c	/^double integrand(double u, void *params){$/;"	f
+main	Kouya_nlinear_systems.c	/^int main(void)$/;"	f
+main	chempot_integral.c	/^int main(int argc, char *argv[]){$/;"	f

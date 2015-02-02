@@ -1,0 +1,67 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Calculations for Husimi Functions}
+\index{Appendix!Calculations for Husimi Functions@\emph{Calculations for Husimi Functions}}%
+The quantum phase space for a particular quantum state is described by the characteristic Husimi function, which is basically the smoothened Wigner function for the state~\cite{wigner}~\cite{husimi}~\cite{Hillery:qdf}. The Husimi function is a plot of the state's probability distribution in a space consisting of centroid coordinates of a chosen basis of states which are eigenstates of canonically commuting symmetries, such as position and momentum.The Husimi function for an energy state for a 2-particle  wavefunction $\psi_{E_j}(x_1,x_2)$ is obtained by evaluating
+%
+\begin{multline}
+F_h(\bar{x_1},\bar{x_2},\bar{p_1},\bar{p_2})=\frac{1}{\sigma_1 \sigma_2 \pi} \int \frac{dx_1}{\sqrt{2\pi}} \frac{dx_2}{\sqrt{2\pi}} \Psi_{E_j}(x_1,x_2) \\
+e^{-\frac{(x_1-\bar{x_1})^2}{2\sigma^2_1}} e^{-\frac{(x_2-\bar{x_2})^2}{2\sigma^2_2}} e^{i (\bar{p_1}x_1 + \bar{p_2}x_2)},
+\label{eq:husimi:appendix}
+\end{multline}
+%
+where $(\bar{x_1},\bar{p_1})$ and $(\bar{x_2},\bar{p_2})$ are the centroids of the Gaussian wave packets and plane waves in the phase space that are the eigenstates of position and momentum respectively.
+
+In this dissertation, the state(s) $\psi_{E_j}(x_1,x_2)$ are the symmetrized 2-boson eigenstates of the double well. These are computed numerically in terms of the symmetrized 2-boson eigenstates of a particle in a box of length $L$ viz.
+%
+\begin{equation}
+{\langle}x_1,x_2\vert n_1,n_2{\rangle} ^{(s)}=\frac{1}{\sqrt{2(1+\delta_{n_1,n_2})}} 
+[{\langle}x_1|n_1\rangle{\langle}x_2|n_2\rangle +{\langle}x_1|n_2\rangle{\langle}x_2|n_1\rangle ],
+\label{eq:symm:appendix}
+\end{equation}
+where
+%
+\begin{equation}
+\phi_n(x)=\langle x|n,x\rangle=\frac{1}{\sqrt{L}} \sin{\biggl[}{\frac{n\pi}{2}(\frac{x}{L}-1){\biggr]}},
+\label{eq:pboxfn:appendixhusimi}
+\end{equation}
+%
+with $n=1,2,...\infty$. Thus,
+\begin{equation}
+\psi_{E_j}(x_1,x_2) = \sum_{\left[n_1,n_2\right]=\left[1,1\right]}^{\left[ N,N \right]} C^{\left[n_1,n_2 \right]}_{E_j} {\langle}x_1,x_2\vert n_1,n_2{\rangle} ^{(s)},
+\label{eq:sumover:appendix}
+\end{equation}
+where the sum is over only unique pairs of $\left[ n_1, n_2 \right]$, and the $C^{\left[n_1,n_2 \right]}_{E_j}$s are obtained numerically. Thus, in order to evaluate the Husimi function of $\psi_{E_j}(x_1,x_2)$, we need to evaluate the Husimi function of ${\langle}x_1,x_2\vert n_1,n_2{\rangle} ^{(s)}$ analytically and apply it to Eqn~\ref{eq:sumover:appendix} numerically. Thus, the expression to be numerically evaluated is
+\begin{equation}
+F_h(\bar{x_1},\bar{x_2},\bar{p_1},\bar{p_2})= \sum_{\left[n_1,n_2\right]=\left[1,1\right]}^{\left[ N,N \right]} C^{\left[n_1,n_2 \right]}_{E_j} f^{\left[n_1,n_2\right]}_h(\bar{x_1},\bar{x_2},\bar{p_1},\bar{p_2}),
+\label{eq:husiminum:appendix}
+\end{equation}
+where
+\begin{multline}
+ f^{\left[n_1,n_2\right]}_h(\bar{x_1},\bar{x_2},\bar{p_1},\bar{p_2}) \equiv \frac{1}{\sigma_1 \sigma_2 \pi} \int \frac{dx_1}{\sqrt{2\pi}} \frac{dx_2}{\sqrt{2\pi}} {\langle}x_1,x_2\vert n_1,n_2{\rangle} ^{(s)} \\
+e^{-\frac{(x_1-\bar{x_1})^2}{2\sigma^2_1}} e^{-\frac{(x_2-\bar{x_2})^2}{2\sigma^2_2}} e^{i (\bar{p_1}x_1 + \bar{p_2}x_2)}.
+\label{eq:husimianalt:appendix}
+\end{multline}
+Equation~\ref{eq:husimianalt:appendix} can be simplified by using Eq.~\ref{eq:symm:appendix} to get
+\begin{multline}
+ f^{\left[n_1,n_2\right]}_h(\bar{x_1},\bar{x_2},\bar{p_1},\bar{p_2}) = \frac{1}{\sqrt{2(1+\delta_{n_1,n_2})}} \\
+[ f^{n_1}(\bar{x_1},\bar{p_1})  f^{n_2}(\bar{x_2},\bar{p_2}) +  f^{n_2}(\bar{x_1},\bar{p_1})  f^{n_1}(\bar{x_2},\bar{p_2}) ],
+\label{eq:husimibrk:appendix}
+\end{multline}
+where
+\begin{equation}
+ f^{n_i}(\bar{x_i},\bar{p_i}) \equiv  \frac{1}{\sigma_1 \sqrt{\pi}} \int \frac{dx_i}{\sqrt{2\pi}} {\langle}x_i\vert n_i{\rangle} e^{-\frac{(x_i-\bar{x_i})^2}{2\sigma^2_i}} e^{i \bar{p_i}x_i }.
+ \label{eq:husimi:sp:appendix}
+\end{equation}
+
+Equation~\ref{eq:husimi:sp:appendix} can be evaluated by using Eqn~\ref{eq:pboxfn:appendixhusimi} on it and evaluating the integral over all space. Even though the sinusoid of Eqn~\ref{eq:pboxfn:appendixhusimi} is only valid in the region $|x|<L$, the standard deviations $\sigma_{1,2}$ of Eqn~\ref{eq:husimi:appendix} are presumed to be small enough that the Gaussians in the Husimi function vanish if we go far enough away from the centroids, pulling the integral down with it. Thus, the contribution of terms beyond $\pm L$ for a sufficiently small value of $L$ is negligible. The single particle Husimi function can thus be evaluated using Gaussian integrals~\footnote{Gaussian integrals are $\int dx \mbox{ } e^{-\alpha x^2}=\sqrt{\frac{\pi}{\alpha}}$, where the integration is performed over all values of $x$} to yield
+\begin{equation}
+ f^{n_i}(\bar{x_i},\bar{p_i}) =  f^{n_i}_+(\bar{x_i},\bar{p_i}) +  f^{n_i}_-(\bar{x_i},\bar{p_i}),
+\label{eq:sp:appendix}
+\end{equation}
+where
+\begin{equation}
+ f^{n_i}_\pm(\bar{x_i},\bar{p_i}) = \pm \frac{\sigma_i \sqrt{2\pi}}{2iL}e^{\mp \frac{in\pi}{2}} e^{-\frac{\bar{x}^2}{2\sigma^2_i}} e^{-\frac{1}{4\sigma^4_i}\left[ \bar{x} + i \bar{p}\sigma^2_i \pm \frac{in\pi\sigma_i}{2l} \right]^2}.
+ \label{eq:spfinal:appendix}
+\end{equation}
+Thus, we can evaluate Eqn~\ref{eq:husimi:appendix} by starting from the analytical expression in Eqn~\ref{eq:spfinal:appendix} and substituting into Eqn~\ref{eq:sp:appendix}, then into Eqn~\ref{eq:husimibrk:appendix}, and that into Eqn~\ref{eq:husiminum:appendix} which can be evaluated numerically from the eigenvalue problem.
+

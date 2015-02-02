@@ -1,0 +1,691 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template for MSCA Individual Fellowships
+% made by Jean-Yves Moyen
+% Jean-Yves.Moyen@lipn.univ-paris13.fr
+% @CC BY-NC
+% http://creativecommons.org/licenses/by-nc/4.0/
+
+%%% *-* latex-mode *-*
+% -*- coding: utf-8 -*-
+\documentclass[a4paper,11pt]{article}
+\usepackage{xspace}
+\usepackage{ifthen}
+\usepackage{bm}
+\usepackage{soul}
+\usepackage{slashbox}
+\usepackage{hhline}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+%       MAKE CHANGES HERE !
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- local vars --
+% Modify for your proposal
+\newcommand{\CallID}{H2020-MSCA-IF-2014\xspace}
+\newcommand{\CallName}{Individual Fellowships (IF)\xspace}
+
+% Must be either Standard EF/CAR/RI/GF
+\newcommand{\CallEval}{Standard EF}
+
+\newcommand{\AppShortTitle}{CCQS\xspace}
+\newcommand{\AppFullTitle}{Coarsening in Classical and Quantum Systems\xspace}
+\newcommand{\AppAuthor}{Roy, Analabha\xspace}
+
+\makeatletter
+\newboolean{@final}
+% Change to 'true' to remove official tips.
+\setboolean{@final}{true}
+%\setboolean{@final}{true}
+\makeatother
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% Nothing to see now. Go to the first \section for the text.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\include{MSCA-Part_B-macros}
+
+% - Bibliography
+%%%%% Comment this out and use regular .bib file and the usual
+%%%%% \bibliography command.
+%\usepackage{filecontents}% to embed the file `myreferences.bib` in your `.tex` file
+
+%\begin{filecontents}{myreferences.bib}
+%@online{foo12,
+%  year = {2012},
+%  title = {footnote-reference-using-european-system},
+%  url = {http://tex.stackexchange.com/questions/69716/footnote-reference-using-european-system},
+%}
+%\end{filecontents}
+
+%\addbibresource{myreferences.bib}
+%%%%% End of example. Uncomment next line to use regular .bib file.
+\bibliography{myreferences}
+
+
+
+% -- main purpose --
+\begin{document}
+
+% -----------------------------------------------------------------------
+% Title page
+
+\MSCAtitlepage
+
+\clearpage
+%\begin{official}
+%  all text marked by green should be deleted before submission of part
+%  b, as these passages are tips to the template provided by the
+%  commission.
+%\end{official}
+
+%\begin{jymnote}
+%  Text in gray is my comment on how to use \LaTeX\ with some of the
+%  recommendations.
+
+%  Start by editing the 'local variables' stuff at the beginning of the
+%  document to suit your needs (acronym, title, \ldots)
+
+%  Official tips and my notes are automatically removed by setting the
+%  boolean 'final' to true' in the local variables. That is, there is no
+%  need to edit them out manually.
+%\end{jymnote}
+
+\clearpage
+
+% -----------------------------------------------------------------------
+% TOC
+
+%\begin{official}
+%  In drafting PART B of the proposal, applicants \underline{must follow}
+%  the structure outlined below.
+%\end{official}
+
+\tableofcontents
+
+\smallskip
+
+\vspace{2cm}
+
+%\begin{official}
+%  NB:
+%  \begin{itemize}
+%  \item Applicants must ensure that sections 1 -- 4 do not exceed the
+%    limit of 10 pages.
+%  \item No reference to the outcome of previous evaluations of this or
+%    any similar proposal should be included in the text. Experts will be
+%    strictly instructed to disregard any such references.
+%  \end{itemize}
+%\end{official}
+
+\clearpage
+
+% -----------------------------------------------------------------------
+% Main matter
+
+\section*{List of Participants}
+\addcontentsline{toc}{section}{\hspace{\cftsecnumwidth}List of Participants}
+
+\stretchingarray
+\begin{savenotes} % for \footnote inside a tabular
+{\footnotesize \noindent%
+\begin{tabular}{|M{2.5cm}|M{1cm}|M{1cm}|M{1cm}|m{1.5cm}|M{2.25cm}|M{2cm}|M{2.5cm}|}
+  \showrowcolors
+  \hline
+  Participants & Legal Entity Short Name \phantom{foo}&
+  \vertical{Academic}{Academic (tick)} & 
+  \vertical{Non-academic}{Non-academic (tick)} & 
+  Country & Dept. / Division / Laboratory & Supervisor & Role of
+  Partner Organization\\
+  \hline \hiderowcolors
+  \underline{Beneficiary} & & & & & & &\colorcell{darkgrey}{}\\
+  \hline
+  CENTRE NATIONAL DE LA RECHERCHE SCIENTIFIQUE
+ & CNRS &\checkmark & &France & Laboratoire de Physique Th\'eorique et Hautes Energies &Prof. Leticia F. Cugliandolo &\colorcell{darkgrey}{}\\
+  \hline
+  \underline{Partner} \underline{Organization} & & & & & &
+  &\colorcell{darkgrey}{}\\
+  \hline
+  N/A  & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
+  \hline
+\end{tabular}
+}
+\end{savenotes}
+
+\section*{Data for non-academic beneficiaries}
+
+\begin{savenotes} % for \footnote inside a tabular
+{\footnotesize \noindent%
+  \begin{tabular}{|M{1.3cm}|M{1.5cm}|M{1.2cm}|M{1.2cm}|M{1.2cm}|M{1cm}|M{1.5cm}|M{1.5cm}|M{1.2cm}|}
+    \showrowcolors
+    \hline
+    Name & \vertical{research premises}{Location of research premises (city
+      / country)} & \vertical{Type of R\&D}{Type of R\&D activities} & 
+    \vertical{No. of full}{No. of full employees} & \vertical{No. of
+      employees}{No. of employees in R\&D} & \vertical{Web site}{Web site}
+    & \vertical{Annual turnover}{Annual turnover (approx. in Euro)} &
+    \vertical{Enterprise}{Enterprise status (yes/no)} & \vertical{SME
+      statusx}{SME status (yes/no)}\\
+    \hline \hiderowcolors
+    N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A & N/A \\
+    \hline
+  \end{tabular}
+}
+\end{savenotes}
+\restorearraystretch
+\newpage
+\countstart
+\section{Summary}
+
+The objective of this proposal is the study of the dynamics of Coarsening in Classical and Quantum Systems. It involves the
+study of classical and quantum many body systems, as well as field theories, as the systems they represent are quenched
+by the diabatic variation of a thermodynamic or other parameter. The dynamical processes that support re-equilibration
+constitute coarsening. The study will be performed using both analytical and numerical techniques, requiring the use of high
+performance computing. The first part of the project entails the study of coarsening in classical quenches within a
+closed scalar field theory, and the profiling of universal dynamical behavior expected in both critical and sub-critical
+quenches. The next phase will involve classical open systems with a more microscopic description; post-quenched
+coarsening in a classical array of micromagnets governed by Gilbert-Landau Lifshitz dynamics. The results obtained therein
+will be used to guide a deeper understanding of coarsening in quantum systems. The project will proceed to investigate
+coarsening and quenches in open quantum spin systems, both using a complete Hamiltonian description of the system
++reservoir, as well as stochastic treatments of the reservoir using Lindblad superoperators. The project aims to understand
+a very important feature of nonequilibrium dynamics, and the onset of universality therein. The results will prove useful in
+multiple disciplines where the out-of-equilibrium dynamics of many body systems are studied.
+
+\section{Excellence}
+\label{sec:excellence}
+
+\subsection{Quality, innovative aspects and credibility of the research
+  (including inter/multidisciplinary aspects)}
+\label{sec:excellence-quality}
+
+The main objective of this research project is to understand the dynamics of \textbf{Coarsening} in \textbf{Classical} and \textbf{Quantum} many body \textbf{Systems}
+(referred to in this proposal by the acronym '\textbf{CCQS}') while they are approaching equilibrium after a quench in a  {parameter}; a particularly important aspect of the nonequilibrium dynamics seen in recent experiments. The focus lies on classical nonequilibrium dynamical systems in a closed field theory with a double well potential, the classical evolution of an open system like coupled micromagnets, and the nonequilibrium dynamics of quantum-quenched dissipative spin heterostructures. A 'quench' is defined as the \textit{diabatic} variation of a thermodynamic or other  {parameter} of the system, such as temperature, mass or chemical potential. In a diabatic variation, the rate at which the quench rate is faster than all the relaxation rates intrinsic to the system, thus allowing for approximating the change as instantaneous. 
+Coarsening after a quench constitutes the dynamical process by which the characteristic  {size} of the support of the equilibrium phases grows.
+
+The first part of the proposed project involves the analytical and numerical study of classical quenches in $\phi^4$ theory in  {$d$} 
+dimension. The potential in the free energy will be constructed to $4^{th}$ order in the order parameter $\phi$. The evolution of the free-energy landscape with the control parameter driving a phase transition guides the understanding of the post-quench dynamics from, typically, a disordered phase to an ordered phase. If the free energy lacks a cubic term, then phase transitions are of second order, driven by instability at criticality. If the free energy has cubic terms, then phase transitions are of first order, driven by metastability at criticality. The project involves the study of quenches to criticality, as well as sub-critical quenches by investigating the microscopic dynamics of the order parameter. This dynamics is governed by a quasi-Newtonian equation of motion with,  {for example, 
+a thermalized ensemble of initial states in a free-energy landscape with a single minimum at zero field}. Other descriptions, such as the field 
+large-$\mathcal{N}$ approximation, will also be considered. After an instantaneous quench at $t=0$ the subsequent evolution of the order parameter is performed by integrating the equation of motion with the post-quenched parameters  {(the double-well structure)}. The first question to be explored is whether the system re-thermalizes to a steady state or not. This can be tested via the fluctuation-dissipation theorem, where linear responses to a small external field are compared to the field correlations. Subsequently, the temporal behavior of the equilibrating field will be studied. During the \textit{coarsening} process, space-time correlations allow for the identification of a growing length scale. Domains of equilibrium states are expected to grow with this length scale, and a spatial profile of 'kinks' or  {`domain walls'} that demarcate these regions is expected to provide insights into the coarsening process. Domain walls will be identified, whose gradients are expected to 
+drive coarsening. Coarsening is thus expected to drive the nucleation and growth of domains that support the equilibrium phase. Near criticality, divergences of time scales via critical slowing down is also known to occur, and the scaling behavior of critical quenches will also be studied analytically using scaling and renormalization group arguments. In addition, the system is expected to build fractal clusters~\footcites{fractal1}{fractal2}{fractal3}
+and the equilibrium and nonequilibrium contributions are multiplicatively separated. In sub-critical quenches, the asymptotic behavior of the characteristic coarsening scale relative to equilibrium correlations is expected to be governed by the dynamic scaling hypothesis~\footcite{dynscal}, where the domain structure is statistically independent of time when lengths are scaled accordingly. The goals of this phase of the project are the profiling of the universal scaling laws described above, as well as the evolution of structure interfaces in the order parameter field through the kinks in the solution.
+
+The next phase of the project will involve studying the dynamics of open classical systems \textit{viz.} systems connected to a thermal reservoir. Classical $\phi^4$ theories of the type discussed above can be linked to closed Ising magnets, and open systems of magnets can be studied by dealing with the interactions between magnetic moments on sub-micrometre length scales. These are governed by competition between the dipolar energy and the exchange energy, the outcome of which governs the long range magnetic order, if any. In such systems, the Landau-Lifshitz-Gilbert (LLG) equation is a key model for describing the nonlinear evolution. The micromagnets in this model are built up from fermions acting under a time-dependent Zeeman field, and the Ehrenfest dynamics therein~\footcite{gll:review}, together with a phenomenological damping term that takes into account the saturation of the magnetization. The dynamics of many coupled LLG systems connected to a thermal bath (canonical ensemble at equilibrium) can be 
+formulated from here. In the continuum limit, the result is a nonlinear partial differential equation in the spin field. The ensuing dynamics links the physics to the microscopic Hamiltonian structures of spin lattices, including planar XX and XY structures~\footcites{laxmanan:xxxy1}{laxmanan:xxxy2} whose quantum evolution will be studied later. This phase of the project aims to formulate the LLG dynamics after a quench across the magnetic phase transitions, and investigate the transition to equilibration in a manner similar to that described in the paragraph above. The dynamics in these systems have wide interdisciplinary relevance. They have intimate connections with many of the well-known integrable soliton equations, including nonlinear Schr\"odinger and sine-Gordon equations~\footcites{laxmanan:xxxy1}{laxmanan:xxxy2}{sinegordon1}{sinegordon2}. The possibility of classical chaos in such systems~\footcite{gll:review} leads it to other disciplines, such as power generation and synchronization~\footcite{
+lax13} and inhomogeneous filaments~\footcite{lax14}. 
+
+The logical continuation of this project now draws attention to the quantum realm in such systems. At zero temperature, a closed quantum system is said to be in equilibrium when it is at the ground state (or generally speaking, any eigenstate) of the Hamiltonian of the system. At finite temperatures, a system at equilibrium can no longer be found in a single eigenstate, but is delocalized in the Hilbert space over many eigenstates with a thermal probability distribution. A \textit{diabatic quench} causes a  {parameter} to vary rapidly in comparison to the relaxation times of the excitations, both thermal and quantum. The nonequilibrium dynamics of such closed quantum systems after a quench, although an ongoing subject of study,  {are somewhat better understood than their open counterparts}, and involve principles like dephasing~\footcite{thermalization} 
+and the Eigenstate Thermalization hypothesis~\footcites{thermalization}{krishrev}, the Kibble-Zurek mechanism~\footcite{bikashbabu}, Landau-Zener tunneling~\footcite{bikashbabu}, semiclassical mean field dynamics like those obtained from the Gross-Pitaevski equation for Bose Einstein condensates~\footcite{colrev} and the Ginzburg Landau equation for superconductivity~\footcite{rammer}, diagrammatic perturbation theory~\footcite{gorkov, volkov}, and others. The quantum dynamics part of this research project will involve the application of some of the above-mentioned ideas, as well as newer stochastic methods, to \textit{open quantum systems} \textit{viz.} systems that can exchange energy via connections to a reservoir of heat. Away from $T=0$, the pure quantum dynamics has to be weighed by the thermal probabilities of the initial state that is presumed to be in thermal equilibrium. For open systems, such dynamics can be studied by completely specifying the nature of the reservoir, and treat the coupled system 
++ 
+reservoir as a closed 
+quantum system, or by treating the reservoir stochastically. The nonequilibrium dynamics, thus formulated, allows the profiling of local quantum correlations and coarse-grained responses whose 
+spatial extent described coarsening that is expected to grow towards the steady state. Analytics will involve modeling such systems by \textit{spin chain heterostructures}~\footcite{arrachea},  constructed by linking finite or semi-infinite XX or XY spin chains (of various anisotropies) to each other at their ends. This model is analogous to well-established models that describe transport in many body systems, as well as nano and mesoscopic systems~\footcite{arrachea,openspin, imry}. The dissipative dynamics of the central chain after a quench can thus be obtained from the Hamiltonian quantum dynamics of the entire system of links. Such systems can be mapped onto p-wave BCS superconducting fermions, and the nonequilibrium Dyson equation can be formulated in a manner similar to~\footcite{gorkov, volkov}. Post-quench dynamics can be studied by solving the resultant equations for the local fermion correlations by diagrammatic approximations to the nonequilibrium self-energy, either in the collisionless regime~\
+footcite{volkov,
+ncnsd2012}, or in the regime where collisions are rapid enough to have relaxed away and only order parameter dynamics remains~\footcite{ncnsd2012}. The steady state properties of such systems have already been investigated in the context of thermal transport by Arrachea \textit{et. al.}~\footcite{arrachea}, and can easily be adapted to dynamics farther from equilibrium. In this manner, the slow collision dynamics (in the mean field or with Gaussian fluctuations) can be mapped onto a set of nonlinear Schr\"odinger equations coupled by a self consistent update for the superconducting gap. The scaling laws for the responses in such dynamics will also be obtained.  In the fast collision regime, the dynamics can be approximated to be near equilibrium, with a classical $\phi^4$ approximation in the path integral (see~\footcite{colrev} and the references therein). This allows for a connection with the classical problem discussed above, and similar numerical methods can be used. Evaluating the Goldstone modes by a 
+linear 
+stability analysis of the dynamics around equilibrium will also be done so as to profile excitations and fluctuations about the mean field.
+
+The approach detailed above, with the full Hamiltonian description of the system and reservoir, comes at the price of numerous analytical and computational difficulties. The final part of this project will deal with alternative formalisms of open quantum systems, where the reduced density matrix is evolved in time by a master equation, allowing for the inclusion of incoherent processes which represent interactions with a reservoir. Such dynamics is regularly studied in quantum optics using the \textbf{Kossakowski-Lindblad equation}, where it can represent absorption or emission from a reservoir~\footcite{lindblad1,lindblad2}. Here, the regular Liouvillean dynamics of closed quantum density matrices are dressed with Lindblad bath operators which act locally on degrees of freedom near each bath. Although this approach is not universally valid, it is a reasonable starting point to study Heisenberg chains such as the ones being studied in this project~\footcite{spinchains:lindblad}. Here, as in the previous 
+paragraph, the 
+ends of 
+a finite spin chain are coupled to canonical Lindblad spin operators whose amplitudes are determined by the thermodynamics of the reservoir.  This approach is computationally simpler, and the density matrix for such a mixed system can be solved using DMRG methods. The dynamics of coarsening in Lindblad systems can be solved after a quench in this manner.
+
+Coarsening is a very basic aspect of non-equilibrium quantum dynamics. Understanding it would shine light on a vast landscape of quantum phenomena ranging from the process of defect generation in critical quantum relaxation~\footcite{relaxation}, thermalization of a closed many-body quantum system~\footcite{krishrev, thermalization}, thermalization and effective temperatures of open quantum systems~\footcite{thermopen}, glassy systems~\footcite{glassy}, mesoscopic systems~\footcite{meso}, to the operation of near future quantum devices like an analog quantum computer~\footcite{annealing}. The potential and the target of our project, as well as its methodologies, are thus genuinely interdisciplinary and of very broad interest.
+
+\subsection{Clarity and quality of transfer of knowledge/training for
+  the development of the researcher in light of the research objectives}
+\label{sec:excellence-training}
+The objectives for the transfer of knowledge are
+\begin{enumerate}
+ \item 
+ Transfer of knowledge and expertise in nonequilibrium field theory using Schwinger-Keldysh formalism, dynamical systems and chaos in classical and quantum problems, many body physics and condensed matter theory to the host.
+ \item
+ Training of graduate students in many body theory and computational methods for complex dynamical many body problems using parallel clusters.
+ \item
+ Facilitation and initiation of existing and new collaborations between host and several collaborators across multiple institutions, in the European Union and elsewhere, bringing their knowledge into Europe by the researcher and host.
+ \item
+ Presentation of research results in multiple conferences and symposia in Europe and elsewhere. The researcher plans to present his works in at least $5$ international meetings of particular interest for the dissemination of the research to others within Europe and beyond; the March Meeting of the American Physical Society, the National Conference of Nonlinear Systems and Dynamics, India, the STATPHYS conference of the  International Union of Pure and Applied Physics, the Annual Beg Rohu Summer School on topics in statistical physics and condensed matter in Saint-Pierre-Quiberon, Brittany, France, the IWNET workshops organized by ETH-Zurich, and others.
+\end{enumerate}
+
+With the proposed project, the researcher will bring several sorts of unique knowledge to the European Union. First, he will bring his extensive expertise in numerical methods. These were founded during his graduate years studying classical and quantum chaos in the University of Texas. The group of his supervisor, Prof Linda E. Reichl, was one of the few groups in North America studying the implications of classical dynamics in the corresponding quantum system as it is periodically driven. Studying the onset of chaos assisted adiabatic passage in the quantum Floquet problem numerically entails large system sizes that are quickly and embarrassingly parallelizable in multiprocessor grids, and the researcher gained extensive expertise to do so using the computational and teaching resources of the Texas Advanced Computational Center at UT. His expertise has been extended and refined during his postdoctoral years in India, where he worked on several dynamical problems involving nonequilibrium quantum fields and 
+ensuing ordinary and partial differential equations, as well as a working knowledge of the Density Matrix Renormalization Group method for solving quantum many body problems. He did so via a diverse range of multiprocessor grids at the SN Bose National Centre for Basic Sciences, Kolkata, as well as the Saha Institute of Nuclear Physics, Kolkata. His knowledge of several paradigms in parallel computing, such as multithreading, message passing, OpenCL and computing using graphical processors, as well as scripting for parallel grid engines, will ensure that numerical work is done in a timely and efficient manner, optimally utilizing the computational resources available to the host in order to solve the problems detailed in this proposal. In addition to research, the researcher plans to hold teaching workshops in parallel computing at the host institution where he will be able to introduce scientific computing in distributed environments to graduate students, fellow postdocs and faculty members new to the field.
+
+Second, the researcher will bring his extensive knowledge of condensed matter theory, many body physics, nonequilibrium field theory, nonlinear dynamics, dynamical systems and chaos to Europe. His knowledge in these areas were developed under the guidance of several leaders in their respective fields in the United States and India, such as Prof L.E. Reichl (The transition to Chaos in classical and quantum systems), Prof J.K. Bhattacharjee (Nonlinear Dynamics), Prof. Krishnendu Sengupta (Nonequilibrium Field Theory), Dr. Arnab Das (Dynamics of many particle systems),  and others. Thus, his theoretical background encompasses numerous topics, such as  Floquet theory, Keldysh theory as applied to the Fermi BCS problem, Bose Einstein Condensates and the time dependent Gross-Pitaevski Bogoliubov equations and the study of excitations therein, and others. All of this knowledge will be brought to the European host organization and group and shared with colleagues, graduate 
+students and other postdocs.
+
+Finally, the researcher and host have made plans to enhance existing collaborations with colleagues in order to expedite the research work detailed in this proposal. Collaborators include  Profs. G. Lozano and L. Arrachea (Universidad de Buenos Aires, Argentina), D. Rossini (Scuola Normale Superiore, Pisa, Italy) and R. Fazio (Center for Quantum Technologies, National University of Singapore). These collaborations will help bring the knowledge and expertise gained by the collaborators from outside the European Union into Europe via interactions with the researcher. In addition, the conferences attended by the host and researcher mentioned in the previous subsection will also be attended by most condensed matter and statistical physicists in Europe, and lectures and unofficial interactions therein will further disseminate expertise throughout the continent.
+
+
+\subsection{Quality of the supervision and the hosting arrangements}
+\label{sec:excellence-supervision}
+\subsubsection{Qualifications and experience of the supervisor (s)}
+
+The Host Scientist (Leticia F. Cugliandolo) has worked on the out of equilibrium dynamics of complex classical and quantum 
+systems since 1993. Her contributions to the field are manifold. The main ones are the proof that mean-field disordered models~\footcite{glassy} and correctly identified mode-coupling theories~\footcite{Bocukume} capture the aging properties of glasses, and the identification and comprehension of 
+effective temperatures in slowly relaxing or weakly perturbed glassy systems~\footcite{Cukupe}. More recently, she started working on 
+the non-equilibrium dynamics of quantum systems and coarsening issues, the main subjects of research in this project. Again, many research 
+articles certify her activity in these fields (one relevant example is~\footcite{Focuga}) and she has given numerous lectures and seminars
+on related problems (see her web-page \footnote{Leticia F. Cugliandolo: \url{http://www.lpthe.jussieu.fr/~leticia}}) .
+
+
+\subsubsection{Quality of the group/supervisors}
+\label{sec:gropu_quality}
+ {
+The host institution, LPTHE, (Laboratoire de Physique Th\'eorique et Hautes Energies, directed by Prof. Olivier Babelon) is located on the campus Jussieu in the $5^{th}$ arrondissement of Paris. LPTHE is one of the major theoretical physics laboratories in France. It is part of Universit\'e Pierre et Marie Curie, Paris VI (Sorbonne), one of the top universities in France~\footnote{QS rankings for the Universit\'e Pierre et Marie Curie can be found at \url{http://www.topuniversities.com/universities/universit\%C3\%A9-pierre-et-marie-curie-upmc}
+}, and associated with the CNRS. It is thus an integral part of the world scientific community, and imbibes a strong scientific temper in their members. More than a third of its members are permanent faculty, a high ratio among theoretical physics departments in France. The members work in many branches of physics, mathematics and other sciences, and their research interests range from  statistical mechanics and condensed matter to particle theoretical physics, string theory and mathematical physics. In particular, LPTHE has a strong focus on statistical physics and condensed matter, and includes a very prominent group of 
+physicists with strong citation metrics who work on subjects like conformal field theory, nonequilibrium physics, quantum information and computing, and others. Financial support for research activities is provided by Paris 6 University, CNRS and a number of contracts with  French Agence Nationale de la Recherche (ANR), and other laboratories and agencies in Europe and around the world.  Each year, the LPTHE produces around one hundred papers published in specialized refereed journals with high impact factors and immediacy indices, such as European Journal of Physics, Europhysics Letters, JSTAT: Theory and Experiment, Journal of Physics, the Physical Review Series, JHEP, Gravitation and Cosmology, Physics Letters, and others.  LPTHE is also part of a larger entity, the F\'ed\'eration de Recherche Interactions Fondamentales~\footnote{The F\'ed\'eration de Recherche Interactions Fondamentales (FRIF) combines several laboratories around a common project and brings together three laboratories in Paris \textit{
+viz.} the LPNHE, the LPT-ENS and LPTHE . It focuses on theoretical physics and experimental particle physics and astroparticle physics. Details can be found at \url{http://www.lpthe.jussieu.fr/fed/}.}, which brings together several laboratories in Paris via common seminars and visitors, workshops and other scientific activities. The LPTHE organizes general colloquia in 
+theoretical physics, laboratory seminars and weekly workshops on statistical mechanics and condensed matter.}
+
+ {
+As of September $2014$, the LPTHE counts around $25$ permanent members, and  permanently hosts around $10$ postdoctoral researchers and $10$ PhD students. Being situated in central Paris, these students and post-docs are exposed to the bursting research activity of this as well as all other institutions in the area. The senior members of the statistical physics and condensed matter group in LPTHE are Vol. Dotsenko, B. Dou\c{c}ot, B. Estienne, L. Faoro,  L. Ioffe, M. Picco, S. Teber  and the host scientist, L.F. Cugliandolo. A mathematical physics group with, among others, P. Zinn-Justin and J-B Zuber as permanent members, is in close contact with this group. In connection with the host scientist research program, the group regularly hosts invited professors from Europe (e.g. A. Gambassi from SISSA, F. Corberi from  Salerno) or from abroad (e.g. B. Alt'shuler from New York USA or G. Lozano from Argentina), and keeps regular collaborations with researcher of other Parisian institutions such as M. Tarzia, F. Zamponi and G. Biroli from 
+neighboring LPTMS, LPT-ENS and Saclay. The group organizes weekly specialized seminars as well as journal clubs for students and post-docs. The University also hosts a colloquium. The program of most seminars of the Paris area can be consulted at the 
+web site \footnote{Seminars in the Paris area: \url{http://semparis.lpthe.jussieu.fr/}} hosted at LPTHE. A mirror of arXiv.org is also hosted at  the computer facilities of the lab. Training at LPTHE has been very successful in the past. Several former students and post-docs in the field have found permanent positions in France (for instance, R. Santachiara at Orsay or P. Pujol at Lyon and next Toulouse) and abroad (e.g. G. Delfino at SISSA).}
+
+\subsection{Capacity of the researcher to reach and re-enforce a
+  position of professional maturity in research}
+\label{sec:excellence-researcher}
+As can be ascertained from his scientific and pedagogical activities, the researcher is quite mature already. With suitable mentoring and further professional training by the host, he would easily attain the desired level of maturity.
+
+\section{Impact}
+
+\subsection{Enhancing research- and innovation-related human resources,
+  skills, and working conditions to realize the potential of individuals
+  and to provide new career perspectives}
+\label{sec:impact-fellow}
+The fellowship is crucial for the development of the career of the researcher in the appropriate direction. With it, his vocation will certainly ascend in this already well-formulated plan of action, and is expected to  reach a formidable level with all its promises. His immediate requirement is a close collaboration with a leading research group which works directly in his field of interest and is both capable and willing to aid him in taking his research to the next logical level. A combination of mentoring by the host, and active research, would help bring out his best work, shaping him quickly as a mature professional and productive physicist, and help him achieve a high academic profile in the statistical, nonlinear, and condensed matter physics communities of Europe as well as India. This will improve his chances for a permanent appointment in one of the above-mentioned research institutes that form the nodes in India's nonequilibrium physics network. Thus, the researcher will be able to interact with 
+his colleagues much more closely, and be able to connect his colleagues in India, as well as the European academics with whom he will work during his fellowship, his European host and all of their collaborators. These connections will help them work together in many potential directions that will arise from the results of the proposed research project. The potential for creating long term academic collaborations is thus very high, and the fellowship will aid the researcher in forming mutually beneficial co-operation between the E.U. and India in the field of nonequilibrium classical and quantum physics.
+
+The very important field of classical and quantum nonequilibrium dynamics has generated new interest over the last decade, in large part, due to advances in experiments involving ultracold atoms. These highly tunable systems make it possible to study nonequilibrium dynamics in regimes hitherto inaccessible in solid state systems. The early experiments involving nonequilibrium ultracold atoms were carried out in the erstwhile Soviet Union and North America (spurred, in part, by cold war competition), followed by significant developments in Europe. The detailed study of heterostructures in a many body system approaching equilibrium is a subset of the above-mentioned studies. Numerical approaches require computational facilities that were realized early on in the United States, with Europe following closely. It is only relatively recently that distributed computing environments in Europe have approached their counterparts in the United States in performance metrics. So far, the bulk of the computational 
+resources have been devoted to military, financial and biological research. As a result, only a few research groups in Europe, such as that of the host, have forayed into the detailed study of coarsening dynamics in established theoretical many body models. Understanding numerous experiments and physical phenomena in these systems relies heavily on the study of coarsening as the system is quenched, and finding universal behavior in such coarsening will lead to significant gains in the understanding of many body systems of high complexity.
+
+The researcher himself is personally connected and in some cases, contributed to the entire of this development. In addition, the host group is widely regarded as  one of the leaders in the field of non-equilibrium dynamics of both classical and quantum systems. Any advancements in the theoretical understanding of such dynamics will stimulate research in nonequilibrium dynamics in Europe, and potentially take the E.U. to the forefront in this topic. Even a marginal success of the project would certainly lay the foundation stone of new paradigm in European science, where the physics of classical and quantum nonequilibrium systems would be used to understand numerous other complex systems, ranging from biological systems to neural networks and even financial models, attracting scientists from a large spectrum of disciplines and trainings.
+
+\subsection{Effectiveness of the proposed measures for communication and
+  results dissemination}
+\label{sec:impact-effectiveness}
+
+\subsubsection{Communication and public engagement strategy of the
+  action}
+The researcher already has some experience in outreach activities of sorts during his stints teaching students while in graduate school. The researcher hopes for the opportunity to apply the skills gained therein during the realization of this proposed research project. He can aid the host prepare material to deliver when students and the general public visit the group to receive first-hand experience and lectures. He can also aid in the mentor ship of undergraduate and masters thesis students who frequently work in short research projects under the host. The researcher also has extensive skills in the typesetting and markup languages that are used by academics to host lecture material and research content on the internet. Thus, he can assist the host in preparing said material and releasing them to the general public via the web-pages of the host institute. All this will help increase the public profile of the host institute via outreach activities.
+\subsubsection{Dissemination of the research results}
+The research results will be disseminated to the general public through peer-reviewed publications, conferences and symposia as detailed in section~\ref{sec:excellence-training}, as well as seminars and colloquia delivered at the institutes of his collaborators as detailed in the same section.
+\subsubsection{ Exploitation of results and intellectual property}
+While the proposed project is mainly in the pure sciences, and seeks to deepen our understanding of fundamental natural phenomena, the study of coarsening in quantum systems has significant applications in the area of material science and, more recently, in quantum information science and computing. The primary relevance lies in the minimization via external control the occurrence of Quantum Errors. Quantum error correction is used in quantum computing to protect quantum information from errors due to disorder-dynamics, decoherence and other types of noise.  Governments and military all over the world support research into the field of quantum computing, and several industrial implementations are currently under way.  The eventual goal is to develop fault-tolerant quantum computation, enhancing the power of computers by many orders of magnitude leading to a unprecedented revolution in computers. The study of the actual propagation of quantum errors themselves can be treated from the perspective of coarsening.
+ A system of qbits in equilibrium may exhibit spontaneous symmetry breaking across a phase transition, and the nonequilibrium dynamics in the same region of the parameter space can be used to model the propagation of passive quantum errors. The onset of coarsening thus presents a vital phenomenon in this propagation, and this study will contribute towards a greater understanding of a key potential industrial application.
+
+\section{Implementation}
+\label{sec:implementation}
+
+\subsection{Overall coherence and effectiveness of the work plan,
+  including appropriateness of the allocation of tasks and resources}
+\label{sec:impl-coherence}
+
+\textbf{Work packages: Feasibility and Credibility}
+\begin{enumerate}{
+\item
+Literature search and reading.
+\item
+Enhanced interaction with collaborators: See section~\ref{sec:excellence-training} for names of collaborators. Visit institutes of the collaborators, or invite collaborators to host institute for interaction and formulation of problem.
+\item
+Setting up and exploring techniques I: Numerical methods for $1-d$ classical scalar $\phi^4$ quench dynamics, designing appropriate algorithms in clusters using parallelization. Research on numerical techniques for solving coupled GLL equations. Adapt algorithms from previous $\phi^4$ quenches  accordingly.
+\item
+Work out problems and write papers I: Run code developed in previous work element for various quenches and other parameters. Interpret data as detailed in the proposal. Look at universal scaling properties near criticality and attempt to make analytical approximations to compare with numerical results. 
+\item
+Setting up and exploring techniques II: Evaluation of exact differential equation of the nonequilibrium dynamics of quantum spin systems. Research on optimal implementations of quantum time-evolved block decimation/DMRG methods for stochastic Lindblad systems.
+\item
+Work out problems and write papers II:  Similar approach as detailed in work element 4.
+\item
+Begin considering neighbouring areas and improvements on work done so far. Implement in more complex systems and problems.
+}\end{enumerate}
+
+\textbf{Deliverables and Milestones:}
+\begin{enumerate}
+ \item[4.1] (6.1)
+Review and publication of papers - I (II): Collate results and write papers with host and collaborators for peer-review. Engage with reviewers and obtain publications in journals.
+\end{enumerate}
+
+\textbf{Dissemination and Communication:}
+\begin{enumerate}
+ \item[4.1] (6.1)
+Present previous results at key conferences and symposia  -I (II): Present research results from deliverables 4.1 (6.1) at the conferences and symposia as detailed in section~\ref{sec:excellence-training}.
+\end{enumerate}
+\textbf{Time schedule of activities through Bar Diagram:} \\
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+\cellcolor[gray]{0.8}\backslashbox{}{Month} & \cellcolor[gray]{0.8}02 & \cellcolor[gray]{0.8}04 & \cellcolor[gray]{0.8}06 & \cellcolor[gray]{0.8}08 & \cellcolor[gray]{0.8}09 &\cellcolor[gray]{0.8}10 & \cellcolor[gray]{0.8}12 & \cellcolor[gray]{0.8}14 & \cellcolor[gray]{0.8}16 & \cellcolor[gray]{0.8}17& \cellcolor[gray]{0.8}18 & \cellcolor[gray]{0.8}20 & \cellcolor[gray]{0.8}22 & \cellcolor[gray]{0.8}24 \\
+\hhline{*{1}{|~}*{13}{|-}|-}
+\cellcolor[gray]{0.8}Work package  & {\cellcolor{yellow}}1 &{\cellcolor{yellow}}2 &{\cellcolor{yellow}}3 &{\cellcolor{yellow}}3 & {\cellcolor{yellow}}4 &{\cellcolor{yellow}}4 & &{\cellcolor{yellow}}5 &{\cellcolor{yellow}}5 & {\cellcolor{yellow}} 6 &{\cellcolor{yellow}}6 & &{\cellcolor{yellow}7} &{\cellcolor{yellow}7} \\
+\hline \hline
+\cellcolor[gray]{0.8} & & & & & & & & & & & & & & \\
+\cellcolor[gray]{0.8}Deliverable & & & & & & &\cellcolor{brown} 4.1 & & & &\cellcolor{brown} 6.1  &\cellcolor{brown} 6.1  & & \\
+\hline 
+\cellcolor[gray]{0.8} & & & & & & & & & & & & & & \\
+\cellcolor[gray]{0.8}Dissemination &  &  &  &  &  &   & & \cellcolor{pink}4.1 &  &  & & \cellcolor{pink}4.1 &\cellcolor{pink}6.1 &  \\
+\hline
+\end{tabular}
+
+\subsection{Appropriateness of the institutional environment
+  (infrastructure)}
+
+LPTHE provides all its postdoctoral fellows with excellent facilities and infrastructure.The LPTHE has local computer calculus facilities that are sufficient to ensure the 
+correct development of the numerical part of the research project. It 
+counts with a library with the main Theoretical Physics textbooks
+(and the possibility of buying any desired issue). Post-docs and 
+visitors have their own office with a table computer from which the cluster can be 
+accessed. Common spaces for discussions and 
+seminars are also available. In addition to these, LPTHE is located
+in the Jussieu campus and access to larger computer facilities
+as well as the University Library are possible upon registration. 
+
+ The host scientist will provide office space for the researcher, including supplies and a computer workstation, and will always be available for academic discussion and guidance. The host institution will also provide access to academic journals via online and off-line subscriptions, broadband internet for research work and communication, institute and university libraries for books, journals and other reference materials, computational and cluster resources of the university and institute, and licenses for any proprietary software that the researcher may require for his work. In addition to research offices, the LPTHE has a seminar room which regularly hosts local seminars and contains the institute library. The library is well stocked with classic and modern text books and other research material on condensed matter theory, many body and field theory, statistical theory and mathematics, among others. 
+Finally, the LPTHE has a common coffee room open to all staff, and is easily accessible from any workspace in the institute.
+
+\subsection{Competences, experience and complementarity of the
+  participating organisations and institutional commitment}
+The candidate has been studying and exploring his interests in nonequilibrium dynamics for many years, and this project will award him the unique and timely opportunity of engaging in extensive research with a group that leads this field. In addition, the peer-reviewed publications that will be the primary deliverables of this project (as detailed in section~\ref{sec:impl-coherence}) will enhance the candidate's research profile. In addition, the expertise gained during the course of this project will enhance the vocation of the candidate, and the close collaborations detailed in the proposal will improve his human networks in academia, paving the way for future collaborations. Finally, as detailed in section~\ref{sec:impact-fellow}, the completion of this fellowship will drastically increase his chances of securing a permanent academic position in his home country.
+
+The candidate has already interacted with the beneficiary during an academic visit to the candidate's home country. The beneficiary has expressed strong enthusiasm at the project, and the details have been discussed. The beneficiary has made an earnest commitment to the project, and has provided valuable guidance to the candidate in its formulation. The successful completion of this project will prove highly advantageous to the beneficiary in all applicable respects that are discussed for the candidate in the previous paragraph.
+
+\countstop
+
+\section{CV of the Experienced Researcher}
+
+  \begin{center}
+    Curriculum Vitae (max. 5 pages)
+  \end{center}
+  \textbf{PERSONAL INFORMATION}\\
+  Family name, First name: \AppAuthor\\
+  Researcher unique identifier(s) (such as ORCID, Research ID, etc. ...): C-$8681$-$2012$ (ResearcherID)\\
+  Date of birth: March $21$, $1978$\\
+  URL for web site: \url{http://www.ph.utexas.edu/~daneel/}\\
+
+  \begin{CVstuff}{EDUCATION}
+    & $01/09/2002$ -- $23/05/2009$ & Doctor of Philosophy (Ph.D.)\\
+    &&Department of Physics, University of Texas at Austin,
+    United States\\
+    & $01/08/2000$ -- $05/05/2002$ & Master of Science (M.Sc)\\
+    &&Department of Physics, Indian Institute of Technology, Kanpur,
+    India\\
+    & $01/07/1997$ -- $30/05/2000$ & Bachelor of Science (B.sc)\\
+    &&Department of Physics, Jadavpur University, Kolkata,
+    India\\
+  \end{CVstuff}
+
+  \begin{CVstuff}{CURRENT POSITION(S)}
+    &$2011$ -- $2014$ & C.S.I.R Senior Research Associate\\
+    && Condensed Matter Physics Division, Saha Institute of Nuclear Physics, Kolkata, 
+    India\\
+  \end{CVstuff}
+
+  \begin{CVstuff}{PREVIOUS POSITIONS}
+    &$2009$ -- $2011$ & Posdoctoral Fellow\\
+    && Theoretical Sciences Department, S.N. Bose National Centre for Basic Sciences, Kolkata
+    India\\
+    &$01/06/2009$ --$ 31/08/2009$ & Posdoctoral Associate\\
+    && Center for Complex Quantum Systems, University of Texas at Austin,
+    United States\\
+  \end{CVstuff}
+
+\begin{CVstuff}{FELLOWSHIPS AND AWARDS}
+\end{CVstuff}
+\begin{enumerate}
+\item
+Scored \textbf{$\bm{1^{st}}$ rank nationwide} (India) in the \textbf{National Eligibility Test} for Lectureship held jointly by the University Grants Commission and the Council of Scientific and Industrial Research (CSIR-UGC NET) on July $17$, $2012$.
+\item
+Awarded the \textbf{Senior Research Associateship} (Scientists' Pool Scheme) from the Council of Scientific and Industrial Research (CSIR), Government of India, in $2011$.
+\item
+Awarded the \textbf{'Dr. D.S. Kothari Postdoctoral Fellowship in Sciences, Medical \& Engineering Sciences'} from the University Grants Commission (UGC) India, in $2011$.
+\item
+Scored $99.2162$ percentile nationwide ($\bm{17^{th}}$ \textbf{rank}) in the \textbf{Joint Entrance Screening Test} (JEST-$2002$) in Physics, $2002$ and scored $99.0000$ percentile nationwide ($\bm{9^{th}}$ rank) in JEST-$2000$.
+\item Awarded \textbf{Certificate of Merit} by the Indian Association of Physics Teachers (IAPT) for being placed in the Nationwide Top $1\%$ in the \textbf{National Graduates Physics Examination} (NGPE), $1997$.
+\end{enumerate}
+
+
+\begin{CVstuff}{TEACHING ACTIVITIES }
+       & Fall 2008                          &Graduate Teaching Assistant, Department of Physics, University of Texas at Austin, Austin, TX, USA\\
+
+       & Academic Year 2007-08             & Grader, Department of 
+                                                                                   Astronomy
+                                                                                   University of Texas at Austin,
+                                                                                   Austin, TX, USA\\
+      & Spring 2006                       &Graduate Teaching Assistant,               Department of Physics
+                                                                                    University of Texas at Austin,
+                                                                                   Austin, TX, USA\\
+
+      &Fall 2002 - Spring 2005            &Graduate Teaching Assistant,                        Department of Physics
+                                                                                          University of Texas at Austin,
+                                                                                            Austin, TX, USA\\
+\end{CVstuff}
+
+\begin{CVstuff}{PUBLICATIONS}
+\end{CVstuff}
+\begin{enumerate}
+\item
+\textbf{A. Roy} and A. Das\footnote{\large{\hl{Corresponding Author}}}, '\textit{Dynamical Localization in a Disordered System: Suppressing the Relaxation of a 
+Random Quantum Magnet by Coherent Periodic Drive}'.\\
+arXiv:1405.3966. Available at \url{http://arxiv.org/abs/1405.3966}
+\item
+\textbf{A. Roy}\footnotemark[\value{footnote}], '\textit{Nonequilibrium Dynamics of Ultracold Fermi Superfluids}', Invited mini-review (NCNSD $2012$),
+Eur. Phys. J. ST, {\bf 222} (3-4), 975-993 (2013).
+\item
+\textbf{A. Roy}\footnotemark[\value{footnote}] , R. Dasgupta, S. Modak, A.Das, and K. Sengupta, '\textit{ Periodic dynamics of fermionic superfluids in the bcs regime}',  J. Phys.: Condens. Matter, {\bf 25}, 205703 (2013).
+\item
+\textbf{A. Roy}\footnotemark[\value{footnote}] , '\textit{Dynamics of quantum quenching for BCS-BEC systems in the shallow BEC regime}', Eur. Phys. J. {Plus}, {\bf 127}:3, 34 (2012).
+ \item 
+\textbf{A. Roy} and L.E. Reichl\footnotemark[\value{footnote}], '\textit{Quantum Control  of Interacting Bosons in Periodic Optical Lattice}',Physica {E}, {\bf 42}, 1627-1632 (2010).
+\item
+\textbf{A. Roy} and L.E.Reichl\footnotemark[\value{footnote}], '\textit{Coherent Control of Trapped Bosons}', Phys Rev {A} {\bf 77}, 033418 (2008).
+\item
+\textbf{A. Roy} and J.K. Bhattacharjee\footnotemark[\value{footnote}],'\textit{Chaos in the Quantum Double Well Oscillator: The Ehrenfest View Revisited}' Phys. Lett. {A}, {\bf 288}/1-3 (2001).
+\end{enumerate}
+
+\pagebreak
+
+\begin{CVstuff}{PAPERS IN PREPARATION}
+\end{CVstuff}
+\begin{enumerate}
+\item
+\textbf{A. Roy} and A. Das, '\textit{Quantum control of multipartite entanglement in periodically driven quantum magnets}'.
+\item
+\textbf{A. Roy} and A. Das, '\textit{Universality in periodically driven disordered many body systems}'.
+\item
+\textbf{A. Roy} and M.V. Medvedyeva, '\textit{Periodic driving in open quantum systems out of equilibrium}'.
+\item
+\textbf{A. Roy} and K. Sengupta, '\textit{Quantum quenching in the Bose Hubbard model with a synthetic non-Abelian gauge field.}'
+\end{enumerate}
+ 
+
+
+  \begin{CVstuff}{CONFERENCE PRESENTATIONS AND POSTERS}
+  \end{CVstuff}
+\begin{enumerate}
+\item
+{\bf 2014} School on Non-linear Dynamics, Dynamical Transitions and Instabilities in Classical and Quantum Systems: Abdus Salam International Centre for Theoretical Physics, Trieste, Italy.\\
+{\it Non-equilibrium Dynamical Many Body Localization in Periodically Driven Quantum Spin - Fermion Systems :} Poster \\
+
+\item
+{\bf 2014} School and Workshop on Physics of Cold Atoms: {Harish-Chandra Research Institute, Allahabad}\\
+National level pedagogical school and research workshop reviewing research on the physics of cold atoms.\\
+
+\item
+{\bf 2013} US-India Advanced Studies Institute on Thermalization: From Glasses to Black Holes: {Indian Institute of Science, Bangalore}\\
+Summer workshop on thermalization: conceptual foundations to modern-day applications in complex condensed matter systems, quantum information theory, and string theory.\\
+
+\item
+{\bf 2013} Invited seminar: Department of Physics, Hong Kong University \\
+{\it Nonequilibrium dynamics of quenched ultracold Fermi superfluids}\\
+
+\item
+{\bf 2012} National Conference on Nonlinear Systems and Dynamics:{Indian Institute of Science Education and Research, Pune}\\
+{\it Periodic Driving in two-Dimensional BCS Systems}\\
+
+\item
+{\bf 2011} Int'l School on Topology in Quantum Matter: {Indian Institute of Science, Bangalore}\\
+Summer workshop on the Quantum Hall Effect, Topological Insulators, and Topological Quantum Computing \\
+
+\item
+{\bf 2010} STATPHYS-Kolkata VII: \hfill {Saha Institute of Nuclear Physics, Kolkata, WB, India}\\
+{\it Quantum quenching in BCS-BEC systems: A dynamical approach:} Poster \\
+
+\item
+{\bf 2009} A.P.S March Meeting, \hfill {David L. Lawrence Convention Center, Pittsburgh, PA}\\
+{\it Dynamics of Quantum Control for Bosons in Optical Lattices} Session P17: Semiconducting Qbits I, Lec P17, 15\\
+
+\item
+{\bf 2008} A.P.S March Meeting, \hfill {Morial Convention Center, New Orleans, LA} \\
+{\it Coherent Control of Trapped Bosons} Session D14: Quantum Information Science in AMO, Lec D14 2 \\
+
+ \item
+{\bf Fall 2007} Joint Meeting, Tx Sect. A.P.S et al \hfill {Dept of Physics, Texas A \& M University}\\
+{\it Coherent Control of Trapped Bosons} Session B2 AMO1: Atomic, Molecular and Optical Physics, Lec B2.1\\
+
+\end{enumerate}
+
+  \begin{CVsimplestuff}{MAJOR COLLABORATIONS}
+    Dr. Mariya V. Medvedyeva, Periodically driven open quantum dynamics out of equilibrium, Institute for Theoretical Physics, University of G\"ottingen, Germany. \\ \\
+    Professor Arnab Das, Dynamical many body localization in periodically driven quantum magnets, Theoretical Physics Department,
+    Indian Association for the Cultivation of Science, Kolkata, India. \\ \\
+    Professor Krishnendu Sengupta, Nonequilibrium dynamics of quantum fields, Theoretical Physics Department,
+    Indian Association for the Cultivation of Science, Kolkata, India. \\   \\ 
+    Professor Jayanta K. Bhattacharjee, Quantum quenches in the two-channel BCS model, Theoretical Sciences Department,
+    S.N. Bose National Centre for Basic Sciences, Kolkata, India. \\  \\    
+    Professor Linda E. Reichl, Quantum control of ultracold bosons via periodic drives, Center for Complex Quantum Systems, University of Texas at Austin, United States.  
+  \end{CVsimplestuff}
+
+\begin{CVstuff}{SUMMARY OF RESEARCH WORKS}
+\end{CVstuff}
+My primary research work has been on the nonequilibrium dynamics of nonintegrable many-particle systems, and the onset of universal behavior therein. The universal features that I am focusing on are the onset of quasi-ergodic behavior via the Generalized Gibbs Ensemble (prethermalization), and the onset of localization via the coherent destruction of tunneling. The model that I am currently studying in this context is the disordered transverse field Ising model out of equilibrium.  I am attempting an understanding of  the dynamics near the points of ordered freezing, in the spirit of similar works on the impulse quenches of such models, I have performed numerical and analytical studies on a time periodic version, where the disorder is added to the Ising spin system. The current focus is on a regime where the ordered model shows dynamical many body freezing, caused by an exotic feature of periodically driven  quantum dynamics called the coherent destruction of tunneling. Here, the evolution of certain simple 
+quantum systems can be strongly suppressed by arranging massive coherent cancellation of transition amplitudes through appropriate periodic drive. I have shown that such dynamical localization can have dramatic manifestations even in a system with extensive number of random interactions. In a disordered quantum Ising chain, I have seen that the timescale of magnetization decoherence can be enhanced by orders of magnitude by employing a periodic drive with specific values of drive parameters regardless of the initial state. My results can readily be translated to describe similar freezing in a much larger family of fermionic and bosonic systems. I have successfully analyzed the system using asymptotic RG theory in Floquet space, and the work is currently in review.
+
+In addition, I am studying the dynamics of the nonequilibrium Bose Hubbard model with a nonabelian gauge field. Utilizing a strong-coupling expansion of the model starting from the local limit, the equilibrium Mott phase can be accurately described using the exact propagators in this limit, followed by an expansion of the action to the desired order in fluctuations. Starting from this description at $t=0$, I am attempting a study of the dynamics of the system after a gauge field and annealed source terms are turned on. The gauge field now has $q$ components with $2\pi/q$ flux quanta through each lattice plaquette. The new action contains hopping terms in the presence of the gauge field, which modifies the equation of motion of the field in novel ways. My investigation is currently centered at $q=2$, where analytical solutions can be obtained in the local limit. However, taking fluctuations into account involves numerics. I am working on modifying my earlier codes to this particular problem, and refining my 
+analytical understanding of this system to simplify the numerics. 
+
+I am also working on extending my results obtained during the study of periodically driven ultracold many body systems to open quantum systems out of equilibrium, where a periodically driven fermion lattice is connected to a reservoir. The current focus is on stochastic models, where the system-bath interaction is modeled using Lindblad superoperators, and the exact dynamics can be done in the Majorana fermion representation.
+
+My previous works as a postdoc involved looking at \textbf{periodic driving of BCS systems as a quantum quench}, investigating collision-less relaxations of responses in such systems in the Bogoliubov limit. The key results, published in JPCM in $2013$ are that, \textbf{although single channel BCS systems can be mapped to Ising models via a Jordan Wigner-Fourier transformation, the equivalence is not maintained out of equilibrium} with a periodic drive. However, the \textbf{responses  and defect densities follow the same scaling laws as those obtained from Landau-Zener theory} in driven Ising systems, thus \textbf{preserving} other universal behavior such as \textbf{the Kibble-Zurek mechanism} near the quantum critical point.
+
+My second postdoctoral research project involved many body dynamics in regimes that were the opposite of those investigated during my graduate work \textit{i.e.} \textbf{quantum quenching}. The post-quench dynamics of a BCS-BEC mixture in the deep-BEC limit was investigated using \textbf{near-equilibrium approximations to the nonequilibrium Keldysh self-energy} via the Ginzburg-Landau Abrikosov-Gor'kov theory. The nonlinear dynamics of the coupled Fermi-Bose mixture showed \textbf{Hopf-like bifurcations} that caused the decaying components of the modes to vanish for small Feshbach detuning, leading to nonlinear mode interference  that persisted over long time scales. This allowed me to identify a \textbf{shallow BEC regime} before unitarity where such oscillations produced \textbf{collapse and revival} of the matter wave packet. 
+
+My graduate research works at the Center for Complex Quantum Systems, UT Austin, involved investigating the influence of \textbf{chaos in periodic quantum-controlled dynamics} of mesoscopic systems. The specific dynamics involved \textbf{varying a parameter in time} by modulated pulses of radiation that resonated with internal excitations. Our research expanded on works done earlier in the center on periodically driven ultracold atoms in optical lattices using Floquet theory, where level repulsions caused by chaos in the underlying classical dynamics were seen to affect the final outcome of a Stimulated Raman Adiabatic Passage.
+
+As an undergraduate at Jadavpur University, I worked on the problem of \textbf{deterministic chaos in the Ehrenfest dynamics of quantum double well oscillators} in the semiquantal limit. It was already established that the {semiquantal dynamics} show sensitive dependence on initial conditions due to the contributions of the fluctuations of the quantum operators causing transition to chaos from KAM tori. We conclusively demonstrated, however, that this \textbf{apparent manifestation of classical chaos in a quantum system gets suppressed at much larger time scales}, recovering the full quantum dynamics in that limit. 
+    
+\section{Capacities of the Participating Organisations}
+\label{sec:organisations}
+\begin{center}
+  {\small % \small is size 9  
+    \begin{tabular}{|p{0.3\linewidth}|p{0.65\linewidth}|}
+      \hline
+      \multicolumn{2}{|>{\columncolor{lightgray}}l|}{Beneficiary: LPTHE - CNRS (Paris)}\\
+      \hline
+      General Description & 
+      The Universit\'e Pierre et Marie Curie (Paris VI) is the largest scientific
+university in France, and a leading research center in Europe. It has 
+been ranked $5^{\rm th}$ in Europe ($22^{\rm nd}$ in the World) in the area of Natural Sciences 
+and Mathematics. LPTHE provides an excellent environment for the training of graduate
+students and
+experienced researchers. In last few years alone, the statistical physics and condensed matter 
+group hosted a number
+of post-doctoral researchers, some of them with a Marie Curie fellowship,
+having successfully
+pursued their academic career. All of them 
+collaborated
+with faculty members during their stay, and many are still continuing such
+collaborations.
+The group organizes weekly seminars, and also holds joint seminars with
+ other theory groups in the Paris area,
+providing an invaluable
+opportunity to interact with a wide group of world class scientists.
+      \\
+      \hline
+      Role and Commitment of key persons (supervisor) & The supervisor, Leticia F. Cugliandolo (full professor since $2003$)
+ has been working on the out of equilibrium dynamics of quantum 
+systems since $1998$, when she presented the first analytic study of aging in quantum 
+spin glasses. Since then, she studied quantum coarsening, the possible (or not) equilibration of 
+closed quantum interacting system, the diffusion of a quantum impurity in a quantum 
+bath, among other questions in this very active field of research. She supervised two PhD theses
+(C. Aron now at Princeton University and Julius Bonart now at Queen's College, London), 
+and two post-doc (A. Jelic, now at Universita di Roma I and 
+L. Foini, now at Universite de Geneve) on the subject of quantum non-equilibrium dynamics. 
+Being recently  named member of the Institut Universitaire de France, she
+will have a much reduced teaching load during the next five years, ensuring 
+a deep immersion in her research projects. She likes to keep active interaction
+with her students and post-docs and she plans to act similarly with A. Roy.\\
+      \hline
+      Key Research Facilities, Infrastructure and Equipment &
+  The LPTHE provides an excellent environment for theoretical research with a 
+library, access to electronic publishing online, and an up-to-date computer system 
+that allows to do numerical calculus.\\
+      \hline
+      Independent research premises? &\\
+      \hline
+      Previous Involvement in Research and Training Programmes &\\
+      \hline
+      Current involvement in Research and Training Programmes & The supervisor is a member of the IRSES project `SoftActive'
+between France, Germany and Japan. She will be the head of the French 
+node of the Training project ASPIRE to be presented for evaluation next February.
+She currently directs the PhD project of Hugo Ricateau.\\
+      \hline
+      Relevant Publications and/or research/innovation products &\begin{enumerate}
+ \item 
+ \textit{Out of equilibrium dynamics of classical and quantum complex systems}, 
+L.F. Cugliandolo,  Comptes Rendus de l'Academie de Sciences {\bf 14}, 685 (2013), T. Giamarchi ed. 
+\item
+J. Bonart and L.F. Cugliandolo ,  EPL {\bf 101} (2013) 16003.
+\item
+ J. Bonart and L.F. Cugliandolo, PRA {\bf 86}, 023636 (2012).
+\item
+ L. Foini, L.F. Cugliandolo, A. Gambassi, PRB {\bf 84}, 212404 (2011).
+\item
+C. Aron, G. Biroli, L.F. Cugliandolo, PRL {\bf 102}, 050404 (2009).
+\end{enumerate}
+     \\
+      \hline
+    \end{tabular}
+    
+    \medskip
+
+%    \begin{tabular}{|p{0.3\linewidth}|p{0.65\linewidth}|}
+%      \hline
+%      \multicolumn{2}{|>{\columncolor{lightgray}}l|}{Partner
+%        Organization Y}\\
+%      \hline    
+%      General description & N/A \\
+%      \hline    
+%      Key Persons and Expertise (supervisor) & N/A \\
+%      \hline    
+%      Key Research facilities, infrastructure and equipment & N/A\\
+%      \hline    
+%      Previous and Current Involvement in Research and Training
+%      Programmes & N/A\\
+%      \hline    
+%      Relevant Publications and/or research/innovation product &
+%      N/A\\
+%      \hline    
+%    \end{tabular}
+  }
+\end{center}
+
+\section{Ethical Aspects}
+The project is neither connected to nor in conflict with any ethical issue of any kind, including
+those mentioned in the Marie Curie Actions guideline.
+
+\section{Letters of Commitment of Partner Organisations}
+\label{sec:letters}
+The project is not connected to any partner organisations as defined in the Marie Curie Actions guideline.
+
+% -----------------------------------------------------------------------
+% End page
+
+\clearpage
+
+\MSCAendpage
+
+\end{document}
+
+
+%%% Local Variables: %%%
+%%% mode:latex %%%
+%%% ispell-local-dictionary: "british" %%%
+%%% End: %%%

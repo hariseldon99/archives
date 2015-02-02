@@ -1,0 +1,21 @@
+#!/bin/bash
+export RUNPROG="./stirap_oplattice"
+export FILENAME_ENERGY="result/energies_ttot_12000.dat"
+export FILENAME_STATE="result/state_ttot_12000.dat"
+export STDOUT_FILE="result/out_ttot_12000.dat"
+export STDERR_FILE="result/err_ttot_12000.dat"
+export T_WIN_INIT=0.0
+export T_WIN_FINAL=12000.0
+export T_WIN_TOT=12000.0
+export T_WIN_INC=1.0
+export LAMBDA_0=0.2
+export OMEGA_F=10.896058668420753
+export OMEGA_S=7.264038951734947
+export NF=3
+export NS=2
+export U0=23.0
+export KAPPA=7.287781
+export STATECHOSEN=0
+
+#nohup $RUNPROG $FILENAME_ENERGY $FILENAME_STATE $T_WIN_INIT $T_WIN_FINAL $T_WIN_TOT $T_WIN_INC $LAMBDA_0 $OMEGA_F $OMEGA_S $NF $NS $U0 $KAPPA $STATECHOSEN > $STDOUT_FILE &
+nohup $RUNPROG $FILENAME_ENERGY $FILENAME_STATE $T_WIN_INIT $T_WIN_FINAL $T_WIN_TOT $T_WIN_INC $LAMBDA_0 $OMEGA_F $OMEGA_S $NF $NS $U0 $KAPPA $STATECHOSEN > $STDOUT_FILE 2>$STDERR_FILE < /dev/null &

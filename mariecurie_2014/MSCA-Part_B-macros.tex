@@ -1,0 +1,266 @@
+%%% *-* latex-mode *-*
+% -*- coding: utf-8 -*-
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Template for MSCA Individual Fellowships
+% made by Jean-Yves Moyen
+% Jean-Yves.Moyen@lipn.univ-paris13.fr
+% @CC BY-NC
+% http://creativecommons.org/licenses/by-nc/4.0/
+
+\author{\AppAuthor}
+\title{\AppFullTitle}
+\date{\today}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- imports --
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{lmodern}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{tabularx}
+\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+\usepackage{verbatim}
+\usepackage{tikz}
+\usepackage{rotating}
+\usepackage{array}
+\usepackage{calc}
+\usepackage{footnote}
+\usepackage{adjustbox}
+\usepackage[style=verbose,backend=bibtex]{biblatex}
+\usepackage{eurosym}
+
+% -- Checkmark
+\def\checkmark{\tikz\fill[scale=0.4](0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;} 
+
+
+% -- Euro symbol
+\DeclareUnicodeCharacter{20AC}{\euro}
+
+% -- Colors
+\definecolor{darkgrey}{gray}{0.2}
+\definecolor{grey}{gray}{0.5}
+\definecolor{lightgrey}{gray}{0.8}
+\definecolor{darkblue}{rgb}{0.27,0.4,0.87}
+\definecolor{darkgreen}{rgb}{0,0.7,0}
+\definecolor{RED}{rgb}{1,0,0} % Uppercase needed in TOC...
+
+% -- Hyperref and pdf settings
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=grey,
+  citecolor=black,
+  filecolor=magenta,
+  urlcolor=blue,
+  pdfstartview=FitV,  % Fit Vertically.
+  pdfpagelayout=TwoColumnRight,  % Two pages, odd page on right.
+  pdfpagemode=UseOutlines,
+  pdftitle={\AppShortTitle},
+  pdfauthor={\AppAuthor},
+  pdfsubject={MSCA - Individual Fellowships},
+  pdfkeywords={Keywords for your project}
+}
+
+% -- TOC customisation
+\usepackage{tocloft}
+
+\tocloftpagestyle{fancy}
+
+\makeatletter
+\newcommand{\@notinpdf}[1]{%
+  \texorpdfstring{{#1}}%
+  {}}
+\newcommand{\@MakeUpper}[1]{%
+  \texorpdfstring{\expandafter\MakeUppercase\expandafter{#1}}%
+  {#1}}
+\renewcommand{\cftsecfont}{\bfseries}
+\setlength{\cftsecnumwidth}{2cm}
+\renewcommand{\cftsecaftersnum}{.}
+
+\let\Contentsline\contentsline
+\renewcommand\contentsline[4]{\Contentsline{#1}{\color{black} \@MakeUpper{#2}}{#3}{#4}}
+
+\newcommand{\@countstart}{%
+  {\color{red} \hfill \bfseries START PAGE COUNT\\ 
+    \rule[0.5\baselineskip]{\linewidth}{3pt}}}
+
+\newcommand{\@countstop}{%
+  {\color{red} \rule{\linewidth}{3pt}\\
+    \phantom{toto} \hfill \bfseries STOP PAGE COUNT -- MAX 10 PAGES}}
+
+\newcommand{\countstart}{\@countstart%
+  \addcontentsline{toc}{section}{\@notinpdf{\color{red} \underline{\hspace{10cm}
+      \bfseries START PAGE COUNT}}}}
+\newcommand{\countstop}{\@countstop%
+  \addcontentsline{toc}{section}{\@notinpdf{\color{red} $\overline{\hspace{10cm}
+      \textbf{\ STOP PAGE COUNT}}$}}}
+\makeatother
+
+\renewcommand*{\contentsname}{}
+\setcounter{tocdepth}{1}
+
+% -- Page style, headers and footers
+\pagestyle{fancy}
+\fancyhead{{\color{grey} \AppShortTitle\ -- \CallEval}}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot{}
+\fancyfoot[L]{{\color{grey} \AppShortTitle -- Part B}}
+\fancyfoot[R]{{\color{grey} \upshape Page {\thepage} of \pageref{LastPage}}}
+\renewcommand{\footrulewidth}{0pt}
+
+% Gantt diagram, uncomment to use.
+% gantt.sty can be downloaded from:
+% http://www.martin-kumm.de/wiki/doku.php?id=Projects:A_LaTeX_package_for_gantt_plots
+% \usepackage{gantt}
+
+% -- Tables tweaking
+\let\savestretch\arraystretch
+\newlength\saveclearance
+\setlength\saveclearance{\minrowclearance}
+
+\newcommand{\stretchingarray}{%
+  \renewcommand\arraystretch{2.4} \setlength\minrowclearance{2.4pt}
+}
+\newcommand{\restorearraystretch}{
+  \renewcommand\arraystretch{\savestretch}%
+  \setlength\minrowclearance{\saveclearance}%
+}
+\rowcolors{1}{grey}{}
+\newcolumntype{M}[1]{>{\centering\arraybackslash}m{#1}}
+\newcommand{\colorcell}[2]{\multicolumn{1}{|>{\columncolor{#1}}c|}{#2}}
+\newcommand{\vertical}[2]{%
+  \rotatebox{90}{\parbox{\widthof{#1}}{\begin{center}#2\end{center}}}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- Officials tips 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\makeatletter
+\ifthenelse{\boolean{@final}}{%
+  \newenvironment{official}{\comment}{\endcomment}}{%
+  \newenvironment{official}{\color{darkgreen}}{}}
+
+\ifthenelse{\boolean{@final}}{%
+  \newcommand{\footofficial}[1]{}}{%
+  \newcommand{\footofficial}[1]{\footnote{\color{darkgreen} #1}}}
+
+\ifthenelse{\boolean{@final}}{%
+  \newcommand{\inlineofficial}[1]{}}{%
+  \newcommand{\inlineofficial}[1]{{\color{darkgreen} #1}}}
+
+\ifthenelse{\boolean{@final}}{%
+  \newenvironment{jymnote}{\comment}{\endcomment}}{%
+  \newenvironment{jymnote}{\color{gray}}{}}
+
+\makeatother
+
+% -- box
+\newcommand{\important}[1]{%
+  \begin{center}
+    \setlength{\fboxrule}{1pt}\setlength{\fboxsep}{2mm}%
+    \adjustbox{minipage=\textwidth-2\fboxsep-2\fboxrule,cfbox=black}{#1}%
+  \end{center}}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% -- Start and end page customisation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Fonts for Start/end page: 12, 14, 16 and 18bp.
+\newcommand{\titlesmallfont}{\fontsize{12bp}{14.4bp}}
+\newcommand{\titlenormalfont}{\fontsize{14bp}{16.8bp}}
+\newcommand{\titlelargefont}{\fontsize{16bp}{19.2bp}}
+\newcommand{\titlehugefont}{\fontsize{18bp}{21.6bp}}
+\newcommand{\forcenewline}[1]{%
+  \ifnum#1=0
+  \else
+  \textnormal{~\\}\forcenewline{\the\numexpr#1-1\relax}
+  \fi}
+\newcommand{\sfbf}[1]{\textsf{\textbf{#1}}}
+
+
+% 'fun' with vertical alignment.
+\newcommand{\MSCAtitlepage}{%
+  \begin{center}
+    {\titlenormalfont \sfbf{Part B\\}}%
+    {\titlesmallfont \forcenewline{2}}%
+    {\fontsize{10bp}{12bp} \forcenewline{1}} % Seriously ?
+    {\titlehugefont \sfbf{START PAGE\\}}%
+    {\titlelargefont \forcenewline{3}%
+      \textsf{MARIE SK\L{}ODOWSKA--CURIE ACTIONS}\\%
+      \forcenewline{2}%
+      \sfbf{\CallName\\}%
+      \sfbf{Call: \CallID\\}%
+      \forcenewline{4}%
+      \textsf{PART B\\}%
+      \forcenewline{3}%
+      \textsf{``\AppShortTitle''\\}%
+      \forcenewline{1}%
+      \textsf{``\AppFullTitle''\\}}%
+    {\titlesmallfont \forcenewline{3}%
+      \sfbf{This proposal is to be evaluated as:\\}%
+      \forcenewline{1}%
+      \sfbf{$\mathbf{[}$\CallEval$\mathbf{]}$\\}}
+  \end{center}%
+}
+
+% 'fun' with vertical alignment.
+\newcommand{\MSCAendpage}{%
+  \begin{center}
+    {\titlehugefont \sfbf{ENDPAGE\\}}%
+    {\titlelargefont \forcenewline{3}%
+      \textsf{MARIE SK\L{}ODOWSKA--CURIE ACTIONS}\\%
+      \forcenewline{2}%
+      \sfbf{\CallName\\}%
+      \sfbf{Call: \CallID\\}%
+      \forcenewline{4}%
+      \textsf{PART B\\}%
+      \forcenewline{3}%
+      \textsf{``\AppShortTitle''\\}%
+      \forcenewline{1}%
+      \textsf{``\AppFullTitle''\\}\forcenewline{1}}%
+    {\titlesmallfont%
+      \sfbf{This proposal is to be evaluated as:\\}%
+      \forcenewline{1}%
+      \sfbf{$\mathbf{[}$\CallEval$\mathbf{]}$\\}}
+  \end{center}%
+}
+
+% -- CV
+\newcommand{\CVstartstuff}[1]{%
+  \vspace{.5cm}
+  \noindent\rlap{\raisebox{1mm}{\textbf{#1}}}
+  \rule{\textwidth}{.4pt}
+}
+
+\newenvironment{CVsimplestuff}[1]{%
+  \CVstartstuff{#1}
+  \bgroup
+}{%
+  \egroup
+}
+
+\newenvironment{CVstuff}[1]{%
+  \CVstartstuff{#1}
+  \bgroup
+  \begin{tabular}{p{.025\linewidth}p{.4\linewidth}p{.5\linewidth}}
+  }{%
+  \end{tabular}
+  \egroup
+}
+
+\newcommand{\spantext}[1]{\multicolumn{3}{p{\linewidth}}{#1}}
+
+
+
+
+%%% Local Variables: %%%
+%%% mode:latex %%%
+%%% ispell-local-dictionary: "british" %%%
+%%% End: %%%

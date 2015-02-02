@@ -1,0 +1,57 @@
+#!/bin/bash
+#
+#
+# Author: Analabha Roy <daneel@bose.res.in>, (C) 2010
+#
+# Copyright: See COPYING file that comes with this distribution
+#
+#
+export GSL_URL="http://www.gnu.org/software/gsl/"
+export GLIBDEV_URL="http://library.gnome.org/devel/glib/"
+export OPENMPI_URL="http://www.open-mpi.org/"
+#export HDF5_URL="http://www.hdfgroup.org/HDF5/"
+
+#export NUMPY_URL="http://numpy.scipy.org/"
+#export SCIPY_URL="http://www.scipy.org/"
+#export MATPLOTLIB_URL="http://matplotlib.sourceforge.net/"
+#export H5PY_URL="http://h5py.alfven.org/"
+
+echo 
+echo "Special utilities required to compile and run lzs_tls, lzs_mbt_2d:"
+echo 
+
+echo "Standard utilities (ie these should be installed by default):"
+echo "1. The pkg-config utility. GNU pkg-config found at:" `which pkg-config`
+echo "2. GNU make. GNU make found at:" `which make`
+echo "3. The C standard library (libc6-dev)."
+echo "4. Any C compiler like gcc, icc."     
+echo "5. The GNU bc arbitrary precision calculator language. "
+#echo "6. The Python programming language: binaries and libraries (tested with Python 2.6.6)"
+echo 
+     
+echo "Non-standard utilities and ways to get them (if they are unavailable in the package repositories of your OS):"
+echo "1. The GNU Scientific Library: Development headers (libgsl-dev), version 1.15 or later"
+echo "   Available at $GSL_URL" 
+echo "2. The GLib library: Development headers (libglib-dev)"
+echo "   Available at $GLIBDEV_URL"
+echo "3. Any implementation of the Message Passing Interface (MPI) standard. Tested with OpenMPI-1.4.1."
+echo "   Available at $OPENMPI_URL"
+#echo "4. Heirarchical data format (HDF5) libraries and development headers (for converting binary output)."
+#echo "   Tested with libhdf5-1.8.4"
+#echo "   Available at $HDF5_URL"
+#echo 
+
+#echo "Python modules required:"
+#echo "1. numpy: Numerical Python module."
+#echo "   Available at $NUMPY_URL"
+#echo "2. scipy: Scientific python module"
+#echo "   Available at $SCIPY_URL"
+#echo "3. matplotlib: A module for producing publication plots with python."
+#echo "   Available at $MATPLOTLIB_URL"
+#echo "4. h5py: Python module for reading and writing HDF5 files."
+#echo "   Available at $H5PY_URL"     
+#echo 
+
+echo 
+echo "See the 'notes' file for details about the programs in this package"
+echo 

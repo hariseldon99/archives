@@ -1,0 +1,54 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+ABSERROR	/home/daneel/benchmark/integrator.h	/^#define ABSERROR /;"	d
+DIM	/home/daneel/benchmark/params.h	/^#define DIM /;"	d
+DT	/home/daneel/benchmark/integrator.h	/^#define DT /;"	d
+MACHINENUM	/home/daneel/benchmark/params.h	/^#define MACHINENUM /;"	d
+N	/home/daneel/benchmark/params.h	/^#define N /;"	d
+QUASIMAX	/home/daneel/benchmark/params.h	/^#define QUASIMAX /;"	d
+RELERROR	/home/daneel/benchmark/integrator.h	/^#define RELERROR /;"	d
+TOLERANCE	/home/daneel/benchmark/algebra.h	/^#define TOLERANCE /;"	d
+YERROR	/home/daneel/benchmark/integrator.h	/^#define YERROR /;"	d
+YPRIMEERROR	/home/daneel/benchmark/integrator.h	/^#define YPRIMEERROR /;"	d
+__FUNCT__	/home/daneel/benchmark/benchmark.c	/^#define __FUNCT__ /;"	d	file:
+__FUNCT__	/home/daneel/benchmark/benchmark.c	/^#undef __FUNCT__$/;"	d	file:
+arrcopy	/home/daneel/benchmark/algebra.c	/^  arrcopy (double source[], double target[], int size)$/;"	f
+arrcopy	/home/daneel/benchmark/algebra.h	/^int arrcopy (double source[], double target[], int arrsize);$/;"	p
+c_mat	/home/daneel/benchmark/benchmark.h	/^double c_mat (int m, int n), psq_mat (int n), kdel (int i, int j);$/;"	p
+c_mat	/home/daneel/benchmark/quantum_hamilt_melements.c	/^c_mat (int np, int n)$/;"	f
+cosmatrix	/home/daneel/benchmark/params.h	/^  double cosmatrix[DIM * DIM];$/;"	m	struct:__anon1
+dim	/home/daneel/benchmark/params.h	/^  int dim;$/;"	m	struct:__anon1
+direct_prod	/home/daneel/benchmark/algebra.c	/^direct_prod (double a_real[], double a_imag[], double b_real[],$/;"	f
+direct_prod	/home/daneel/benchmark/algebra.h	/^double direct_prod (double a_real[], double a_imag[], double b_real[],$/;"	p
+drive_and_tower	/home/daneel/benchmark/params.h	/^} drive_and_tower;$/;"	t	typeref:struct:__anon1
+func	/home/daneel/benchmark/integrator.c	/^func (double t, const double y[], double dydt[], void *param)$/;"	f
+gtod_secbase	/home/daneel/benchmark/timer.h	/^double gtod_secbase = 0.0E0;$/;"	v
+gtod_timer	/home/daneel/benchmark/benchmark.h	/^double gtod_timer();$/;"	p
+gtod_timer	/home/daneel/benchmark/timer.c	/^double gtod_timer()$/;"	f
+hamilt	/home/daneel/benchmark/benchmark.h	/^double hamilt (void *param, int nt, int mt, double t);$/;"	p
+hamilt	/home/daneel/benchmark/hamiltonian.c	/^hamilt (void *param, int nt, int mt, double t)$/;"	f
+hamilt	/home/daneel/benchmark/integrator.h	/^double hamilt (void *param, int nt, int mt, double t);$/;"	p
+integrate	/home/daneel/benchmark/benchmark.h	/^int integrate (double *y, double initial, double final, void *out);$/;"	p
+integrate	/home/daneel/benchmark/integrator.c	/^integrate (double *input, double initial, double final, void *param)$/;"	f
+jac	/home/daneel/benchmark/integrator.c	/^jac (double t, const double y[], double *dfdy, double dfdt[], void *param)$/;"	f
+kappa	/home/daneel/benchmark/params.h	/^  double kappa;$/;"	m	struct:__anon1
+kdel	/home/daneel/benchmark/algebra.c	/^kdel (int i, int j)$/;"	f
+kdel	/home/daneel/benchmark/benchmark.h	/^double c_mat (int m, int n), psq_mat (int n), kdel (int i, int j);$/;"	p
+kdel	/home/daneel/benchmark/hamiltonian.h	/^double kdel (int, int), psq_mat (int);$/;"	p
+kdel	/home/daneel/benchmark/quantum_hamilt_melements.c	/^double kdel (int, int);$/;"	p	file:
+lambda	/home/daneel/benchmark/params.h	/^  double lambda;$/;"	m	struct:__anon1
+main	/home/daneel/benchmark/benchmark.c	/^main (int argc, char **argv)$/;"	f
+omega	/home/daneel/benchmark/params.h	/^  double omega;$/;"	m	struct:__anon1
+print_arr	/home/daneel/benchmark/algebra.c	/^print_arr (double matrix_real[], double matrix_imag[], int size)$/;"	f
+psq	/home/daneel/benchmark/params.h	/^  double psq[DIM];$/;"	m	struct:__anon1
+psq_mat	/home/daneel/benchmark/benchmark.h	/^double c_mat (int m, int n), psq_mat (int n), kdel (int i, int j);$/;"	p
+psq_mat	/home/daneel/benchmark/hamiltonian.h	/^double kdel (int, int), psq_mat (int);$/;"	p
+psq_mat	/home/daneel/benchmark/quantum_hamilt_melements.c	/^psq_mat (int n)$/;"	f
+select_vec	/home/daneel/benchmark/algebra.c	/^select_vec (double matrix[], int j, double vector[], int row_col_size)$/;"	f
+select_vec	/home/daneel/benchmark/algebra.h	/^int select_vec (double matrix[], int i, double vector[], int rowsize);$/;"	p
+write_vec	/home/daneel/benchmark/algebra.c	/^write_vec (double vector[], int j, double matrix[], int row_col_size)$/;"	f
+write_vec	/home/daneel/benchmark/algebra.h	/^int write_vec (double vector[], int i, double matrix[], int rowsize);$/;"	p

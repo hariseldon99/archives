@@ -1,0 +1,11 @@
+#!/bin/bash
+                                                                               #first line specifies shell
+export FILENAME="result/sosdata3.dat"                                                                              #Output filename
+export ENERGY=-3.7195803113749006                                                                           #Energy value
+export X1INIT=-0.835022                                                                                                                                         #Initial value of X1
+export P1INIT=-0.167555                                                                                            #initial value of P1
+export X1FINAL=0.825923                                                                                                          #final value of X1
+export P1FINAL=0.121391                                                                                            #final value of P1
+                                                                                                                                                        #use ibrun for "pam -g mvapich_wrapper"
+#./poincare $FILENAME $X1INIT $P1INIT $X1FINAL $P1FINAL $ENERGY 
+mpiexec -n 2 ./poincare $FILENAME $X1INIT $P1INIT $X1FINAL $P1FINAL $ENERGY 

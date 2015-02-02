@@ -1,0 +1,25 @@
+This Source Tree Contains proggies for evaluating classical and quantum surfaces of section for 2 bosons in a double well. The double well is of the type:
+V(x)= V0 * ( -2 * x^2 + x^4 )
+
+The interaction between the particles:
+
+1. classical poincare section:
+A normalized gaussian of amplitude U0 and spread SIGMA, and a delta function:
+U(x1,x2) = U0/SQRT(2*Pi*SIGMA) * EXP(-(x1-x2)^2/(2 * SIGMA^2))
+
+2. quantum poincare section:
+A delta function of amplitude U0:
+U(x1,x2) = U0 DELTA(x1-x2)
+The quantum surface of section is a husimi plot of a particular quantum state, performed by a simple finite element method using the particle in a box as a representation.
+
+The relevant parameters are set by the header file "params.h". Edit them as necessary
+
+Be sure to edit the Makefile to point to thelocation of the GNU Scientific libraries, as well as the compiler program.
+
+The programs are compiled thus:
+1."make poincare" compiles the poincare section program
+2."make husimi" compiles the husimi function program
+
+
+
+

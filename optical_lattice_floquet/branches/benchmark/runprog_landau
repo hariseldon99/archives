@@ -1,0 +1,11 @@
+#!/bin/bash
+export RUNPROG="./benchmark"
+export NUMPROCS=2 #Number of iterations of each integration chosen
+export FILENAME="result/times.dat"
+export N_INIT=1
+export N_FINAL=100
+export KAPPA=12.0
+export LAMBDA=0.3
+export OMEGA=24.0
+
+mpirun -np $NUMPROCS -hostfile hosts.landau $RUNPROG $FILENAME $N_INIT $N_FINAL $KAPPA $LAMBDA $OMEGA

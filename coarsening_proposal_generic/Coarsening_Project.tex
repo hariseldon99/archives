@@ -1,0 +1,366 @@
+\documentclass[a4paper,11pt,color]{article}
+
+%% A template for the IEF Marie Curie action
+%
+% All very simple code, and standard packages. The bibliography uses
+% IEEEtranSA style, which is very similar to alpha.
+%
+% The ethical issues tables in section B6 could be forced in place
+% more elegantly, but it worked for me.
+%
+% DOUBLE CHECK the details of your call before using this
+% template. The name of the sections and subsections changes from call
+% to call, and new sections are added and removed.
+%
+% August 2010, v1.0 - Jesus Nuevo-Chiquero.
+%
+% This file is provided AS IS, with absolutely no warranty of
+% anything. You are welcome to use it, but you assume all risks.
+\usepackage[defaultsans]{droidsans}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be typewriter style
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{eurosym}
+\usepackage{lastpage}
+\usepackage{tabularx}
+%\usepackage{xspace}
+%\usepackage{lineno}
+%\linenumbers
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{7}
+
+\usepackage{setspace}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{xcolor}
+%\usepackage[square, comma, numbers, sort&compress]{natbib}
+\usepackage[numbers, comma, sort&compress]{natbib}
+
+\usepackage{hyperref}
+\voffset=-2.5cm
+%\hoffset=-0.5cm
+\textheight=24cm
+%\textwidth=17cm
+\headheight=14pt
+\textwidth=16cm
+\oddsidemargin=0pt
+\evensidemargin=0pt
+
+\def\Acronimo{CCQS}
+%CCQS == Coarsening in Classical and Quantum Systems
+\hypersetup{
+    pdftitle={\Acronimo{}},    % title
+    pdfauthor={Analabha Roy},
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+  }
+
+
+\pagestyle{fancy}
+\fancyfoot[C]{Part B - Page \thepage~of \pageref{LastPage}}
+\fancyhead[l]{\Acronimo{} - Analabha Roy 
+}
+\fancyhead[r]{ Coarsening in Classical and Quantum Systems}
+
+
+\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\thesection}{\thesection}
+\def\thesection{B\arabic{section}} 
+
+
+\let\oldthebibliography=\thebibliography
+  \let\endoldthebibliography=\endthebibliography
+  \renewenvironment{thebibliography}[1]{%
+    \begin{oldthebibliography}{#1}%
+      \setlength{\parskip}{0ex}%
+      \setlength{\itemsep}{0ex}%
+  }%
+  {%
+    \end{oldthebibliography}%
+  }
+
+
+
+ \title{Research Proposal:\\Coarsening in Classical and Quantum Systems}
+ \author{Analabha Roy\\CSIR Senior Research Associate,\\ Saha Institute of Nuclear Physics,\\ Kolkata, India}
+ \date{\today}
+
+\begin{document}
+ \maketitle
+
+
+\section{Overview of Proposal:}
+\label{sec:sciTec}
+\label{sec:sciTecQuality}
+
+The main objective of this research project is to understand the dynamics of \textbf{Coarsening} in \textbf{Classical} and \textbf{Quantum} many body \textbf{Systems} (referred to in this proposal by the acronym '\textbf{CCQS}') while they are approaching equilibrium after a quench in a  {parameter}; a particularly important aspect of the nonequilibrium dynamics seen in recent experiments. The focus lies on classical nonequilibrium dynamical systems in a closed field theory with a double well potential, the classical evolution of an open system like coupled micromagnets, and the nonequilibrium dynamics of quantum-quenched dissipative spin heterostructures. A 'quench' is defined as the \textit{diabatic} variation of a thermodynamic or other  {parameter} of the system, such as temperature, mass or chemical potential. In a diabatic variation, the rate at which the quench rate is faster than all the relaxation rates intrinsic to the system, thus allowing for approximating the change as instantaneous. Coarsening after a quench constitutes the dynamical process by which the characteristic  {size} of the support of the equilibrium phases grows.
+
+The first part of the proposed project involves the analytical and numerical study of classical quenches in $\phi^4$ theory in  {$d$} 
+dimension. The potential in the free energy will be constructed to $4^{th}$ order in the order parameter $\phi$. The evolution of the free-energy landscape with the control parameter driving a phase transition guides the understanding of the post-quench dynamics from, typically, a disordered phase to an ordered phase. If the free energy lacks a cubic term, then phase transitions are of second order, driven by instability at criticality. If the free energy has cubic terms, then phase transitions are of first order, driven by metastability at criticality. The project involves the study of quenches to criticality, as well as sub-critical quenches by investigating the microscopic dynamics of the order parameter. This dynamics is governed by a quasi-Newtonian equation of motion with,  {for example, 
+a thermalized ensemble of initial states in a free-energy landscape with a single minimum at zero field}. Other descriptions, such as the field 
+large-$\mathcal{N}$ approximation, will also be considered. After an instantaneous quench at $t=0$ the subsequent evolution of the order parameter is performed by integrating the equation of motion with the post-quenched parameters  {(the double-well structure)}. The first question to be explored is whether the system re-thermalizes to a steady state or not. This can be tested via the fluctuation-dissipation theorem, where linear responses to a small external field are compared to the field correlations. Subsequently, the temporal behavior of the equilibrating field will be studied. During the \textit{coarsening} process, space-time correlations allow for the identification of a growing length scale. Domains of equilibrium states are expected to grow with this length scale, and a spatial profile of 'kinks' or  {`domain walls'} that demarcate these regions is expected to provide insights into the coarsening process. Domain walls will be identified, whose gradients are expected to 
+drive coarsening. Coarsening is thus expected to drive the nucleation and growth of domains that support the equilibrium phase. Near criticality, divergences of time scales via critical slowing down is also known to occur, and the scaling behavior of critical quenches will also be studied analytically using scaling and renormalization group arguments. In addition, the system is expected to build fractal clusters~\cite{fractal}
+and the equilibrium and nonequilibrium contributions are multiplicatively separated. In sub-critical quenches, the asymptotic behavior of the characteristic coarsening scale relative to equilibrium correlations is expected to be governed by the dynamic scaling hypothesis~\cite{dynscal}, where the domain structure is statistically independent of time when lengths are scaled accordingly. The goals of this phase of the project are the profiling of the universal scaling laws described above, as well as the evolution of structure interfaces in the order parameter field through the kinks in the solution.
+
+The next phase of the project will involve studying the dynamics of open classical systems \textit{viz.} systems connected to a thermal reservoir. Classical $\phi^4$ theories of the type discussed above can be linked to closed Ising magnets, and open systems of magnets can be studied by dealing with the interactions between magnetic moments on sub-micrometre length scales. These are governed by competition between the dipolar energy and the exchange energy, the outcome of which governs the long range magnetic order, if any. In such systems, the Landau-Lifshitz-Gilbert (LLG) equation is a key model for describing the nonlinear evolution. The micromagnets in this model are built up from fermions acting under a time-dependent Zeeman field, and the Ehrenfest dynamics therein~\cite{gll:review}, together with a phenomenological damping term that takes into account the saturation of the magnetization. The dynamics of many coupled LLG systems connected to a thermal bath (canonical ensemble at equilibrium) can be 
+formulated from here. In the continuum limit, the result is a nonlinear partial differential equation in the spin field. The ensuing dynamics links the physics to the microscopic Hamiltonian structures of spin lattices, including planar XX and XY structures~\cite{laxmanan:xxxy} whose quantum evolution will be studied later. This phase of the project aims to formulate the LLG dynamics after a quench across the magnetic phase transitions, and investigate the transition to equilibration in a manner similar to that described in the paragraph above. The dynamics in these systems have wide interdisciplinary relevance. They have intimate connections with many of the well-known integrable soliton equations, including nonlinear Schr\"odinger and sine-Gordon equations~\cite{laxmanan:xxxy,sinegordon}. The possibility of classical chaos in such systems~\cite{gll:review} leads it to other disciplines, such as power generation and synchronization~\cite{lax13} and inhomogeneous filaments~\cite{lax14}. 
+
+The logical continuation of this project now draws attention to the quantum realm in such systems. At zero temperature, a closed quantum system is said to be in equilibrium when it is at the ground state (or generally speaking, any eigenstate) of the Hamiltonian of the system. At finite temperatures, a system at equilibrium can no longer be found in a single eigenstate, but is delocalized in the Hilbert space over many eigenstates with a thermal probability distribution. A \textit{diabatic quench} causes a  {parameter} to vary rapidly in comparison to the relaxation times of the excitations, both thermal and quantum. The nonequilibrium dynamics of such closed quantum systems after a quench, although an ongoing subject of study,  {are somewhat better understood than their open counterparts}, and involve principles like dephasing~\cite{thermalization} 
+and the Eigenstate Thermalization hypothesis~\cite{thermalization,krishrev}, the Kibble-Zurek mechanism~\cite{bikashbabu}, Landau-Zener tunneling~\cite{bikashbabu}, semiclassical mean field dynamics like those obtained from the Gross-Pitaevski equation for Bose Einstein condensates~\cite{colrev} and the Ginzburg Landau equation for superconductivity~\cite{rammer}, diagrammatic perturbation theory~\cite{gorkov, volkov}, and others. The quantum dynamics part of this research project will involve the application of some of the above-mentioned ideas, as well as newer stochastic methods, to \textit{open quantum systems} \textit{viz.} systems that can exchange energy via connections to a reservoir of heat. Away from $T=0$, the pure quantum dynamics has to be weighed by the thermal probabilities of the initial state that is presumed to be in thermal equilibrium. For open systems, such dynamics can be studied by completely specifying the nature of the reservoir, and treat the coupled system + reservoir as a closed 
+quantum system, or by treating the reservoir stochastically. The nonequilibrium dynamics, thus formulated, allows the profiling of local quantum correlations and coarse-grained responses whose 
+spatial extent described coarsening that is expected to grow towards the steady state. Analytics will involve modeling such systems by \textit{spin chain heterostructures}~\cite{arrachea},  constructed by linking finite or semi-infinite XX or XY spin chains (of various anisotropies) to each other at their ends. This model is analogous to well-established models that describe transport in many body systems, as well as nano and mesoscopic systems~\cite{arrachea,openspin, imry}. The dissipative dynamics of the central chain after a quench can thus be obtained from the Hamiltonian quantum dynamics of the entire system of links. Such systems can be mapped onto p-wave BCS superconducting fermions, and the nonequilibrium Dyson equation can be formulated in a manner similar to~\cite{gorkov, volkov}. Post-quench dynamics can be studied by solving the resultant equations for the local fermion correlations by diagrammatic approximations to the nonequilibrium self-energy, either in the collisionless regime~\cite{volkov,
+ncnsd2012}, or in the regime where collisions are rapid enough to have relaxed away and only order parameter dynamics remains~\cite{ncnsd2012}. The steady state properties of such systems have already been investigated in the context of thermal transport by Arrachea \textit{et. al.}~\cite{arrachea}, and can easily be adapted to dynamics farther from equilibrium. In this manner, the slow collision dynamics (in the mean field or with Gaussian fluctuations) can be mapped onto a set of nonlinear Schr\"odinger equations coupled by a self consistent update for the superconducting gap. The scaling laws for the responses in such dynamics will also be obtained.  In the fast collision regime, the dynamics can be approximated to be near equilibrium, with a classical $\phi^4$ approximation in the path integral (see~\cite{colrev} and the references therein). This allows for a connection with the classical problem discussed above, and similar numerical methods can be used. Evaluating the Goldstone modes by a linear 
+stability analysis of the dynamics around equilibrium will also be done so as to profile excitations and fluctuations about the mean field.
+
+The approach detailed above, with the full Hamiltonian description of the system and reservoir, comes at the price of numerous analytical and computational difficulties. The final part of this project will deal with alternative formalisms of open quantum systems, where the reduced density matrix is evolved in time by a master equation, allowing for the inclusion of incoherent processes which represent interactions with a reservoir. Such dynamics is regularly studied in quantum optics using the \textbf{Kossakowski-Lindblad equation}, where it can represent absorption or emission from a reservoir~\cite{lindblad}. Here, the regular Liouvillean dynamics of closed quantum density matrices are dressed with Lindblad bath operators which act locally on degrees of freedom near each bath. Although this approach is not universally valid, it is a reasonable starting point to study Heisenberg chains such as the ones being studied in this project~\cite{spinchains:lindblad}. Here, as in the previous paragraph, the ends of 
+a finite spin chain are coupled to canonical Lindblad spin operators whose amplitudes are determined by the thermodynamics of the reservoir.  This approach is computationally simpler, and the density matrix for such a mixed system can be solved using DMRG methods. The dynamics of coarsening in Lindblad systems can be solved after a quench in this manner.
+
+Coarsening is a very basic aspect of non-equilibrium quantum dynamics. Understanding it would shine light on a vast landscape of quantum phenomena ranging from the process of defect generation in critical quantum relaxation~\cite{relaxation}, thermalization of a closed many-body quantum system~\cite{krishrev, thermalization}, thermalization and effective temperatures of open quantum systems~\cite{thermopen}, glassy systems~\cite{glassy}, mesoscopic systems~\cite{meso}, to the operation of near future quantum devices like an analog quantum computer~\cite{annealing}. The potential and the target of our project, as well as its methodologies, are thus genuinely interdisciplinary and of very broad interest.
+ 
+\section{Research methodology and approach}
+\label{sec:research_methodology}
+
+The interdisciplinary nature of the project links it to  a diverse set of topics in theoretical physics, necessitating interaction between scientists from different disciplines. The researcher (Analabha Roy) has already experienced enough in the field of nonequilibrium many body dynamics, and will compile his techniques with the Host. In addition, the basic framework for solving the quantum problem has been formulated by Profs G. Lozano and L. Arrachea (Universidad de Buenos Aires, Argentina)~\cite{arrachea, arrachea2}, as well as A.A. Aligia (Bariloche Atomic Centre, San Carlos de Bariloche, Argentina). 
+
+The project will combine  multiple methods and paradigms in physics to characterize the general aspects of coarsening in non-equilibrium dynamics. Numerical methods to be used will constitute a variety of simulation algorithms for solving  large nonlinear differential equations and exact diagonalization methods; the researcher already has sound experience with these methods. The key methods used will constitute execution in parallel processor grids with an atomic decomposition of the spatial grid, followed by ghost cell updates using the Message Passing Interface for each time step. Time steps can be performed by conventional quadrature and finite element methods, or more modern symplectic integrators appropriate for Hamiltonian systems~\cite{symplectic}.   {The onset of chaos in the coupled LLG problem via period-doubling bifurcation is of particular interest}~\cite{gll:review}, and analytical treatments of period doubling bifurcation via renormalization group techniques and the analysis of Feigenbaum numbers~\cite{hilborn} will be used. The quantum problem will be tackled both analytically and numerically. Analytical techniques in the quantum realm involve the Keldysh theory of nonequilibrium quantum fields as applied to spin chain heterostructures. Starting from the BCS model that is equivalent to that of the spin chains, fermion correlations can be obtained using diagrammatic approximations to the nonequilibrium self-energy, and solving the Dyson equation for complex contour-ordered Keldysh Green's function after mapping it to the real time Green's functions in the RAK formalism using Langreth's theorem and associated rules~\cite{rammer, arrachea}. Different regimes of interest can be identified by associating them with collision rates, and scaling laws for defects obtained  using modified Landau-Zener theory~\cite{fermidyn}, as well as other methods that are more appropriate for 
+impulse quenches (see~\cite{ncnsd2012} and references therein). The physics of dissipation in quantum systems can also be modeled by a second approach using Lindblad operators. The ensuing Kossakowski-Lindblad dynamics  can be simulated numerically with novel approaches to the time evolved block decimation using the Density Matrix Renormalization Group technique, including the implementation of these algorithms in distributed grid computing environments using established parallel-programming paradigms~\cite{white:pdmrg}. The researcher plans to collaborate with Profs D. Rossini and R. Fazio, and combine their expertise in this area to tackle this final part.
+
+\section{Relationship to current research in the field}
+\label{sec:originality}
+Nonequilibrium dynamics of many body systems provide deep insights into several complex phenomena in nature, ranging from the behavior around phase transitions in bulk matter, biological systems,  to the creation of the known forces of the universe. In addition, studies in Quantum Annealing indicates that there is a very deep relationship between different aspects of quantum non-equilibrium dynamics and the basic limitations of a quantum computer~\cite{annealing}. Nonequilibrium dynamics of open quantum systems are an important part of quantum optics, quantum measurement theory, quantum statistical mechanics, quantum information science, quantum cosmology and semiclassical approximations~\cite{openq}. 
+
+Due to the many implications and interdisciplinary nature of nonequilibrium dynamics, a comprehensive study of the approach to equilibrium in such systems would provide insights into the behavior of several nonequilibrium systems that are actively studied in academia. Also, the LLG equations are related to the dynamics of several important physical systems such as ferromagnets, vortex filaments, moving space curves, $\sigma$-models in particle physics, the spin torque effect in 
+nanoferromagnets in the field of spintronics, and others (see~\cite{gll:review} and references therein). The classical kinetics of systems undergoing critical dynamics or an ordering process is an important problem for condensed matter physicists, since it enhances the generic understanding of phenomena not fully understood, such as pattern formation in nonequilibrium systems and the approach to equilibrium in systems with slow dynamics. In addition, most treatments of open quantum systems out of equilibrium have involved phenomenological approaches using generic structures~\cite{openspin}, restricting  themselves to the equilibrium steady state, and often performed within the linear response regime with small temperature gradients. Therefore, it is desirable to develop alternative approaches designed to treat systems far out of equilibrium while they are coarsening towards steady states. The Keldysh formalism provides such a framework, and a detailed investigation of nonequilibrium dynamics using Keldysh 
+methods is sorely needed in order to form a complete understanding of such systems. Finally, the detailed study of quantum nonequilibrium dynamics has, for the most part, been restricted to closed quantum systems, and studies of open systems have begun fairly recently~\cite{daley}. Thus, studies of coarsening in open quantum systems will contribute towards a fledgling area of research. 
+
+\section{Relevance of the project}
+\label{sec:timeliness}
+The relevance and importance of this upcoming research field cannot be overstated in view of several theoretical and experimental developments that took place over the last couple of decades, such as spinodal decomposition~\cite{spinodal}, magnetic domain growth in ferromagnets~\cite{puri}, and in the field of ultracold atoms (see~\cite{ultracold, colrev, fermidyn,ncnsd2012} and references therein). The high degree of tunability in ultracold systems allow the rendering of slow dynamics in regimes that are inaccessible in traditional solid state systems. In view of these recent experimental advances allowing for the study of coarsening in quantum quenches, the above project is no mere theoretical investigation with far-fetched implications. All the results that will be determined by this project lie well within experimentally accessible regimes, and can be tested using the diverse array of experimental setups mentioned above. The publications that arise out of this project will propose experimental set-ups in 
+cold-atomic systems where the theoretical observations may be
+realized and tested. The project would thus closely follow the development of these experimental fields. The quantities that this project aims to evaluate in order to investigate coarsening can be directly measured in the laboratory using both \textit{in situ}, as well as time-of-flight measurements of ultracold atoms. Recent theoretical advances in the dynamics of coarsening are providing deep insights regarding various aspects of critical phenomena, and are particularly relevant in quantum faster information processing and computation. Therefore, the time is ripe for a research project that coordinates all these developments.
+
+\section{Feasibility and Work  Plan}
+\label{sec:feasibility}
+The work plan for the proposed project consists of \textit{work elements} and the time period during which each element will be implemented. Work elements consists of background research, exploration of methodologies, objectives and milestones that can help assess the progress of the project. The various work elements, their feasibility and credibility, and their time schedule are given below.
+\textbf{Work Elements: Feasibility and Credibility}
+\begin{enumerate}{
+\item
+Literature search and reading.
+\item
+Enhanced interaction with collaborators: G. Lozano and L. Arrachea (Universidad de Buenos Aires, Argentina), D. Rossini (Scuola Normale Superiore, Pisa, Italy) and R. Fazio (Center for Quantum Technologies, National University of Singapore). Visit institutes of the collaborators, or invite collaborators to host institute for brief enhanced interaction and formulation of problem.
+\item
+Setting up and exploring techniques I: Numerical methods for $1-d$ classical scalar $\phi^4$ quench dynamics, designing appropriate algorithms in clusters using Message Passing Interfaces for parallelization. Research on numerical techniques for solving coupled Gilbert Landau-Lifshitz equations. Adapt algorithms from previous $\phi^4$ quenches  accordingly.
+\item
+Work out problems and write papers I: Run code developed in previous work element for various quenches and other parameters. Consider quenches at or near criticality and away from criticality. Choose appropriate scale for coarse-graining responses and study the time evolution of the same. Characterize domain walls and their evolution. Look at universal scaling properties near criticality and attempt to make analytical approximations to compare with numerical results. Collate results and write papers with host and collaborators for peer-review.
+\item
+Present previous results at key conferences and symposia. Engage with peer-reviewers and implement suggestions, corrections and modifications, if any.
+\item
+Setting up and exploring techniques II: Evaluation of exact differential equation of the nonequilibrium dynamics of quantum spin systems from Keldysh theory and designing algorithms for solving the same. Research on optimal implementations of quantum time-evolved block decimation/DMRG methods for stochastic Lindblad systems using parallel processors and design algorithm for quantum XY spin system coupled to a bath and quenched.
+\item
+Work out problems and write papers II: Run code developed in previous work element for various quenches and other parameters. Similar approach to the classical case. Find coarse graining and profile. Check scaling. Collate and send drafts for peer-review
+\item
+Present previous results at key conferences and symposia. Engage with peer-reviewers.
+\item
+Begin considering neighbouring areas and improvements on work done so far.
+\item
+Implement in more complex systems and problems.
+}\end{enumerate}
+\newpage
+\textbf{Time schedule of activities through Bar Diagram:} \\
+
+See above for key to work elements\\
+
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+0 & 2 & 4 & 6 & 8 & 10 & 12 & 14 & 16 & 18 & 20 & 22 & 24 \\
+\hline
+Month/ & & & & & & & & & & & & \\
+Work Element & & & & & & & & & & & &  \\
+\hline
+1 & \cellcolor[gray]{0} & & & & & & & & & & & \\
+\hline
+2 & & \cellcolor[gray]{0}& & & & & & & & & &   \\
+\hline
+3 & & & \cellcolor[gray]{0} &\cellcolor[gray]{0} & & & & & & & & \\
+\hline
+4 & & & & \cellcolor[gray]{0}& \cellcolor[gray]{0}& & & & & & & \\
+\hline
+5 & & & & & &\cellcolor[gray]{0} & & & & & & \\
+\hline
+6 &  &  &  &  &  &\cellcolor[gray]{0}   &\cellcolor[gray]{0}  & \cellcolor[gray]{0} &  &  & &  \\
+\hline
+7 &  &  &  &  &  &  &  & \cellcolor[gray]{0}& \cellcolor[gray]{0}  &  & &  \\
+\hline
+8 &  &  &  &  &  &  &  & & &\cellcolor[gray]{0}   &  &  \\
+\hline
+9 &  &  &  &  &  &  &  & & & \cellcolor[gray]{0} &\cellcolor[gray]{0}  &  \\
+\hline
+10 &  &  &  &  &  &  &  & & & & \cellcolor[gray]{0}&\cellcolor[gray]{0}   \\
+\hline
+\end{tabular}
+
+\begin{thebibliography}{}
+
+\bibitem{fractal}
+J.D. Gunton, M. San Miguel, and P.S. Sahni, in \textit{Phase Transitions and Critical Phenomena}, C. Domb
+and J.L. Lebowitz eds. (Academic Press, New York, 1983)  {\bf 8} 267; H. Furukawa, Adv. Phys. {\bf 6}, 703 (1985);
+J. Langer, in \textit{Solids Far From Equilibrium}, C. Godr'eche ed. (Cambridge University Press, Cambridge, 1992).
+
+\bibitem{dynscal}
+B.I. Halperin and P.C. Hohenberg, Phys. Rev. {\bf 177}:2, 952 (1969).
+
+\bibitem{gll:review}
+M. Lakshmanan,  Phil. Trans. R. Soc. A {\bf 369}:1939 1280-1300 (2011).
+
+\bibitem{laxmanan:xxxy}
+M. Lakshmanan and A. Saxena, Physica D {\bf 237} 885-897 (2008); J. A. G. Roberts and C.J. Thompson, J. Phys. A {\bf 21} 1769-1780 (1988).
+
+\bibitem{sinegordon}
+M. Daniel and L. Kavitha, Phys. Rev. B {\bf 66} 184433 (2002); H.J. Mikeska and M. Steiner, Adv. Phys. {\bf40}:3 191-356 (1991). 
+
+\bibitem{lax13}
+J. Grollier, V. Cross  and A. Fert, Phys. Rev. B {\bf 73} 060409 (2006).
+
+\bibitem{lax14}
+Y.B. Bazaliy, B.A. Jones and S.C. Zhang, Phys. Rev. B {\bf 69} 094421 (2004).
+
+\bibitem{thermalization}
+M. Rigol, V. Dunjko, and M. Olshanii, Nature 452, 854 (2008).
+
+\bibitem{krishrev}
+A. Polkovnikov, K. Sengupta, A. Silva, M. Vengalattore, Rev. Mod. Phys. \textbf{83}, 863 (2011).
+
+\bibitem{bikashbabu}
+A. Dutta, U. Divakaran, D. Sen, B.K. Chakrabarti, T.F. Rosenbaum, G. Aeppli, arXiv:1012:0653 (unpublished).
+
+\bibitem{colrev}
+A. Roy, Eur. Phys. J. {Plus}, {\bf 127}:3, 34 (2012).
+
+\bibitem{rammer}
+J. Rammer, \textit{Quantum Field Theory of Non-equilibrium States} (Cambridge University Press, Cambridge 2007).
+
+\bibitem{gorkov}
+L.P. Gorkov, G.M. Eliashberg, Sov. Phys. JETP \textbf{27}, 328 (1968).
+
+\bibitem{volkov}
+A.F. Volkov, Sh.M. Kogan, Sov. Phys. JETP \textbf{38}(5), 1018 (1974).
+
+\bibitem{arrachea}
+L. Arrachea, G. S. Lozano, and A. A. Aligia, Phys. Rev. B {\bf 80}, 014425 (2009).
+
+\bibitem{openspin}
+M. Michel, O. Hess,  H. Wichterich and J. Gemmer, Phys. Rev. B {\bf 77}, 104303 (2008) 
+
+\bibitem{imry}
+Y. Imry, \textit{Introduction to Mesoscopic Physics}, (Oxford University Press, 1997).
+
+\bibitem{ncnsd2012}
+A. Roy, \textit{Nonequilibrium Dynamics of Ultracold Fermi Superfluids}, Invited mini-review (NCNSD $2012$),
+Eur. Phys. J. ST, {\bf 222} (3-4), 975-993 (2013).
+
+\bibitem{lindblad}
+A. Kossakowski, Rep. Math. Phys. {\bf 3} 247 (1972); G. Lindblad , Commun. Math. Phys. {\bf 48} 119 (1976).
+
+\bibitem{spinchains:lindblad}
+S. Clark, J. Prior, M. J. Hartmann, D. Jaksch, and M. B. Plenio, New J. Phys. {\bf 12}, 025005 (2010).
+
+\bibitem{relaxation}
+W. H. Zurek, U. Dorner, and P. Zoller, Phys. Rev. Lett. {\bf 95}, 105701 (2005).
+
+\bibitem{thermopen}
+A. Caso, L. Arrachea, G. S. Lozano, Eur. Phys, J B, {\bf 85}:266, (2012).
+
+\bibitem{glassy}
+L. F. Cugliandolo and J. Kurchan, Phys. Rev. Lett. {\bf 71}, 173-176 (1993) 
+
+\bibitem{meso}
+L. Arrachea and L. F. Cugliandolo, Europhys. Lett. 70 642 (2005).
+
+\bibitem{annealing}
+Arnab Das and B. K. Chakrabarti Eds., \textit{Quantum Annealing and Related Optimization Methods}, Lecture Note in Physics, {\bf 679}, Springer-Verlag, Heidelberg (2005).
+
+\bibitem{arrachea2}
+L. Arrachea, Phys. Rev. B {\bf 79}, 104513 (2009) 
+
+\bibitem{symplectic}
+E. Forest and R.D. Ruth, Physica D {\bf 43} 105 (1990); H. Yoshida, Phys. Lett. A {\bf 150} (5-7):262 (1990).
+
+\bibitem{hilborn}
+R. Hilborn, \textit{Chaos and Nonlinear Dynamics: An Introduction for Scientists and Engineers}, (Oxford University Press, USA, 2001).
+
+\bibitem{fermidyn}
+A.Roy, R. Dasgupta, S. Modak, A.Das, and K. Sengupta,  J. Phys.: Condens. Matter, {\bf 25}, 205703 (2013).
+
+\bibitem{white:pdmrg}
+E. M. Stoudenmire and S. R. White, Phys. Rev. B {\bf 87}, 155137 (2013).
+
+\bibitem{openq}
+Breuer, Heinz-Peter; F. Petruccione. \textit{The Theory of Open Quantum Systems}, (Oxford University Press 2007).
+
+\bibitem{daley}
+W. Yi, S. Diehl, A. J. Daley and P. Zoller, New J. Phys. {\bf 14}, 055002 (2012).
+
+\bibitem{spinodal}
+A. Sicilia, Y. Sarrazin, J.J. Arenzon, A.J. Bray, L.F. Cugliandolo, Phys. Rev. E {\bf 80} 031121 (2009).
+
+\bibitem{puri}
+S. Puri, \textit{Kinetics of Phase Transitions}, S. Puri and V. Wadhawan eds. (CRC Press, Boca Raton 2009).
+
+\bibitem{ultracold}
+M. Lewenstein, A. Sanpera, V. Ahufinger, B. Damski, A. Sen De, U. Sen, Adv. Phys. {\bf 56}
+243 (2007).
+
+\bibitem{Cuku} 
+L. F. Cugliandolo and J. Kurchan,  Phys. Rev. Lett. {\bf 71}, 173-176 (1993).
+
+\bibitem{Bocukume}
+J-P Bouchaud, L. F. Cugliandolo, J. Kurchan, and M. M\'ezard, Physica A {\bf 226}:3-4, 243-273 (1996).
+
+%\bibitem{Cukupe}
+%L. F. Cugliandolo, J. Kurchan, and L. Peliti,  Phys. Rev. E {\bf 55}, 3898-3914 (1997). 
+
+%\bibitem{Focuga}
+%L. Foini, L. F. Cugliandolo, and A. Gambassi, Phys. Rev. B {\bf 84}, 212404 (2011).
+
+%\bibitem{mcranking}
+%QS rankings for the Universit\'e Pierre et Marie Curie can be found at \url{http://www.topuniversities.com/universities/universit\%C3\%A9-pierre-et-marie-curie-upmc}
+
+%\bibitem{frif}
+%The F\'ed\'eration de Recherche Interactions Fondamentales (FRIF) combines several laboratories around a common project and brings together three laboratories in Paris \textit{viz.} the LPNHE, the LPT-ENS and LPTHE . It focuses on theoretical physics and experimental particle physics and astroparticle physics. Details can be found at  \url{http://www.lpthe.jussieu.fr/fed/}.
+
+\bibitem{floquet:oplattice} 
+A. Roy and L.E. Reichl,  Physica {E}, {\bf 42}, 1627-1632 (2010). 
+
+\bibitem{floquet:dblwell}
+A. Roy and L.E. Reichl,  Phys. Rev. {A} {\bf 77}, 033418 (2008).
+
+\bibitem{myfirstpaper}
+A. Roy and J.K. Bhattacharjee, Phys. Lett. {A}, {\bf 288}/1-3 (2001).
+
+\bibitem{patsch}
+A.K. Pattanayak and W.C. Schieve, Phys. Rev. Lett. {\bf 72}, 2855 (1994).
+
+\bibitem{stirap}
+K. Na and L.E. Reichl, Phys. Rev. A {\bf 70}, 063405 (2004); K. Na and L.E. Reichl, Phys. Rev. A {\bf 72}, 013402 (2005); B. P. Holder and L. E. Reichl, Phys. Rev. A {\bf 72}, 043408 (2005).
+
+\bibitem{colrev:expt}
+M. Greiner, O. Mandel, T. W. H\"ansch, and I. Bloch, Nature, {\bf 419}:51-54 (2002).
+
+\bibitem{colrev:dicke}
+H.B. Huang, C.X. Yang, L.J. Sun, L. Chen, and J. Li, Physics Letters A, {\bf 372} (36):5748-5753 (2008).
+
+
+\bibitem{scimpact}
+D.A. King, Nature {\bf 430}, 311-316 (2004). Also see D. Dickson, \textit{China, Brazil and India lead southern science output}, SciDev.Net ($16/04/2004$), link: \url{http://www.scidev.net/global/policy/news/china-brazil-and-india-lead-southern-science-outp.html}.
+
+\bibitem{indoaglob}
+The Royal Society, \textit{Knowledge, networks and nations, Final report}, RS Policy document 03/11
+Issued: March 2011 DES2096, ISBN: $9780854038909$, Available online at \url{http://royalsociety.org/policy/projects/knowledge-networks-nations/report/}.
+\end{thebibliography}
+
+\end{document}

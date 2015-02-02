@@ -1,0 +1,10 @@
+# KDevelop Custom Project File List
+Makefile
+classical_hamilt_fn.c
+classical_integrator.c
+husimi.c
+husimi_integrals.c
+params.h
+poincare.c
+quantum_hamilt_melements.c
+undriven_hamilt.c

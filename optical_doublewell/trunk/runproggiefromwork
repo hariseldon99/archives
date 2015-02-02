@@ -1,0 +1,19 @@
+#@ shell = /bin/csh 
+#@ initialdir = /work/utexas/ph/daneel
+#@ job_name = Floquet_e_11
+#@ input = /dev/null 
+#@ output = $(job_name).o$(jobid) 
+#@ error = $(job_name).o$(jobid) 
+#@ job_type = parallel 
+#@ environment = COPY_ALL; LL_JOB=TRUE; 
+#@ resources = ConsumableCpus(8) ConsumableMemory(1000mb)
+#@ wall_clock_limit = 24:00:00 
+#@ node = 1
+#@ tasks_per_node = 1
+#@ node_usage = not_shared
+#@ notify_user = daneel@physics.utexas.edu
+#@ notification = error
+#@ class = high
+#@ queue 
+setenv OMP_NUM_THREADS 8
+./11.out

@@ -1,0 +1,25 @@
+#@ shell = /bin/csh
+#@ initialdir = /work/utexas/ph/daneel
+#@ job_name = poincare
+#@ input = /dev/null
+#@ output = $(job_name).o$(jobid)
+#@ error = $(job_name).o$(jobid)
+#@ job_type = parallel
+#@ environment = COPY_ALL; MP_SINGLE_THREAD=yes;
+#@ resources = ConsumableCpus(1) ConsumableMemory(100mb)
+#@ network.MPI_LAPI = sn_all, not_shared, US
+#@ wall_clock_limit = 00:10:00
+#@ node = 1
+#@ tasks_per_node = 8
+#@ node_usage = not_shared
+#@ notify_user = daneel@physics.utexas.edu
+#@ notification = error
+#@ class = normal
+#@ queue 
+setenv FILENAME "result/sosdata.dat"
+setenv X1INIT 0.0
+setenv P1INIT 0.0
+setenv X1FINAL 0.0
+setenv P1FINAL 0.5
+setenv ENERGY 1.0
+./poincare $FILENAME $X1INIT $P1INIT $X1FINAL $P1FINAL $ENERGY

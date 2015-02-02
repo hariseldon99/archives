@@ -1,0 +1,38 @@
+CC=`which mpicc`
+GSL_LOC = ${HOME}/bin/gsl-config --cflags
+GSL_FLAGS= ${HOME}/bin/gsl-config --libs
+GLIB_LOC = pkg-config --cflags --libs glib-2.0
+GLIB_FLAGS = pkg-config --libs glib-2.0
+CFLAGS= -Wall -O3 -c -fopenmp
+
+#Note: To disable the use of ATLAS for BLAS operations, comment the line below
+#LD_FLAGS=-lgsl -lcblas -latlas -lm
+
+WORK=${PWD}
+CC_COMPILE=$(CC) `$(GLIB_LOC)` `$(GSL_LOC)` $(CFLAGS) $<
+BIN_NAMES=isingrand_parallel heff_res_parallel
+
+#Dependencies
+OBJECTS=initconds.o responses.o gsl_determinant_complex.o
+
+.DEFAULT_GOAL := all
+
+all: $(BIN_NAMES)
+
+%.o:%.c %.h params.h
+	$(CC_COMPILE)
+
+isingrand_parallel: isingrand_parallel.o integrator_isingrand.o $(OBJECTS) params.h
+	$(CC) isingrand_parallel.o integrator_isingrand.o $(OBJECTS) `$(GLIB_FLAGS)` `$(GSL_FLAGS)` -Wl,-Bdynamic -fopenmp -o $@
+
+heff_res_parallel: heff_res_parallel.o integrator_heffres.o $(OBJECTS) params.h
+	$(CC) heff_res_parallel.o integrator_heffres.o $(OBJECTS) `$(GLIB_FLAGS)` `$(GSL_FLAGS)` -Wl,-Bdynamic -fopenmp -o $@
+
+allclean: clean resclean
+
+clean:
+	rm -f *.o* *.txt *~ $(BIN_NAMES)
+
+resclean:
+	${RM} *.dat *result/*
+	${RM} -r *result_*
