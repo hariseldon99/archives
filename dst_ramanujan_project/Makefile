@@ -1,6 +1,6 @@
 WORK=${PWD}
 TAR=/bin/tar
-NAME=qerr_proj
+NAME=dst_ramanujan
 BIBTEX=true
 USE_PDFLATEX=true
 VIEWPDF=okular

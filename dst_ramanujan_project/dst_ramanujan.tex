@@ -1,0 +1,211 @@
+\documentclass[a4paper,11pt,color]{article}
+
+\usepackage{bera}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be typewriter style
+\usepackage[latin1]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{eurosym}
+\usepackage{lastpage}
+\usepackage{tabularx}
+%\usepackage{xspace}
+%\usepackage{lineno}
+%\linenumbers
+%\usepackage{draftwatermark}
+%\SetWatermarkScale{7}
+
+\usepackage{setspace}
+
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{colortbl}
+\usepackage{xcolor}
+\usepackage[square, comma, numbers, sort&compress]{natbib}
+%\usepackage[margin=0.5in]{geometry}
+
+\usepackage{hyperref}
+\voffset=-2.5cm
+%\hoffset=-0.5cm
+\textheight=24cm
+%\textwidth=17cm
+\headheight=14pt
+\textwidth=16cm
+\oddsidemargin=0pt
+\evensidemargin=0pt
+
+\def\Acronimo{Universality and  Quantum Information in the Dynamics\\ of Nonintegrable Systems}
+\hypersetup{
+    pdftitle={\Acronimo{}, DST Ramanujan - 2016},    % title
+    pdfauthor={Analabha Roy},
+    colorlinks=true,
+    citecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+  }
+
+
+\pagestyle{fancy}
+\fancyfoot[C]{Page \thepage~of \pageref{LastPage}}
+\fancyhead[l]{\Acronimo{}}
+\fancyhead[r]{Analabha Roy \\ DST Ramanujan Fellowship -2016}
+
+
+\renewcommand{\headrulewidth}{0pt}
+%\renewcommand{\thesection}{\thesection}
+%\def\thesection{Sec. \arabic{section}} 
+
+
+\let\oldthebibliography=\thebibliography
+  \let\endoldthebibliography=\endthebibliography
+  \renewenvironment{thebibliography}[1]{%
+    \begin{oldthebibliography}{#1}%
+      \setlength{\parskip}{0ex}%
+      \setlength{\itemsep}{0ex}%
+  }%
+  {%
+    \end{oldthebibliography}%
+  }
+
+\begin{document}
+% \maketitle
+
+\phantom{a}
+\vspace{15mm}
+\begin{center}
+
+
+        \Large{
+      
+     
+        \textbf{STARTPAGE}
+  
+          \vspace{15mm}
+          RESEARCH PROPOSAL\\
+          DEPARTMENT OF SCIENCE AND TECHNOLOGY\\
+          \vspace{1cm}
+          
+          \textbf{DST Ramanujan Fellowship}\\
+          \textbf{2016}
+          \vspace{2cm}                   
+
+          
+          \vspace{2cm}
+
+          ``\Acronimo''
+                    \vspace{2cm}
+
+          Analabha Roy \\
+          Postdoctoral Research Fellow \\
+          National Institute for Theoretical Physics (NiTheP) \\
+          Stellenbosch, South Africa \\
+          email: \url{daneel@sun.ac.za}
+        }
+
+  \end{center}
+\vspace{1cm}
+
+\pagebreak
+
+ 
+\section{Research and technological quality}
+\label{sec:sciTecQuality}
+
+The main objective of this research project is to investigate the onset of phase transitions and universal behavior of responses and correlations in nonintegrable quantum systems out of equilibrium. This is a particularly important aspect of nonequilibrium dynamics that has been realized in recent experiments. A quantum phase transition is a phase transition between different phases of matter at zero temperature, accessed by varying a physical parameter. The transition describes an abrupt change in the many-body quantum state due to its quantum fluctuations. Like their classical counterparts, quantum phase transitions are characterized by 'critical points', the end points of a phase equilibrium profile.  Critical phenomena is the study of the physics of these critical points, specifically phenomena associated with 
+divergence of correlation lengths and time scales. Integrability ...
+
+The focus of this project lies on 2-dimensional quntum systems, where established analytical and numerical techniques, usually applicable to 1d systems, tend to break down or are rendered unfeasable. The goal is to investigate theoretical models of many body systems where the universal scaling properties of varous qualtities near quantum critical points can be studied after breaking integrability.  An additional goal is to determine the fate of known universalities in nonequilibrium statistical physics in such systems. These range from the Kibble Zurek mechanism to dynamical many body freezing and many body localization in periodically driven systems. During the course of this project, various quantum phase transitions, ranging from ferromagnetism in spins to superradiance in open quantum systems, will be investigated by analytical and numerical techniques.
+
+The idea of universality asserts that that critical phenomena, such as diverging length, time and energy  scales at the critical point in a phase transition, involve scaling laws that do not depend on the exact details of the Hamiltonian or energy spectrum, but on symmetry properties and dimensionality that are common to a wide range of quantum many body systems. In addition, universality near criticality leads  to the well-known Kibble-Zurek mechanism (KZM) in dynamics. KZM described the formation of topological defects in a system which is driven through a continuous phase transition at finite rate. It exploits the critical slowing down in the neighbourhood of the critical point, this is, the divergence of the relaxation time of the system. The critical slowing down of defect dynamics causes strong deviations from the adiabatic behaviour obtained by continuing the equilibrium energy spectrum in time. KZM predicts the typical size of the domains in the broken symmetry phase to be fixed by the value of the equilibrium correlation length at the 'freeze-out time', and that this prediction is universal, with the power exponent given in terms of the dynamical critical exponents of the transition. Another universal phenomena of interest is that of dynamical many body freezing' in time-periodically driven quantum systems. This phenomenon causes prepared quantum states to freeze to their equilibrium values if the system is periodically driven at a known resonance [REFS]. This occurs due to Quantum Interference, a linear superposition of quantum states that can cause responses to grow and fall in time, much like the bow waves from the wakes of many different boats moving in parallel criss-cross over water. A great many such interfering terms can cancel out all time evolution (the crest of one wave falling on the trough of another), and lead to freezing (calm waters). 
+
+The first part of the proposed project involves refining existing numerical techniques that replicate known critical behaviour in integrable 2d spin models.  For one-dimensional lattices, reliable numerical methods, often based on matrix product states, are available to complement experimental efforts, at least up to intermediate time scales \cite{Schollwoeck11}. However, in two- and higher-dimensional lattices, computational methods for strongly interacting quantum systems out of equilibrium are scarce, and further development of simulation methods is much needed. Thus, novel simulation methods will be applied by combining phase space sampling of the initial state with a systematic semi-classical expansion based on the Born-Bogoliubov-Green-Kirkwood-Yvon (BBGKY) hierarchy. The sampling scheme is inspired by a discrete Wigner representation for spin systems as introduced by Wootters [Wootters87], and was recently used in the context of dynamical simulations [Schachenmayer\_etal15,Schachenmayer\_etalNJP15]. However, that scheme only incorporates quantum fluctuations on the level of the initial state and thus accounts for them only for short times. We combine the sampling with a systematic way of deriving time evolution equations for arbitrary $n$-point correlations, based on the BBGKY hierarchy [Bonitz, OUR-REF].  In 2 dimensions, critical phenomena have been studied analytically in the Kitaev model [REF-AMITDA]. The model itself is built from the Hamiltonian of a hexagonal lattice system with spin exchange parameters that dependent on direction [REF]. This is one of the few 2d spin models that are integrable, and plaquette operators that commute with the Hamiltonian can be used to diagonalize the system and obtain all eigenstates in the basis of Majorana fermions[REF]. If the approximate simulation methods described above can replicate these known exponents in the Kitaev model, then it will validate the continuation of these simulations to nonintegrable systems. Therefore, the Kitaev model presents itself as  an ideal benchmark for comparison. 
+
+The next phase of the project will involve breaking integrability in the Kitaev honeycomb lattice. This can be acheived in a straightforward manner by introducing long range interactions, since the Kitaev Hamiltonian remains local in the Majorana basis only if the interactions extend to nearest neighbours in the honeycomb. Long range interactions can be introduced by placing a power law dependence on the inter-site exchange energies. A rapid decay in the exchange as a function of inter-site distance can effectively replicate the nearest-neighbour case, and reducing the power law coefficient can continuously extend the interactions to longer ranges[REF]. The BBGKY-Wigner simulation method has shown incredible promise in this area [OUT-REF], and has already acquired interest from numerous experimental groupd working on 2d quantum dynamics. This method can be readily adapted to investigate the onset of universality in long range systems, as well as with anisotropic deformations in the honeycomb lattice that can lead to alternative lattice structures, such as triangular as well as square lattices. In addition, the introduction of integrability breaking fields in the Kitaev Hamiltonian can also be simulated. The simulation of the dynamics  in a time-independent Hamiltionian will be started from a fully polarized initial state , whose discrete Wigner representation is relatively simple. The possibility of using prepared ground states will also be explored. In the latter case, the system will be 'quenched' from the ground state of the Hamiltonian at $t=0$. A 'quench' is defined as the \textit{diabatic} variation of a {parameter} of the system, such as  mass, chemical potential, an external field or the exchange energies themselves. In a diabatic variation, the quench rate is faster than all the relaxation rates intrinsic to the system, thus allowing for approximating the change as instantaneous. The system, initially at an eigenstate, will no longer be in an eigenstate after the quench, thus allowing it to evolve dynamically in a time independent Hamiltonian. In all cases, the onset of universality will be determined by looking at the time dependence of inter-site correlations. It is known that the spread of correlations between two sites in the nearest neighbour case is bound inside an effective 'light cone' given by the Lieb - Robinson velocity [REF]. Long range interactions distort this cone and allow for superluminal correlations [REF-KASTNER-MAURITZ], and are expected to affect the scaling laws near the quantum critical point. Thus, the dynamics of responses are expected to differ from the Kibble-Zurek mechanism as obtained in the integrable case, and studying the changes in the critical exponents, or the scaling laws themselves, offers an exciting possibility with this approach. In addition, the onset of freezing as described above is also expected to change. Freezing is known to persist in disordered systems [REF], as well as in the presence of integrability breaking fields [REF]. The persistence of this phenomenon is observed in long range interactions in 2d has far-reaching implications in quantum information science, and will be investigated in a future phase of this project.
+
+The next phase of the project will involve  open quantum systems, where the reduced density matrix is evolved in time by a master equation, allowing for the inclusion of incoherent processes which represent interactions with a reservoir. Such dynamics is regularly studied in quantum optics using the \textbf{Kossakowski-Lindblad equation}, where it can represent absorption or emission from a reservoir~\cite{lindblad}. Here, the regular Liouvillean dynamics of closed quantum density matrices are dressed with Lindblad bath operators which act locally on degrees of freedom near each bath. Although this approach is not universally valid, it is a reasonable starting point to study radiative systems such as the ones being studied in this project~\cite{spinchains:lindblad}.  This approach is computationally simpler, and the density matrix for such a mixed system can be solved using phase space methods detailed below.
+
+The final part of this project will deal with the physics of quantum information propagation in nonintegrable many body systems, and determining if the phenomenologies associated with periodically driving a many body system such as a quantum logic gate, can allow for
+controlling and directing the outcome of quantum logic gates. This leads to the possibility of eliminating the degradation of quantum information, either due to isolated bit flips or due to decoherence induced by thermalization or coupling to the external environment.  The realization of quantum error correction in the manner described above is not obvious currently, since entangled qubit states may have unusual responses to driven dynamics that have not been studied so far. This final phase  involves the study of complex many body logic gates realized by interacting quantum magnets. Each magnet, capable of storing a single qubit, interacts with its neighbours via amplitude hopping, as well as repulsive pseudopotentials. These interactions can be modeled in various ways, and our focus will be on one dimensional Ising-like spins with nearest neighbour as well as long range interactions. 
+
+Our studies will require the use of extensive analytical and numerical techniques which are described in the sections below. My own interest in nonequilibrium dynamics stems from my undergraduate years, and I have been working with great passion in this field throughout my graduate and postdoctoral years. I have worked with many luminaries in this area, both in India as well as in the United States, and have developed an extensive network of academics who work in nonequilibrium dynamics. The opportunity offered by this fellowship will give me the ability to achieve the goals described above much more efficiently. I will present the results in national and international conferences in the BRICS countries, Europe, North America and East-Southeast Asia. I should also be able to host frequent academic visits of my colleagues to my host institute, as well as get funding for academic visits of my own to them. I will deliver seminars that will increase interest in this area among undergraduate and graduate students, attracting potential research collaborators.  Given the importance that many academics, as well as people in the industry and government, attach to the prospects of quantum computing and nonequilibrium dynamics, this research project will help keep my host at the final frontier of modern technology.
+ 
+\section{Appropriateness of research methodology and approach}
+\label{sec:research_methodology}
+
+The interdisciplinary nature of the project links it to  a diverse set of topics in theoretical physics, necessitating interaction between scientists from different disciplines. The researcher (Analabha Roy) has already experienced enough in the field of nonequilibrium many body dynamics. In addition, the basic framework for solving the quantum problem has been formulated by ...
+The project involves a joint collaboration with them towards applying their formalism to ...
+
+The project will combine  multiple methods and paradigms in physics to characterize the general aspects o...
+. Numerical methods to be used will constitute a variety of simulation algorithms for solving  large nonlinear differential equations and exact diagonalization methods; I already have sound experience with these methods. The key methods used will constitute execution in parallel processor grids with an atomic decomposition of the spatial grid, followed by ghost cell updates using the Message Passing Interface for each time step. Time steps can be performed by conventional quadrature and finite element methods, or more modern symplectic integrators appropriate for Hamiltonian systems~\cite{symplectic}. Analytical techniques in the quantum realm involve ... The physics of dissipation in quantum systems can also be modeled by a second approach using Lindblad operators. The ensuing Kossakowski-Lindblad dynamics  can be simulated numerically with novel approaches to the time evolved block decimation using the Density Matrix Renormalization Group technique, including the implementation of these algorithms in distributed grid computing environments using established parallel-programming paradigms~\cite{white:pdmrg}. The researcher and host plans to collaborate with Profs D. Rossini and R. Fazio, and combine their expertise in this area to tackle this final part.
+
+\section{Originality and innovative nature of the project, and relationship to the 'state of the art' of research in the field}
+\label{sec:originality}
+Nonequilibrium dynamics of many body systems provide deep insights into several complex phenomena in nature, ranging from the behavior around phase transitions in bulk matter, biological systems,  to the creation of the known forces of the universe. In addition, studies in Quantum Annealing indicates that there is a very deep relationship between different aspects of quantum non-equilibrium dynamics and the basic limitations of a quantum computer~\cite{annealing}. Nonequilibrium dynamics of open quantum systems are an important part of quantum optics, quantum measurement theory, quantum statistical mechanics, quantum information science, quantum cosmology and semiclassical approximations~\cite{openq}. 
+
+Due to the many implications and interdisciplinary nature of nonequilibrium dynamics, a comprehensive study of ... would provide insights into the behavior of several nonequilibrium systems that are actively studied in academia. ... Thus, these studies will contribute towards a fledgling area of research. 
+
+\section{Timeliness, relevance, and impact of the project}
+\label{sec:timeliness}
+The relevance and importance of this upcoming research field cannot be overstated in view of several theoretical and experimental developments that took place over the last couple of decades, ...
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Collaborations and Transfer of Knowledge}
+\label{sec:training}
+\subsection{Clarity and quality of the transfer of knowledge objectives}
+\label{sec:training_objectives}
+The objectives for the transfer of knowledge are
+\begin{enumerate}
+ \item 
+ Transfer of knowledge and expertise in nonequilibrium statistical mechanics and many body theory
+ \item
+ Training of graduate students in many body theory and computational methods for complex dynamical many body problems using parallel clusters.
+ \item
+ Facilitation of existing collaborations, as well as initiation of new ones,  between researcher and several international collaborators across multiple institutions, bringing their knowledge into India by the researcher.
+ \item
+ Presentation of research results in multiple conferences and symposia in India and internationally. The researcher plans to present his works in at least $5$ international meetings of particular interest for the dissemination of the research to others; the March Meeting of the American Physical Society, the National Conference of Nonlinear Systems and Dynamics, India, the STATPHYS conference of the  International Union of Pure and Applied Physics, the Annual Beg Rohu Summer School on topics in statistical physics and condensed matter in Saint-Pierre-Quiberon, Brittany, France, the IWNET workshops organized by ETH-Zurich, and others.
+\end{enumerate}
+
+
+\subsection{Potential of transferring knowledge to  host}
+\label{sec:training_relevance}
+With the proposed project, I will bring several sorts of unique knowledge to the host institute. First, I will bring my extensive expertise in numerical methods, developed over the course of my graduate studies at the University of Texas, as well as my various postdoctoral appointnents in India and abroad.  My knowledge of several paradigms in parallel computing, such as multithreading, message passing, OpenCL and computing using graphical processors, as well as scripting for parallel grid engines, will ensure that numerical work is done in a timely and efficient manner, optimally utilizing the computational resources available at the host in order to solve the problems detailed in this proposal.
+
+Second, I will also bring my extensive knowledge of condensed matter theory, many body physics, nonequilibrium field theory, nonlinear dynamics, dynamical systems and chaos to the host. My knowledge in these areas were developed under the guidance of several leaders in their respective fields in the United States and India, such as Prof L.E. Reichl (The transition to Chaos in classical and quantum systems), Prof J.K. Bhattacharjee (Nonlinear Dynamics), Prof. Krishnendu Sengupta (Nonequilibrium Field Theory), Dr. Arnab Das (Dynamics of many particle systems), Prof. Michael Kastner (Condensed Matter Theory) and others. My theoretical background encompasses numerous topics, such as  Floquet theory, Keldysh theory as applied to the Fermi BCS problem, Bose Einstein Condensates and the time dependent Gross-Pitaevski Bogoliubov equations and the study of excitations therein, and others. All of this knowledge will be brought to the host organization and group and shared with colleagues, graduate students and other postdocs.
+
+Finally, I have made plans to enhance existing collaborations with colleagues in order to expedite the research work detailed in this proposal. Collaborators include  Profs. Michael Kastner  (National Institute for Theoretical Physics and University of Stellenbosch, South Africa), Prof. Romain Bachelard (Centro de Pesquisa em Optica e Fotonica, Sao Carlos, Brazil)  , Prof  John J. Bollinger (National Institute of Standards and Technology, Boulder, CO USA), and others. These collaborations will help bring the knowledge and expertise gained by the collaborators from abroad into India via interactions with myself. In addition, the conferences  mentioned in the previous subsection will also be attended by most condensed matter and statistical physicists in the world, and lectures and unofficial interactions therein will further disseminate expertise accordingly.
+
+
+\begin{thebibliography}{}
+\bibitem {Schollwoeck11}%
+ {U.} {Schollw{\"o}ck},  {Ann. Phys. (NY)}\textbf {{326}}, {96}  {2011}.
+  
+\bibitem{thermalization}
+M. Rigol, V. Dunjko, and M. Olshanii, Nature 452, 854 (2008).
+
+\bibitem{krishrev}
+A. Polkovnikov, K. Sengupta, A. Silva, M. Vengalattore, Rev. Mod. Phys. \textbf{83}, 863 (2011).
+
+\bibitem{ncnsd2012}
+A. Roy, \textit{Nonequilibrium Dynamics of Ultracold Fermi Superfluids}, Invited mini-review (NCNSD $2012$),
+Eur. Phys. J. ST, {\bf 222} (3-4), 975-993 (2013).
+
+\bibitem{lindblad}
+A. Kossakowski, Rep. Math. Phys. {\bf 3} 247 (1972); G. Lindblad , Commun. Math. Phys. {\bf 48} 119 (1976).
+
+\bibitem{relaxation}
+W. H. Zurek, U. Dorner, and P. Zoller, Phys. Rev. Lett. {\bf 95}, 105701 (2005).
+
+\bibitem{annealing}
+Arnab Das and B. K. Chakrabarti Eds., \textit{Quantum Annealing and Related Optimization Methods}, Lecture Note in Physics, {\bf 679}, Springer-Verlag, Heidelberg (2005).
+
+\bibitem{fermidyn}
+A.Roy, R. Dasgupta, S. Modak, A.Das, and K. Sengupta,  J. Phys.: Condens. Matter, {\bf 25}, 205703 (2013).
+
+\bibitem{floquet:oplattice} 
+A. Roy and L.E. Reichl,  Physica {E}, {\bf 42}, 1627-1632 (2010). 
+
+\bibitem{floquet:dblwell}
+A. Roy and L.E. Reichl,  Phys. Rev. {A} {\bf 77}, 033418 (2008).
+
+\end{thebibliography}
+
+\end{document}
