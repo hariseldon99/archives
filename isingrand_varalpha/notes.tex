@@ -1,0 +1,373 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{bera}
+\usepackage[centertags]{amsmath}
+\usepackage{amssymb}
+\usepackage{mathdots}
+\usepackage{empheq}
+\usepackage{dsfont}
+\usepackage{amsfonts}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[margin=1.0in]{geometry}
+\usepackage[square, comma, numbers, sort&compress]{natbib}
+
+\newcommand{\shellcmd}[1]{\\\indent\indent\texttt{\footnotesize\$ #1}\\}
+
+% Command "alignedbox{}{}" for a box within an align environment
+% Source: http://www.latex-community.org/forum/viewtopic.php?f=46&t=8144
+\newlength\dlf  % Define a new measure, dlf
+\newcommand\alignedbox[2]{
+% Argument #1 = before & if there were no box (lhs)
+% Argument #2 = after & if there were no box (rhs)
+&  % Alignment sign of the line
+{
+\settowidth\dlf{$\displaystyle #1$} 
+    % The width of \dlf is the width of the lhs, with a displaystyle font
+\addtolength\dlf{\fboxsep+\fboxrule} 
+    % Add to it the distance to the box, and the width of the line of the box
+\hspace{-\dlf} 
+    % Move everything dlf units to the left, so that & #1 #2 is aligned under #1 & #2
+\boxed{#1 #2}
+    % Put a box around lhs and rhs
+}
+}
+
+%opening
+\title{Algorithm for periodic quantum dynamics of a random Ising chain}
+\author{Analabha Roy}
+
+\begin{document}
+
+\maketitle
+
+\section{\sc Introduction}
+\label{sec:intro}
+This algorithm integrates the dynamics of the following Ising model
+\begin{equation} \label{H_OBC}
+H(t) = -  \frac{J}{2} \sum_i^{L-1}  \left(1+\alpha J_i\right) \left(c^{\dagger}_i c^{\dagger}_{i+1} + c^{\dagger}_i c_{i+1}  + {\rm h.c.}\right) 
+    -  \sum_i^{L} \bigg\{h(t)+\alpha h_i\bigg\} c^{\dagger}_i c_i \;,
+\end{equation}
+where $h(t)$ can be $h_0\cos{\omega t}$ or $h_0 \left(t/\tau\right)$ as in~\cite{isingrand}. The quantities $J_i$ and $h_i$ are random numbers, either uniform in the range $(-\sigma,\sigma)$, or Gaussian with a standard deviation of $\sigma$. The Hamiltonian can be written as a sum of the time-driven Ising Hamiltonian $ H_D(t)$ and a disordered Ising Hamiltonian whose contribution is controlled by a weak perturbative term $\alpha$. Thus,
+\begin{eqnarray}
+H(t)&=& H_D(t)+\alpha H_R.
+\end{eqnarray}
+The object is to do a general study of the model dynamics, and investigate the dynamics of an arbitrary initial state when $H_D(t)$ is at resonance and exotically freezes the unperturbed Hamiltonian~\cite{arnab1}. The full model can, via Jordan Wigner Transformation, be mapped to the dynamics below~\cite{isingrand}
+\begin{empheq} [box=\fbox]{align}
+\label{BdG_tdep:eqn}
+i\frac{d}{dt}u_{i\mu}(t) &=  
+{2} \sum_{j=1}^{L} \left[A_{i,j}(t)u_{j\mu}(t)+B^o_{i,j}(t)v_{j\mu}(t) \right] 
+\nonumber \\
+i\frac{d}{dt}v_{i\mu}(t) \!\! &= 
+-{2}\sum_{j=1}^{L} \left[A_{i,j}(t)v_{j\mu}(t)+B^o_{i,j}(t)u_{j\mu}(t) \right].
+\end{empheq}
+Here $A$ and $B^o$ are real $L\times L$ matrices. The matrix $A=A^d(t)+A^o$, where $A^d_{i,j}(t)=-\left[h(t)+\alpha h_i\right]\delta_{i,j}/2$ is diagonal. The
+non-zero elements of $A^o$ and $B^o$ are given by $A^o_{i,i+1}=A^o_{i+1,i}=-J (1+\alpha J_i) /4$, $B^o_{i,i+1}=-B^o_{i+1,i}=- J (1+\alpha J_i)/4$. Furthermore, the system state is characterized by two \textit{complex} $L\times L$ matrices $u$ and $v$, whose columns are the $L$-dimensional vectors $u_\mu$ and $v_\mu$ for $\mu=1,\dots,L$. Note that, for $\alpha=0.0$, the system is perfectly ordered and evolves in time as a driven Ising model along the lines of~\cite{arnab1}. However, there is a factor of $2$ difference in the amplitudes from~\cite{arnab1}. Thus, exotic freezing in our model occurs when the following resonance condition is met
+\begin{equation}
+\label{eq:freezing}
+\mathcal{J}_0(\eta)=0,
+\end{equation}
+for periodic driving with $h(t)=h_0 \cos{\omega t}$. Here, $\eta\equiv {2h_0}/{\omega}$, and $\mathcal{J}_0(x)$ is the zeroth order Bessel Function, and arises from the dominant term in the Fourier series expansion for $|\psi(t)\rangle = \exp{\left[-i\int^t_0 \mathrm{d}\tau\; H(\tau)\right]}|\psi(0)\rangle$ in the instantaneous rest frame of the drive signal~\cite{arnab1}.
+
+We now discuss setting the initial conditions. At $t=0$, we define the invertible transformation
+\begin{eqnarray}
+\label{eq:gammadef}
+\gamma_\mu &\equiv& \sum^L_{j=1} \left(u^\ast_{j\mu}c_j+v^\ast_{j\mu}c^\dagger_j\right), \nonumber \\
+c_i &=& \sum^L_{\mu=1} \left(u_{i\mu}\gamma_\mu+v^\ast_{i\mu}\gamma^\dagger_\mu\right),
+\end{eqnarray}
+such that the state is given by $|\psi(0)\rangle \sim \prod_\mu \gamma_\mu|0\rangle$. In general, the operator $\gamma_\nu$ annihilates this state, and so represents the vacuum of the $\gamma$ particles. The $u_{ij}$ and $v_{ij}$ can be chosen to diagonalize the Hamiltonian at $t=0$, in which case the $\gamma_\nu$s are Boglon quasiparticles. \textbf{In general, we are we are not doing so, although this is what was done in}~\cite{isingrand}. The dynamics in eqns~\ref{BdG_tdep:eqn} continues this transformation in time, thus
+\begin{equation}
+\label{eq:gammat}
+\gamma_\mu(t) \equiv \sum^L_{j=1} \bigg[u^\ast_{j\mu}(t)c_j+v^\ast_{j\mu}(t)c^\dagger_j\bigg].
+\end{equation}
+In the Schr\"odinger picture, the state of the system can be said to evolve as 
+\begin{eqnarray}
+\label{eq:psit}
+|\psi(t)\rangle  &=&   \frac{1}{\sqrt{n(t)}}\ \prod_i \gamma_i(t)|0\rangle,\nonumber \\
+n(t)           &\equiv&  \langle 0 |\prod_j \gamma^\dagger_j(t)\gamma_j(t)|0\rangle.
+\end{eqnarray}
+We now define the matrices $u(t)$ and $v(t)$ to encapsulate the coefficients $u_{\mu\nu}(t)$ and $v_{\mu\nu}(t)$. In addition, we go to the $SU(2L)$ representation and write the state of the system in terms of Nambu spinors in that space. Thus,
+\begin{equation}
+\label{eq:nambu:spinors}
+\begin{array}{lcrcr}
+ \Psi \equiv \begin{bmatrix}
+            c_1\\
+            c_2 \\
+            \vdots \\
+            c_L\\
+            c^\dagger_1\\
+            c^\dagger_2 \\
+            \vdots\\
+            c^\dagger_L
+           \end{bmatrix} & , & \Gamma(t) \equiv \begin{bmatrix}
+            \gamma_1(t)\\
+            \gamma_2 (t)\\
+            \vdots \\
+            \gamma_L(t)\\
+            \gamma^\dagger_1(t)\\
+            \gamma^\dagger_2 (t)\\
+            \vdots\\
+            \gamma^\dagger_L(t)
+           \end{bmatrix} & . &
+           \end{array}
+\end{equation}
+The solution can be written in terms of these spinors as
+\begin{eqnarray}
+\label{eq:spinors}
+\Gamma(t) &   =  & U^\dagger(t) \Psi,\nonumber \\
+U(t)      &\equiv& \begin{bmatrix}         
+		    u(t) & v^\ast(t)\\
+		    v(t) & u^\ast(t)
+		    \end{bmatrix}.
+\end{eqnarray}
+In addition, the Hamiltonian
+\begin{eqnarray}
+\label{eq:hst}
+H(t)   &  =   & \Psi^\dagger H^S(t) \Psi,\nonumber \\
+H^S(t) &\equiv& \begin{bmatrix}
+                 A(t) & B(t)\\
+                 -B(t) & -A(t)
+                \end{bmatrix},
+\end{eqnarray}
+Unitary evolution and canonicality demands that $\{\gamma_\mu(t),\gamma^\dagger_\nu(t)\}=\delta_{\mu\nu},\{\gamma_\mu(t),\gamma_\nu(t)\}=\{\gamma^\dagger_\mu(t),\gamma^\dagger_\nu(t)\}=0$. Thus, from eqns~\ref{eq:gammat}, we get
+\begin{eqnarray}
+\label{eq:fermionicgamma}
+u^\dagger(t) u(t) + v^\dagger(t) v(t) &=& \mathds{1},\nonumber \\
+v^T(t)u(t)+u^T(t)v(t) &=& 0.
+\end{eqnarray}
+More generally, if we define the propagator matrices
+\begin{eqnarray}
+\alpha(t_1,t_2) &\equiv& v^T(t_1) \ u(t_2) + u^T(t_1) \ v(t_2),\nonumber \\
+\beta(t_1,t_2)  &\equiv& u^\dagger(t_1) \ u(t_2) + v^\dagger(t_1) \ v(t_2),
+\end{eqnarray}
+then $\alpha(t,t)=0$, $\beta(t,t)=\mathds{1}$ $\forall t$. We can use these propagator matrices to write down the basis transformation of $\gamma_\mu(t)$ from the elementary fermions $c_i,c^\dagger_i$ to the emergent fermions $\gamma_\mu,\gamma^\dagger_\mu$. Using eqs~\ref{eq:gammat} and~\ref{eq:gammadef}, this yields
+\begin{equation}
+\label{eq:emergentbasis}
+\gamma_\mu(t) = \beta^{\ }_{\mu\nu}(t,0) \ \gamma_\nu + \alpha^\ast_{\nu\mu}(0,t) \ \gamma^\dagger_\nu. 
+\end{equation}
+
+Finally, we discuss setting initial conditions. Any initial condition we choose must satisfy the conditions in eq~\ref{eq:fermionicgamma} at $t=0$. If we desire random initial conditions, one way is to keep $u=0$ and set $v$ to be a random unitary matrix. Random unitary matrices can be generated by creating a random matrix and performing Gram-Schmidt orthonormalization on its columns, effectively rotating the unit matrix by random angles. The GNU Scientific Library~\cite{galassi:gsl} contains routines for the QR decomposition of a matrix, where the matrix Q is unitary and  R is upper triangular. Building a random matrix, performing the QR decomposition and unpacking the matrix Q will yield the orthonormalized form of the random matrix. The relevant routines can be found in~\cite{gsl:qrdecomp}. However, this state does not appear to be sufficiently different from the classical ground state to be of much use, since the only randomness is in the phases. An alternative option is to start from the classical 
+ground state viz $|\psi(0)\rangle = \prod_i c^\dagger_i |0\rangle$. From 
+eq~\ref{eq:gammadef} and~\ref{eq:psit}, this can be done by setting $u(0)=0$,$v(0)=\mathds{1}$. Another choice is the Greenberger–Horne–Zeilinger (GHZ) state $|\psi(0)\rangle = \frac{1}{\sqrt{2}}\ \left(1+\prod_i c^\dagger_i\right)|0\rangle$. This can be set by setting  $h_0=0,\alpha= J_i=h_i=1$ in the Hamiltonian in eq~\ref{H_OBC} and diagonalizing it. The ground state of the ordered Ising model is $2$-fold degenerate, and numerical diagonalization routines select the equal superposition of the canonical basis states in the degenerate subspace as the eigenstate. In this case, that is just the GHZ state. This is accomplished by formulating $H^S(0)$ using eq~\ref{eq:hst} with $h_0=0,\alpha= J_i=h_i=1$ and diagonalizing it. This involves solving for $L$ eigenvalues $\epsilon_\mu$ such that
+\begin{equation}
+H^S(0)|\phi_\mu\rangle  = \epsilon_\mu |\phi_\mu\rangle,
+\end{equation}
+with ground state energy of $-\sum_\mu \epsilon_\mu$. The structure of $H^S$ in eq~\ref{eq:hst} indicates that if the eigenvalue  $\epsilon_\mu$ has an eigenvector $|\phi_\mu\rangle$, then the  eigenvalue  $-\epsilon_\mu$ has an eigenvector $|\phi^\ast_\mu\rangle$, where
+\begin{eqnarray}
+|\phi_\mu \rangle &=& \begin{pmatrix}
+        u_\mu \\
+	v_\mu
+       \end{pmatrix},\nonumber \\
+|\phi^\ast_\mu \rangle &=& \begin{pmatrix}
+        v^\ast_\mu \\
+	u^\ast_\mu
+       \end{pmatrix}.
+\end{eqnarray}
+Here, $u_\mu$, $v_\mu$ are $L-$ dimensional vectors that form the columns of the matrices $u(0)$ and $v(0)$ respectively. Thus, the matrix $U_d$ that diagonalizes $H^S (0)$ can be constructed as
+\begin{equation}
+U_d = \begin{bmatrix}
+       u(0) & v^\ast(0)\\
+       v(0) & u^\ast(0)
+      \end{bmatrix}.
+\end{equation}
+Thus, once $U_d$ is obtained numerically, the submatrices $u(0)$ and $v(0)$ can be extracted.
+
+\section{Calculation of Dynamical Responses to the Drive}
+\label{sec:responses}
+We shall now use these results to obtain expressions for the measurable responses of the system as it evolves in time, namely the magnetization (mapped to the Fermion density after the Jordan Wigner Transformation), and the autocorrelations of the system. 
+
+\subsection{Magnetization}
+\label{subsec:magcalc}
+The magnetization per site can be shown via Jordan Wigner transformation~\cite{arnab1} to be
+\begin{equation}
+\label{eq:magdef}
+m(t)\equiv -1 + \frac{2}{L}\sum^L_{i=1} \langle \psi(0) | c^\dagger_{i,H} (t) c_{i,H}(t) |\psi(0)\rangle,
+\end{equation}
+where the operators 
+\begin{equation}
+\label{eq:cit}
+c_{i,H}(t)\equiv \sum^L_{\mu=1} \left[u_{i\mu}(t)\gamma_\mu+v^\ast_{i\mu}(t)\gamma^\dagger_\mu\right],
+\end{equation}
+are in the Heisenberg picture, and $|\psi(0)\rangle$ is the initial state at $t=0$. Note that the number operator is NOT conserved by the Hamiltonian in eq~\ref{H_OBC}. Equation~\ref{eq:magdef} can be expanded using eq~\ref{eq:cit} to yield
+\begin{eqnarray}
+\label{eq:magops}
+ m(t) &=& -1+2\langle\psi(0)|\hat{\rho}(t)|\psi(0)\rangle,\nonumber \\
+ \hat{\rho}(t) &=& \frac{1}{L}\sum^L_{i,\mu,\nu = 1}\bigg[u^\ast_{i\nu}(t) u_{i\mu}(t)\gamma^\dagger_\nu\gamma_\mu + u^\ast_{i\nu}(t)v^\ast_{i\mu}(t)\gamma^\dagger_\nu\gamma^\dagger_\mu + \nonumber \\
+  & & v_{i\nu}(t)u_{i\mu}(t)\gamma_\nu\gamma_\mu + v_{i\nu}(t)v^\ast_{i\mu}(t)\gamma_\nu\gamma^\dagger_\mu\bigg] .
+\end{eqnarray}
+The expression for $\hat{\rho}(t)$ can be written as
+\begin{equation}
+ \label{m:t}
+ \hat{\rho}(t) = \frac{1}{L} \times \rm{Tr}\left[\hat{\kappa^i} \; u^\dagger(t)u(t) + \hat{\kappa^c} \; v^\dagger(t)v(t) + \hat{\epsilon^i} \; u^\dagger(t)v^\ast(t)+\hat{\epsilon^c} \; v^{\ast \dagger}(t)u(t)\right],
+\end{equation}
+where the matrix elements of $\hat{\rho^{i,c}}$ and $\hat{\epsilon^{i,c}}$ are
+\begin{eqnarray}
+\label{matelems}
+\hat{\kappa^i}_{\nu\mu} &=& \gamma^\dagger_\nu\gamma_\mu, \nonumber \\
+\hat{\epsilon^i}_{\nu\mu} &=& \gamma^\dagger_\nu\gamma^\dagger_\mu,\nonumber \\
+\hat{\kappa^c}_{\nu\mu} &=& \gamma_\nu\gamma^\dagger_\mu, \nonumber \\
+\hat{\epsilon^c}_{\nu\mu} &=& \gamma_\nu\gamma_\mu.
+\end{eqnarray}
+Now, note that, all but the third equation among these are normal ordered. Also, since $\gamma_\mu$ ($\gamma^\dagger_\mu$) destroys $|\psi(0)\rangle$ ($\langle\psi(0)|$), all but $\hat{\kappa^c}_{\nu\mu}$ among the operators in eqs.~\ref{matelems} have zero expectation values w.r.t $|\psi(0)\rangle$. This allows for the simplification of eq~\ref{m:t} and then eq~\ref{eq:magops}, yielding
+\begin{equation}
+m(t) = -1+\frac{2}{L} \times {\rm Tr}\left[\langle\kappa^c\rangle {v}^\dagger(t) {v}(t)\right],
+\end{equation}
+where the expectation $\langle\dots\rangle\equiv \langle\psi(0)|\dots|\psi(0)\rangle$. Now, noting that the fermionic nature of the $\gamma$s (detailed in eqns~\ref{eq:fermionicgamma}) demands that $\hat{\kappa^c}_{\nu\mu}\equiv\gamma_\nu\gamma^\dagger_\mu=\delta_{\nu\mu}-\gamma^\dagger_\nu\gamma_\mu$, and taking expectation on both sides yields $\langle\kappa^c\rangle=\mathds{1}$. This gives us the working formula for the magnetization
+\begin{equation}
+ \label{eq:mag}
+\boxed{m(t) = -1+\frac{2}{L} \times {\rm Tr}\left[ {v}^\dagger(t) {v}(t)\right].}
+\end{equation}
+
+\section{\sc Notes on Algorithm}
+The code in this tarball integrates the dynamics above numerically in a parallel multithreaded computing environment. It evaluates the magnetization and entanglement as functions of time, and dumps the output files. Here are some preliminary notes and suggestions on the algorithm used to implement the dynamics described in the previous section.
+\begin{itemize}
+ \item
+ The source code requires the following dependencies to compile successfully
+ \begin{enumerate}
+  \item 
+  A GNU shell environment with the GNU bash shell. On most UNIX and Linux systems, this is installed by default. On windows and macs, please install the MinGW shell environment~\cite{mingw} or Cygwin~\cite{cygwin}.
+  \item
+  A GNU - compatible C compiler and linker. On most UNIX and Linux systems, the GNU-CC (gcc) compiler an be easily installed. On windows and macs, please install such a compiler in your MinGW or Cygwin installations~\cite{gccmingw,gcccygwin}. Any GNU compatible C compiler should do it, whether its gcc or any other like icc (Intel C compiler), bcc (Bourne C compiler), etc.
+  \item
+  The GNU Make toolkit~\cite{make}. On most UNIX and Linux systems, this is installed by default. On windows and macs, please install GNU Make in your MinGW or Cygwin installations in a manner similar to~\cite{gccmingw,gcccygwin}.
+  \item
+  \LaTeX , for the documentation.
+  \item
+  The \LaTeX - autocompiler 'latex-mk'~\cite{latexmk}.
+  \item
+  The GNU Scientific library~\cite{galassi:gsl}. This is required for the matrix implementation, the default BLAS (Basic Linear Algebra Subprograms)~\cite{blas} for matrix-matrix multiplications, and the ODE integrators. You can link other BLAS libraries if you want, and boiler plate changes to the code will not be necessary. In addition, the uniform random number generators of the GSL are being used.
+  \item
+  The GLib library and associated header file 'glib.h'~\cite{glib}. This is a cross-platform software utility library that  provides advanced data structures, such as linked lists, hash tables, dynamic arrays, balanced binary trees etc. The dynamic array type from this library will be used to store output data during runtime.
+  \item
+  Any implementation of the MPI standard of Message Passing Parallelization. For details, see~\cite{mpi}. The program has been tested with OpenMPI~\cite{openmpi}.
+\item
+ Optional: The Python Programming Language~\cite{python}, as well as numpy~\cite{numpy}, scipy~\cite{scipy} and matplotlib~\cite{matplotlib} packages for the postprocessing scripts.
+ \end{enumerate}
+ \item
+ The code is in a 'tarball' that can be uncompressed using any decompression tool like GNU tar, or 7-zip. The source code is distributed in the C files, and default makefiles are provided. Please adjust the makefile as needed before compiling. The tarball also provides scripts for running the compiled binary.
+ \item
+ To compile the code, just untar the package and run  
+ \shellcmd{make}
+ This should compile the code into a single binary named 'isingrand\_parallel'. Executing this without any flags will dump out usage instructions.  
+ \item
+ To compile any particular object, like the integrator or the main file, simply run 'make' followed by the object name. For example, to compile the integrator object, run
+ \shellcmd{make integrator.o}
+ This will create the object file 'integrator.o'.
+ \item
+ To build the documentation from \LaTeX , simply navigate to the 'writeup' directory and run
+ \shellcmd{make dvi/pdf/ps/html}
+ Choose any one of the above options. This will build the document from the \LaTeX - file.
+ \item
+  I am implementing the integrators in the GNU Scientific Library~\cite{galassi:gsl} for solving the actual dynamics. The library contains many implementations of Runge Kutta and Bulirsch St\"oer routines that can be used and interchanged easily. However, using Bulirsch St\"oer routine requires the calculation of the Jacobian of the dynamics, and I have not implemented this currently. The jacobian is currently just a placeholder blank function that returns the macro GSL\_SUCCESS without actually doing anything. Runge Kutta methods will work, and the default method coded is the 'rk8pd' method \textit{i.e.} the $8^{th}$ order Runge-Kutta Prince Dormand method with $9^{th}$ order error checking.
+\item
+ The program runs multiple instances of the random number generation via a loop that runs through $N$ counts of the random number generator. This loop is parallelized.
+\item
+ The program uses MPI programming to distribute the work load across multiple processors in multiple nodes of a cluster.  The program can be run with $p$ MPI processes. Each mpi process generates its own seed, instantiates its own copy of a random number generator using that seed.
+\item
+In order to run the program with only one processor in one node, just run the compiled binary with no arguments to see a help page with a list of all options and flags. To run it in a standard mpi environment, run the binary and its options/flags after appending them to an MPI runtime command like 'mpiexec','mirun','ibrun','poe' etc. Sample run scripts are given in the 'scripts' directory.
+\item
+The 'scripts' directory also contains some python scripts to postprocess the data from the main program. They have the extension '.py' and are individually commented in detail.
+  \item 
+  I have \textbf{not hardcoded} the input block except for the lattice size, and I strongly suggest keeping it that way. The data is read using the 'getopt' library in glibc~\cite{getopt}, and there is a sample run script named 'runprog.sh' that runs the program with default values. Please alter it as necessary.
+ \item
+ To speed up program execution, output data is dumped to a dynamic array in memory. After the integrations, the array data is dumped to disk. This is faster than dumping to disk during actual runtime, although this does mean that the program eats up a lot of memory. The dynamic arrays are constructed using data collection tools from the GLib library~\cite{glib}, such as the 'Array' data structure. This method guards against memory leaks that may arise from incorrectly using \textbf{malloc()} or \textbf{realloc()} directly.
+\end{itemize}
+
+\begin{thebibliography}{10}
+\bibitem{isingrand}
+\newblock T. Caneva, R. Fazio, and G.E. Santoro, Phys. Rev. B {\bf 76}, 144427 (2007).
+\newblock DOI : \url{http://link.aps.org/doi/10.1103/PhysRevB.76.144427}.
+\bibitem{arnab1} Das A 2010 {Phys. Rev. B} {\bf 82} 172402. Bhattacharyya S, Das A
+and Dasgupta S 2012 {Phys. Rev. B} {\bf 86} 054410.
+\bibitem{mingw}
+MinGW, a contraction of "Minimalist GNU for Windows", is a minimalist development environment for native Microsoft Windows applications.
+Please see \url{http://www.mingw.org/}.
+\bibitem{cygwin}
+Cygwin is a collection of tools which provide a Linux look and feel environment for Windows. Please see \url{http://www.cygwin.com/}.
+\bibitem{gccmingw}
+\newblock To install gcc on MinGW, install MinGW~\cite{mingw}, then install the cli addons installer from \url{http://sourceforge.net/projects/mingw/files/Installer/mingw-get/}, and run
+\shellcmd{mingw-get install gcc g++ mingw32-make}
+Also see \url{http://www.mingw.org/wiki/Getting_Started}. You can also play with this \url{http://mingw-w64.sourceforge.net/} for $64-$ bitness.
+\bibitem{gcccygwin}
+\newblock To install gcc on cygwin, run the cygwin installer \url{http://www.cygwin.com/install.html} and choose gcc in the menu. 
+\bibitem{make}
+GNU Make is a tool which controls the generation of executables and other non-source files of a program from the program's source files. See
+\url{http://www.gnu.org/software/make/}
+\bibitem{latexmk}
+LaTeX-Mk is an automatic \LaTeX - compiler that uses makefiles~\cite{make} to build \LaTeX - files. See \url{http://latex-mk.sourceforge.net/}.
+\bibitem{blas}
+Basic Linear Algebra Subroutine (BLAS) is an API standard for building linear algebra libraries that perform basic linear algebra operations such as vector and matrix multiplication. See \url{http://www.netlib.org/blas/}. For a quick introduction, see \url{http://www.netlib.org/scalapack/tutorial/sld054.htm}.
+\bibitem{galassi:gsl}
+M.Galassi, J.~Davies, J.~Theiler, B.~Gough, G.~Jungman, M.~Booth, and F.~Rossi, 
+{\em GNU Scientific Library Reference Manual,  2nd edition},
+(Network Theory Ltd.,Bristol BS8 3AL, United Kingdom, 2003).
+\newblock Website:\url{http://www.gnu.org/software/gsl/manual/gsl-ref.html}
+
+\bibitem{gsl:qrdecomp}
+The QR decomposition of a matrix and the extraction of the decomposed products can be done numerically using the GNU Scientific Library. The relevant documentation can be found at~\url{http://www.gnu.org/software/gsl/manual/html_node/QR-Decomposition.html}.
+
+
+\bibitem{mpi}
+\newblock For a quick introduction to parallel computing and the message passing interface, see \\
+\newblock V. Eijkhout,
+{\em Introduction to High-Performance Scientific Computing},
+\newblock Web:\url{http://tacc-web.austin.utexas.edu/veijkhout/public_html/istc/istc.html}.\\
+For details, see \\
+\newblock W. Gropp, and E. Lusk,
+{\em An Introduction to MPI: Parallel Programming with the Message Passing Interface}\\
+\newblock Web:\url{http://www.mcs.anl.gov/research/projects/mpi/tutorial/mpiintro/ppframe.htm}
+
+\bibitem{openmpi}
+\newblock Open MPI: Open Source High Performance Computing
+\newblock The Open MPI Project is an open source MPI-2 implementation that is developed and maintained by a consortium of academic, research, and industry partners.
+\newblock: URL: \url{http://www.open-mpi.org/}.
+
+\bibitem{python}
+Python is a powerful dynamic high-level programming language similar to Tcl, Perl, Ruby, Scheme or Java. For details, see \url{http://www.python.org/}.
+
+\bibitem{numpy}
+NumPy is the fundamental package for scientific computing with Python. It implements array storage and object-oriented numerical class libraries as python modules. For details see \url{http://www.numpy.org}.
+
+\bibitem{scipy}
+The SciPy Stack is a collection of open source software for scientific computing in Python, and particularly a specified set of core packages. For details see \url{http://www.scipy.org}.
+
+\bibitem{matplotlib}
+Matplotlib is a mature and popular plotting package in Python. It provides publication-quality 2D plotting as well as rudimentary 3D plotting.For details see \url{http://www.matplotlib.org}.
+
+\bibitem{getopt}
+Getopt is a C library function used to parse command-line options. See \url{http://www.gnu.org/software/libc/manual/html_node/Getopt.html}. It is part of the glibc software package:\url{http://www.gnu.org/software/libc/}
+
+\bibitem{glib}
+\newblock GLib Reference manual:\url{https://developer.gnome.org/glib/}\\
+Also see \\
+\newblock T. Copeland, {\em Manage C data using the GLib collections}, (IBM:2005)
+\newblock Web:\url{http://www.ibm.com/developerworks/linux/tutorials/l-glib/}
+
+\bibitem{unitaryflow}
+A. Verdeny, A. Mielke, and F. Mintert, Phys. Rev. Lett. {\bf 111}, 175301 (2013).
+
+\bibitem{hatano}
+M. Fujinaga, and N. Hatano, J. Phys. Soc. Jpn. {\bf 76} 094001 (2007).
+
+\bibitem{osborne}
+T. J. Osborne, M. A. Nielsen, Phys. Rev. A {\bf 66}, 032110 (2002).
+
+\bibitem{lieb}
+E. Lieb, T. Schultz, and D. Mattis, Ann. Phys. {\bf 16}, 407 (1961).
+
+\bibitem{vidal}
+G. Vidal and R.F. Werner, Phys. Rev. A {\bf 65}, 032314 (2002).
+
+\bibitem{plenio}
+M.B. Plenio, Phys. Rev. Lett. {\bf 95} 090503 (2005).
+
+\bibitem{igloi}
+F. Igloi and H. Reiger, Phys. Rev. B {\bf 57} (18) 11404 (1998).
+
+\bibitem{canovi}
+E. Canovi, \textit{Quench dynamics of many-body systems}, Thesis at \url{http://www.sissa.it/statistical/tesi_phd/canovi.pdf} (2010).
+\end{thebibliography}
+
+
+\end{document}
