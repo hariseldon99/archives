@@ -17,8 +17,8 @@ from __future__ import division, print_function
  * - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 """
 desc = """Comparison of quantum analytical with Discrete Truncated Wigner
-	  Approximation for 1d Ising model (sxsx) with long range
-	  interactions and no fields"""
+          Approximation for 1d Ising model (sxsx) with long range
+          interactions and no fields"""
 
 import numpy as np
 import argparse, sys
@@ -43,14 +43,14 @@ def input():
 
     parser.add_argument("-v", '--verbose', action='store_true', \
       help="increase output verbosity")
-   
+
     parser.add_argument('-pbc', '--periodic', \
       help="switch to periodic boundary conditions, default is open",\
         action="store_true")
     parser.add_argument('-n', '--nonorm', \
       help="do not normalize the energy per particle, default is yes",\
         action="store_true")
-    
+
     parser.add_argument('-b', '--beta', type=np.float64, \
       help="power law index for long range interactions", default=beta)
 
@@ -62,42 +62,42 @@ def input():
 #This is the Jmn hopping matrix with power law decay for open boundary
 #conditions.
 def get_jmat_obc(args):
-  J = dia_matrix((N, N))
-  for i in xrange(1,N):
-    elem = pow(i, -args.beta)
-    J.setdiag(elem, k=i)
-    J.setdiag(elem, k=-i)
-  return J.toarray()
+    J = dia_matrix((N, N))
+    for i in xrange(1,N):
+        elem = pow(i, -args.beta)
+        J.setdiag(elem, k=i)
+        J.setdiag(elem, k=-i)
+    return J.toarray()
 
 def get_jmat_pbc(args):
-  J = dia_matrix((N, N))
-  mid_diag = np.floor(N/2).astype(int)
-  for i in xrange(1,mid_diag+1):
-    elem = pow(i, -args.beta)
-    J.setdiag(elem, k=i)
-    J.setdiag(elem, k=-i)
-  for i in xrange(mid_diag+1, N):
-    elem = pow(N-i, -args.beta)
-    J.setdiag(elem, k=i)
-    J.setdiag(elem, k=-i)
-  return J.toarray() 
+    J = dia_matrix((N, N))
+    mid_diag = np.floor(N/2).astype(int)
+    for i in xrange(1,mid_diag+1):
+        elem = pow(i, -args.beta)
+        J.setdiag(elem, k=i)
+        J.setdiag(elem, k=-i)
+    for i in xrange(mid_diag+1, N):
+        elem = pow(N-i, -args.beta)
+        J.setdiag(elem, k=i)
+        J.setdiag(elem, k=-i)
+    return J.toarray()
 
 def precalc(params):
-      # calc all the 'outer' sums/diffs, and zero the k=i,j terms
-      ii = np.arange(params.jmat.shape[0])
-      JM1 = params.jmat[:, :, None] + params.jmat[:, None, :]
-      JM2 = params.jmat[:, :, None] - params.jmat[:, None, :]
-      JM1[ii, ii, :] = 0
-      JM2[ii, ii, :] = 0
-      JM1[ii, :, ii] = 0
-      JM2[ii, :, ii] = 0
-      JM1 = JM1.transpose([1, 2, 0])
-      JM2 = JM2.transpose([1, 2, 0])
-      return JM1, JM2
+    # calc all the 'outer' sums/diffs, and zero the k=i,j terms
+    ii = np.arange(params.jmat.shape[0])
+    JM1 = params.jmat[:, :, None] + params.jmat[:, None, :]
+    JM2 = params.jmat[:, :, None] - params.jmat[:, None, :]
+    JM1[ii, ii, :] = 0
+    JM2[ii, ii, :] = 0
+    JM1[ii, :, ii] = 0
+    JM2[ii, :, ii] = 0
+    JM1 = JM1.transpose([1, 2, 0])
+    JM2 = JM2.transpose([1, 2, 0])
+    return JM1, JM2
 
 class Precalc_objects:
     description = """Class to store conditions and precalculated objects"""
-       
+
     def __init__(self, args):
         #Copy arguments from parser to this class
         self.__dict__.update(args.__dict__)
@@ -117,8 +117,8 @@ class Precalc_objects:
               np.sum(1/(pow(np.arange(1, N+1), args.beta).astype(float)))
         if args.nonorm:
             self.norm = 1.0
-        self.jmat = self.jmat/self.norm    
-        self.j_p, self.j_m = precalc(self)    
+        self.jmat = self.jmat/self.norm
+        self.j_p, self.j_m = precalc(self)
 
 def corr_time(t, JM1, JM2):
     return np.prod(np.cos(2*JM1*t), axis=-1)+np.prod(np.cos(2*JM2*t), axis=-1)
